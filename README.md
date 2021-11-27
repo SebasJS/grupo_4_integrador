@@ -11,3 +11,6 @@ Decathlon Colombia | Tienda deportiva , Ropa deportiva y accesorios.
 Atlanta Deportes - Tienda Deportiva Online - Salud recreación y deporte 
 
 Juan Camilo Salazar Restrepo
+
+Joan Sebastian Gomez Vargas
+

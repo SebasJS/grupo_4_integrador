@@ -1,0 +1,32 @@
+{
+  "name": "altisport",
+  "version": "1.0.0",
+  "description": "Descripción\r Tienda virtual de todo tipo de artículos deportivos, por ejemplo : ropa, tenis, bicicletas, balones, morrales, etc.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebasJS/grupo_4_integrador.git"
+  },
+  "keywords": [
+    "bicicletas",
+    "ropa deportiva",
+    "balones",
+    "articulos deportivos"
+  ],
+  "author": "Grupo 4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebasJS/grupo_4_integrador/issues"
+  },
+  "homepage": "https://github.com/SebasJS/grupo_4_integrador#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

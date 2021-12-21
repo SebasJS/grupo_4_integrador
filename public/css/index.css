@@ -1,0 +1,47 @@
+/* Normalización*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/*Header*/
+
+.logo{
+    width: 150px;
+}
+
+header {
+    display: flex;
+    background-color: #222831 ;
+    height: 150px;
+    width: 100%;
+    
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+
+}
+
+nav ul li{
+margin: 100px;
+list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/*Banner*/
+
+img {
+    width: 100%;
+}

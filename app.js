@@ -12,4 +12,8 @@ app.get('/', (req,res) => res.sendFile(path.resolve(__dirname, './views/home.htm
 
 app.listen(process.env.PORT || 3000, () =>console.log("Servidor Corriendo en Puerto 3000"));
 
-app.get('/product-info',(req,res)=> res.sendFile(path.resolve(__dirname,'./views/product-info.html')))
+app.get('/product-info',(req,res)=> res.sendFile(path.resolve(__dirname,'./views/product-info.html')));
+
+app.get('/login',(req,res) => res.sendFile(path.resolve(path.resolve(__dirname, './views/login.html'))));
+
+app.get('/registro', (req,res) => res.sendFile(path.resolve(path.resolve(__dirname,'./views/registro.html'))));

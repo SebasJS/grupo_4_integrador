@@ -87,6 +87,8 @@ body main h2{
     
 }
 
+a{text-decoration: none;}
+
 section.categorias article {
     display: flex;
     width: 25%;

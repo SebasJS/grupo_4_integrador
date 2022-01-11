@@ -200,7 +200,7 @@ footer{
 }
 
 .final div{
-    margin-top: 10%;
+    margin-top: 50px;
     margin-right: 15%;
     color: var(--blanco);
 }
@@ -208,4 +208,13 @@ footer{
 .final div a{
     text-decoration: none;
     color: var(--blanco);
+}
+
+.logoContainerFooter{
+    width: 380px;
+    margin: 0;
+}
+
+.logoimgFooter{
+    width: 100%;
 }

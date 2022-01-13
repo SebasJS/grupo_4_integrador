@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesRegProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Crear</title>
+</head>
+<body>
+    <%- include("../partials/header.ejs") %> 
+    <main>
+        <h2>Crea tu producto</h2>
+        <form action="">
+            <div class="formu">
+                <label for="Nombre">Nombre producto:</label>
+                <input type="text" id="nombre" placeholder="Nombre"><br>
+                <label for="Precio">Valor del producto:</label>
+                <input type="text" id="valor" placeholder="Precio"><br>
+                <label for="Precio">Stock:</label>
+                <input type="text" id="stock" placeholder="stock"><br>
+                <label for="Precio">Codigo unico:</label>
+                <input type="text" id="sku" placeholder="SKU"><br>
+                <label for="Precio">Categoria:</label>
+                <select name="deporte">
+                    <option>-----</option>
+                    <option>Ropa</option>
+                    <option>Balones</option>
+                    <option>Zapatos</option>
+                    <option>Montaña</option>
+                    <option>Raqutas</option>
+                    <option>Bicicletas</option>
+                    <option>Artes Marciales</option>
+                    <option>Equitacion</option>
+                    <option>Tenis</option>
+                  </select><br>
+                <label for="descripcion">Descripcion del producto:</label><br>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Añade la descripcion"></textarea><br>
+                <label for="Nombre">Cargar imagen</label>
+                <input type="file"><br>
+                <input type="submit" value="Crear Producto">
+            </div>
+
+        </form>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>

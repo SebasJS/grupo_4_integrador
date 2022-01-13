@@ -1,6 +1,3 @@
-/*import*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Luckiest+Guy&display=swap');
 /* Normalización*/
 *{
     margin: 0;
@@ -8,24 +5,7 @@
     box-sizing: border-box;
 }
 
-:root{
-    /*colores*/
-    --gris:#222831;
-    --blanco:#ffffff;
-    --naranja:#FD7014;
-    --negro:#000000
 
-    /*fuentes*/
-    --roboto:'Roboto', sans-serif;
-    --bebas: 'Bebas Neue', cursive;
-}
-
-html
-{
-    font-size: 62.5%;
-    font-family: var(--roboto);
-
-}
 
 /*Header*/
 
@@ -38,9 +18,8 @@ header {
     background-color: #222831 ;
     height: 150px;
     width: 100%;
-    font-size: 1.8em;
+    
     align-items: center;
-    font-family: var(--bebas);
 }
 
 nav ul {
@@ -52,7 +31,7 @@ nav ul {
 }
 
 nav ul li{
-margin: 80px;
+margin: 100px;
 list-style-type: none;
 }
 
@@ -66,67 +45,3 @@ nav ul li a {
 img {
     width: 100%;
 }
-
-/*main*/
-
-main{
-    font-family: var(--bebas); 
-}
-body main h2{
-    margin-top: 40px;
-    text-align: center;
-    font-size: 3.6em;
-   
-}
-
-.categorias{
-    display: flex;
-    width: 100%;
-    
-    margin-top: 100px;
-    
-}
-
-a{text-decoration: none;}
-
-section.categorias article {
-    display: flex;
-    width: 25%;
-    height: 400px;
-    background-color: #ffffff;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    margin-top: -50px;
-    margin-bottom: 100px;
-    -webkit-box-shadow: 1px -2px 9px 2px rgba(0,0,0,0.41); 
-box-shadow: 1px -2px 9px 2px rgba(0,0,0,0.41);
-}
-section.categorias article:hover {
-    width: 26%;
-    height: 410px; 
-}
-
-section.categorias article img {
-    width: 300px;
-    height: 300px;
-}
-section.categorias article div {
-    display:flex;
-    background-color:var(--gris) ;
-    width: 100%;
-    height: 150px;
-    justify-content: center;
-    align-items: center;
-}
-
-section.categorias article div h3 {
-    color: white;
-    text-align: center;
-    padding: auto;
-    font-size: 2.4em;
-}
-
-
-

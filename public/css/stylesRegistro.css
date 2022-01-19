@@ -11,18 +11,21 @@ html{
     height: 100%;
     font-family: sans-serif;
 }
+h2{
+    padding-top: 30px;
+}
 .Izq{
     width: 50%;
     height: 100%;
     background-color: #222831;
-    position: fixed;
+    /*position: fixed;*/
     color: #ffff;
 }
 .Der{
     width: 50%;
     height: 100%;
     background-color: #ffff;
-    position: fixed;
+    /*position: fixed;*/
     left:50%;
 }
 .formulario{

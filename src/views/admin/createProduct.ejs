@@ -12,34 +12,34 @@
     <%- include("../partials/header.ejs") %> 
     <main>
         <h2>Crea tu producto</h2>
-        <form action="">
+        <form action="/admin" method="POST" enctype="multipart/form-data">
             <div class="formu">
                 <label for="Nombre">Nombre producto:</label>
-                <input type="text" id="nombre" placeholder="Nombre"><br>
+                <input type="text" id="name" name="name" placeholder="Nombre"><br>
                 <label for="Precio">Valor del producto:</label>
-                <input type="text" id="valor" placeholder="Precio"><br>
+                <input type="text" id="price" name="price" placeholder="Precio"><br>
                 <label for="Precio">Stock:</label>
-                <input type="text" id="stock" placeholder="stock"><br>
+                <input type="text" id="stock" name="stock"  placeholder="stock"><br>
                 <label for="Precio">Codigo unico:</label>
-                <input type="text" id="sku" placeholder="SKU"><br>
+                <input type="text" id="sku" name="sku" placeholder="SKU"><br>
                 <label for="Precio">Categoria:</label>
-                <select name="deporte">
-                    <option>-----</option>
-                    <option>Ropa</option>
-                    <option>Balones</option>
-                    <option>Zapatos</option>
-                    <option>Montaña</option>
-                    <option>Raqutas</option>
-                    <option>Bicicletas</option>
-                    <option>Artes Marciales</option>
-                    <option>Equitacion</option>
-                    <option>Tenis</option>
+                <select name="category" id="category">
+                    <option value="">-----</option>
+                    <option value="ropa">Ropa</option>
+                    <option value="balones">Balones</option>
+                    <option value="zapatos">Zapatos</option>
+                    <option value="montaña">Montaña</option>
+                    <option value="raquetas">Raqutas</option>
+                    <option value="bicicletas">Bicicletas</option>
+                    <option value="artesMarciales">Artes Marciales</option>
+                    <option value="equitacion">Equitacion</option>
+                    <option value="tenis">Tenis</option>
                   </select><br>
                 <label for="descripcion">Descripcion del producto:</label><br>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Añade la descripcion"></textarea><br>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Añade la descripcion"></textarea><br>
                 <label for="Nombre">Cargar imagen</label>
-                <input type="file"><br>
-                <input type="submit" value="Crear Producto">
+                <input type="file" name="image" id="image"><br>
+                <button type="submit">Guardar Producto</button>
             </div>
 
         </form>

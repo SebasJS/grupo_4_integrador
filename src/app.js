@@ -6,6 +6,7 @@ const mainRouter = require("./routes/mainRouter");
 const adminRouter = require("./routes/adminRouter");
 const usersRouter = require("./routes/usersRouter");
 const shopRouter = require("./routes/shopRouter");
+const productsRouter = require("./routes/products");
 
 const publicPath = path.resolve(__dirname,'./public');
 
@@ -19,7 +20,10 @@ app.use('/',mainRouter);
 app.use('/admin',adminRouter);
 app.use('/shop',shopRouter);
 app.use('/users',usersRouter);
+app.use('/products',productsRouter);
 
+
+app.use((req, res, next) => next(createError(404)));
 
 
 //Servidor

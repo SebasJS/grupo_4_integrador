@@ -1,92 +1,98 @@
 [
- {
-  "id": 1,
-  "name": "Bicicleta gw",
-  "price": 1000000,
-  "stock": 20,
-  "sku": "BC10001",
-  "category": "bicicletas",
-  "description": "bicicleta ideal para montaña y deportes extremos",
-  "image": "bicicleta1.jpg"
- },
- {
-  "id": 2,
-  "name": "Bicicleta shimano",
-  "price": 900000,
-  "stock": 15,
-  "sku": "BC10002",
-  "category": "bicicletas",
-  "description": "bicicleta ideal para montaña y deportes extremos",
-  "image": "bicicleta2.jpg"
- },
- {
-  "id": 3,
-  "name": "Bicicleta mela",
-  "price": 500000,
-  "stock": 3,
-  "sku": "BC10003",
-  "category": "bicicletas",
-  "description": "bicicleta ideal para montaña y deportes extremos",
-  "image": "bicicleta3.jpg"
- },
- {
-  "id": 4,
-  "name": "badf",
-  "price": "1222",
-  "stock": "15",
-  "sku": "b100001",
-  "category": "balones",
-  "description": "adfadsas",
-  "image": "1642706821688-bicicleta3.jpg"
- },
- {
-  "id": 5,
-  "name": "asasa",
-  "price": "123",
-  "stock": "23",
-  "sku": "bc10002",
-  "category": "ropa",
-  "description": "adfadfa",
-  "image": "1642706924469-1642706821688-bicicleta3.jpg"
- },
- {
-  "id": 6,
-  "name": "adfad",
-  "price": "1222",
-  "stock": "500",
-  "sku": "aafdadfad",
-  "category": "balones",
-  "description": "adfasdfad",
-  "image": "1642707026437-bicicleta4.jpg"
- },
- {
-  "id": 7,
-  "name": "adfad",
-  "price": "1222",
-  "stock": "500",
-  "sku": "aafdadfad",
-  "category": "balones",
-  "description": "adfasdfad",
-  "image": "1642707406568-bicicleta4.jpg"
- },
- {
-  "id": 8,
-  "name": "adfad",
-  "price": "1222",
-  "stock": "500",
-  "sku": "aafdadfad",
-  "category": "balones",
-  "description": "adfasdfad",
-  "image": "1642707443284-bicicleta4.jpg"
- },
- {
-  "id": 9,
-  "name": "",
-  "price": "",
-  "stock": "",
-  "sku": "",
-  "category": "",
-  "description": "",
-  "image": "default-image.png"
- }
+    {
+        "id": 1,
+        "name": "Bicicleta gw",
+        "price": 1000000,
+        "discount": 30,
+        "stock": 20,
+        "sku": "BC10001",
+        "category": "bicicletas",
+        "tag": "visited",
+        "description": "bicicleta ideal para montaña y deportes extremos",
+        "image": "bicicleta1.png"
+    },
+    {
+        "id": 2,
+        "name": "Bicicleta shimano",
+        "price": 900000,
+        "discount": 30,
+        "stock": 15,
+        "sku": "BC10002",
+        "category": "bicicletas",
+        "tag": "visited",
+        "description": "bicicleta ideal para montaña y deportes extremos",
+        "image": "bicicleta2.png"
+    },
+    {
+        "id": 3,
+        "name": "Bicicleta mela",
+        "price": 500000,
+        "discount": 30,
+        "stock": 3,
+        "sku": "BC10003",
+        "category": "bicicletas",
+        "tag": "visited",
+        "description": "bicicleta ideal para montaña y deportes extremos",
+        "image": "bicicleta3.png"
+    },
+    {
+        "id": 4,
+        "name": "Tenis Nike Jordan Dunk 1985",
+        "price": "250000",
+        "discount": 30,
+        "stock": "15",
+        "sku": "b100001",
+        "category": "Tenis",
+        "tag": "visited",
+        "description": "Tenis Nike Jordan Dunk 1985 para jugar baloncesto",
+        "image": "nike-dunk-1985.png"
+    },
+    {
+        "id": 5,
+        "name": "Tenis Nike Jordan Starfish",
+        "price": "123000",
+        "discount": 30,
+        "stock": "23",
+        "sku": "bc10002",
+        "category": "Tenis",
+        "tag": "in-sale",
+        "description": "Tenis Nike Jordan Starfish para jugar baloncesto",
+        "image": "nike-starfish.png"
+    },
+    {
+        "id": 6,
+        "name": "Tenis Adidas Forum Mid Negros",
+        "price": "1222",
+        "discount": 30,
+        "stock": "500",
+        "sku": "aafdadfad",
+        "category": "tenis",
+        "tag": "in-sale",
+        "description": "Tenis Adidas Forum Mid Negros",
+        "image": "adidas-forum.png"
+    },
+    {
+        "id": 7,
+        "name": "Tenis Adidas Forum Mid Azules",
+        "price": "122200",
+        "discount": 30,
+        "stock": "500",
+        "sku": "aafdadfad",
+        "category": "tenis",
+        "tag": "in-sale",
+        "description": "Tenis Adidas Forum Mid azules",
+        "image": "forum-mid-azul.png"
+    },
+    {
+        "id": 8,
+        "name": "Bicicleta de Montaña",
+        "price": "1222000",
+        "discount": 30,
+        "stock": "500",
+        "sku": "aafdadfad",
+        "category": "bicicletas",
+        "tag": "in-sale",
+        "description": "Bicicleta de Montaña llantas gordas",
+        "image": "bicicleta4.png"
+    }
 ]

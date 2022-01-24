@@ -7,28 +7,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>altisport</title>
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 
 
 <body>
     <%- include("../partials/header.ejs") %>
-    <%- include("../partials/baner.ejs") %>
-    <% productos.forEach(productos => { %> 
-    <div>
-        <section class="cajaProducto">
-            <a href="/routes/shopRouter/product-info<%= productos.id%>">
-                <figure class="product-box_image">
-                    <img src="/img/<%= productos.image%>" alt="imagen de producto">
-                </figure>
-                <article class="product-box_data">
-                    <p><%= productos.name%></p>
-                    <i class="fas fa-truck"></i>
+        <%- include("../partials/baner.ejs") %>
+
+
+
+            <section class="categorias">
+                <article>
+
+                    <img src="/img/bicicleta.png" alt="categorias bicicleta">
+                    <div><a href="/product-info">
+                            <h3>Bicicletas</h3>
+                        </a></div>
                 </article>
-            </a>
-        </section>
-    </div>
-    <% }); %>
-    <%- include("../partials/footer.ejs") %>
+
+                <article>
+
+                    <img src="/img/zapato.png" alt="categorias zapatos">
+                    <div>
+                        <h3>Zapatos</h3>
+                    </div>
+                </article>
+
+                <article>
+
+                    <img src="/img/balones.png" alt="categorias balones">
+                    <div>
+                        <h3>balones</h3>
+                    </div>
+                </article>
+
+                <article>
+
+                    <img src="/img/ropa.png" alt="categorias ropa">
+                    <div>
+                        <h3>ropa</h3>
+                    </div>
+
+                </article>
+            </section>
+
+            <!-- seccion de productos -->
+
+            <div class="container products-wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="products-title">Basado en tu última visita</h2>
+                    </div>
+
+                    <!-- Show the "visited" products -->
+
+                    <% visited.forEach( product=> { /* let finalPrice = (product.price
+                        *((100-product.discount)/100)).toFixed(0); */%>
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="product-box">
+                                <a href="/products/detail/<%= product.id%>">
+                                    <figure class="product-box_image">
+                                        <img src="/img/<%= product.image%>" alt="imagen de producto">
+                                    </figure>
+                                    <article class="product-box_data">
+                                        <h2>
+                                            $ <%= product.price%>
+                                        </h2>
+                                        <span>
+                                            <%= product.discount%> % OFF
+                                        </span>
+                                        <p>
+                                            <%= product.name%>
+                                        </p>
+                                        <i class="fas fa-truck"></i>
+                                    </article>
+                                </a>
+                            </section>
+                        </div>
+                        <% }); %>
+                </div>
+            </div>
+
+            <!-- /ultima visita -->
+
+            <!-- Ofertas -->
+            <div class="container products-wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="products-title">Ofertas</h2>
+                    </div>
+                    <!-- Show the "in-sale" products -->
+
+                    <% inSale.forEach( product=> {/* let finalPrice = (product.price *
+                        ((100-product.discount)/100)).toFixed(0); */%>
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="product-box">
+                                <a href="/products/detail/<%= product.id%>">
+                                    <figure class="product-box_image">
+                                        <img src="/img/<%= product.image%>" alt="imagen de producto">
+                                    </figure>
+                                    <article class="product-box_data">
+                                        <h2>
+                                            $ <%= product.price%>
+                                        </h2>
+                                        <span>
+                                            <%= product.discount%> % OFF
+                                        </span>
+                                        <p>
+                                            <%= product.name%>
+                                        </p>
+                                        <i class="fas fa-truck"></i>
+                                    </article>
+                                </a>
+                            </section>
+                        </div>
+                        <% }); %>
+                </div>
+            </div>
+            <!-- /Ofertas -->
+
+
+            <% productos.forEach(productos=> { %>
+                <div>
+                    <section class="cajaProducto">
+                        <a href="/routes/shopRouter/product-info<%= productos.id%>">
+                            <figure class="product-box_image">
+                                <img src="/img/<%= productos.image%>" alt="imagen de producto">
+                            </figure>
+                            <article class="product-box_data">
+                                <p>
+                                    <%= productos.name%>
+                                </p>
+                                <i class="fas fa-truck"></i>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+                <% }); %>
+                    <%- include("../partials/footer.ejs") %>
 
 </body>
 

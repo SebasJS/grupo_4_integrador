@@ -9,33 +9,54 @@ html{
     font-size: 62.5%;
     width: 100%;
     height: 100%;
-    font-family: sans-serif;
+    
+    background-color: #E6E6E6;
+}
+
+main{
+    display: flex;
+    justify-content: center;
 }
 h2{
     padding-top: 30px;
 }
+.form-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .Izq{
-    width: 50%;
-    height: 100%;
+   
+   
     background-color: #222831;
     /*position: fixed;*/
-    color: #ffff;
+    color: #222831;
 }
 .Der{
-    width: 50%;
-    height: 100%;
+    
+    
     background-color: #ffff;
     /*position: fixed;*/
-    left:50%;
+    
 }
+
+
+
 .formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: white;
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    left: 10%;
-    top: 10%;
+    width: 60%;
+    padding: 30px;
+    border-radius: 25px;
+    position: relative;
     color: #222831;
+    -webkit-box-shadow: -1px 3px 17px -2px rgba(0,0,0,0.48); 
+box-shadow: -1px 3px 17px -2px rgba(0,0,0,0.48);
 }
 .formulario label{
     margin: 0;
@@ -46,9 +67,11 @@ h2{
     font-size: 180%;
 }
 .formulario input {
-    width: 90%;    
+    width: 50%;    
     margin-bottom: 5%;
     font-size: 180%;
+    padding: 10px;
+    border-radius: 10px;
 }
 .formulario select{
     width: 100%;
@@ -67,28 +90,19 @@ h2{
     font-size: 18px;
     border-radius: 20px;
     position: absolute;
-    left: 20%;
-}
-
-.Izq .logo{
-    color: #ffff;
-    width: 30%;
-    height: 30%;
-    position:absolute;
-    top: 11%;
-    left: 34%;
     
 }
-.Izq h1{
-    font-size: 510%;
-    position: absolute;
-    top: 40%;
-    left: 30%;
+
+
+.titulo{
+    font-size: 20px;
+    
+    
+    
 }
-.Izq h2{
-    font-size: 250%;
-    position: absolute;
-    top: 55%;
-    left: 10%;
+.subtitulo{
+    font-size: 15px;
+    
+    
 }
 

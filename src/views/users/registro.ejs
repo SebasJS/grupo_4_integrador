@@ -18,7 +18,7 @@
         <main>
 
             <div>
-                <form action="/" class="formulario">
+                <form action="/users" method="POST" class="formulario" enctype="multipart/form-data">
                     <h2 class="titulo">Crea tu cuenta</h2><br>
                     <h3 class="subtitulo">Crea una cuenta una única vez y conéctate a todos nuestros servicios y sus
                         asociados
@@ -28,7 +28,7 @@
                     <label for="Email">Introduce tu email</label><br>
                     <input type="text" name="email" id="email" placeholder="correo electronico"><br>
                     <label for="contra">Introduce tu contraseña</label><br>
-                    <input type="password" name="password" id="contra" placeholder="contraseña"><br>
+                    <input type="password" name="password" id="password" placeholder="contraseña"><br>
                     <label for="telefono">Telefono</label><br>
                     <input type="number" name="telefono" id="telefono" placeholder="123 456 789"><br>
                     <div class="columnas">
@@ -54,7 +54,7 @@
                         </p>
                     </div>
                     <label for="Direccion">Direccion</label><br>
-                    <input type="text" name="Direccion" id="direccion" placeholder="clle #2 cra 23 -tv 15"><br>
+                    <input type="text" name="direccion" id="direccion" placeholder="clle #2 cra 23 -tv 15"><br>
                     <label for="Tarjeta">Tarjeta</label><br>
                     <input type="number" name="tarjeta" id="tarjeta" placeholder="123 456 789"><br>
                     <input type="submit" value="registarme" id="enviar"><br>

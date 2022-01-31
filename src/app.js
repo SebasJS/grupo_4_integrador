@@ -23,7 +23,7 @@ app.use('/users',usersRouter);
 app.use('/products',productsRouter);
 
 
-app.use((req, res, next) => next(createError(404)));
+
 
 
 //Servidor

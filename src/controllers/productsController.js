@@ -3,6 +3,7 @@ const path = require("path");
 
 const productsFilePath = path.join(__dirname, "../database/productos.json");
 const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
 const bicicletas = productos.filter((producto) => producto.category === "bicicletas");
 const tenis = productos.filter((producto) => producto.category === "tenis");
 const balones = productos.filter((producto) => producto.category === "balones");

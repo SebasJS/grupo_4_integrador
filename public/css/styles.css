@@ -26,22 +26,33 @@ html
 /*HEADER*/
 header{
     background-color: var(--gris);
-    font-size: 3.6em;
+    font-size: 2.4em;
     color:var(--blanco);
-    height: 169px;
+    height: 85px;
 }
 
-#logo{
+#navBar{
     color:var(--blanco);
-    margin-left: 2%;
+    
     display:flex;
-    justify-content: start;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.navMenu{
+    display: flex;
+}
+
+.userMenu{
+    display: flex;
+    gap:15px
 }
 
 .logoContainer{
-    width: 200px;
-    margin-right: 75px;
+    width: 100px;
+    
 }
 
 .logoimg{
@@ -50,11 +61,16 @@ header{
 
 .navButton{
     margin-right: 75px;
-    margin-top: 75px
+    
+}
+.loginicon {
+        
+  
+    
 }
 
 header span{
-    margin-right: 7%;
+    
 }
 
 #banner{

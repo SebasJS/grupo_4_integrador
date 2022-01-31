@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Document</title>
+    <title>Header</title>
 </head>
+
 <body>
     <header>
-        <span id="logo">
+        <nav id="navBar">
             <div class="logoContainer">
                 <img src="/img/altisport-logo.png" alt="" class="logoimg">
             </div>
-            <p class="navButton">
-                Bicicletas
-            </p>
-            <p class="navButton">
-                Balones
-            </p>
-            <p class="navButton">
-                Ropa
-            </p>
-            <p class="navButton">
-                Zapatos
-            </p>
-            <p class="navButton">
-                <i class="fas fa-sign-in-alt fa-inverse"></i>
-            </p>
+            <div class="navMenu">
+                <p class="navButton">
+                    <a a href="/products/bicicletas">Bicicletas</a>
+                </p>
+                <p class="navButton">
+                    <a a href="/products/balones">Balones</a>
+                </p>
+                <p class="navButton">
+                    <a href="/products/ropa">Ropa</a>
+                </p>
+                <p class="navButton">
+                    <a a href="/products/tenis">Tenis</a>
+                </p>
+
+            </div>
+            <div class="userMenu">
+                <p class="loginicon">
+                    <a href="users/register"><i class="fas fa-user-plus"></i></a>
+                </p>
+
+                <p class="loginicon">
+                    <a href="/users/login"><i class="fas fa-sign-in-alt"></i></a>
+                </p>
+
+                <p class="loginicon">
+                    <i class="fas fa-shopping-cart"></i>
+                </p>
+            </div>
+
+
+
+
+        </nav>
     </header>
 </body>
+
 </html>

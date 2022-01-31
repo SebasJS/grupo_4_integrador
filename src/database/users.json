@@ -1,0 +1,12 @@
+[
+    {
+        "nombre": "Juan",
+        "email": "juan@gmail.com",
+        "password": "Camilo",
+        "telefono": "3042093951",
+        "departamento": "cundinamarca",
+        "ciudad": "bogota",
+        "direccion": "mz 78 lote 18",
+        "tarjeta": "123456789"
+    }
+]

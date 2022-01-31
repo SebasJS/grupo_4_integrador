@@ -3,7 +3,7 @@ const path = require("path");
 
 const usersFilePath = path.join(__dirname, "../database/users.json");
 
-
+const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 
 const controller = {
@@ -15,11 +15,12 @@ const controller = {
         res.render(("users/registro"));
     },
     createUser: (req, res) => {
-        const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+        
+        console.log(req);
 		
 		let newUser = {
 			id: users[users.length - 1].id + 1,
-            nombre: users.nombre,
+            nombre: req.nombre,
 			...req.body,
 
             

@@ -27,7 +27,7 @@ h2{
     color: var(--naranja);
     text-align: center;
 }
-form{
+.containerCreate{
     text-align: center;
     padding-top: 20px;
     font-size: 25px;
@@ -46,16 +46,15 @@ form .formu  {
 }
 form .formu input{
    width: 300px;
-    
+   margin: 10px 0;   
 }
 
 form .formu #descripcion{
     border: 3px solid #FD7014;
     border-radius: 5px;
-    margin-left: 172px;
 }
 
-form .formu input[type="submit"]{
+form .formu input[type="submit"] {
     border: none;
     outline: none;
     width: 157px;
@@ -64,5 +63,7 @@ form .formu input[type="submit"]{
     margin-left: 209px;
     border-radius: 20px;
 }
-
+form .formu select, form  .formu textarea, form label.labelDescriptionCreateProduct{
+    margin: 10px 0;
+}
 

@@ -18,5 +18,8 @@ module.exports = {
             inSale,
             toThousand
         });
+    },
+    cart: (req,res)=>{
+        res.render("main/cart")
     }
 }

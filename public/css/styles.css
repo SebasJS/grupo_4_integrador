@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('/css/shoppingCart.css');
+@import url('/css/stylesAdmin.css');
+@import url('/css/stylesRegProduct.css');
 
 *{
     margin: 0;
@@ -27,7 +30,7 @@ html
 header{
     background-color: var(--gris);
     font-size: 2.4em;
-    color:var(--blanco);
+    color: #ffffff;
     height: 85px;
 }
 
@@ -39,15 +42,18 @@ header{
     align-items: center;
     width: 100%;
     padding: 0 30px;
+    color: #ffffff;
 }
 
 .navMenu{
     display: flex;
+    color: #ffffff;
 }
 
 .userMenu{
     display: flex;
-    gap:15px
+    gap:15px;
+    color: #ffffff
 }
 
 .logoContainer{

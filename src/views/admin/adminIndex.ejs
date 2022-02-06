@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Administrador</title>
+</head>
+<body>
+    <%- include("../partials/header.ejs") %>
+    <div class="btnCreateNewProduct">
+        <form action="/admin/create">
+            <button type="submit" class="btnAdminEdit">Crear nuevo producto</button>
+        </form>
+    </div>
+    <div class="containerAdminIndex">
+        <% products.forEach(product => { %>
+        
+        <p class="nameProductAdmin"><%= product.name %></p>
+        <form action="/admin/delete/<%= product.id%>?_method=delete" method="POST" class="btnDelete">
+            <button type="submit" class="btnAdminDelete">Eliminar</button>
+        </form>    
+        <form action="/admin/update/<%= product.id%>">
+            <button type="submit" class="btnAdminEdit">Editar</button>
+        </form>
+        <% });%>
+    </div>
+    <%- include("../partials/footer") %>
+</body>
+</html>

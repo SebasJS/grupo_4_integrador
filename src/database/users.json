@@ -1,35 +1,183 @@
 [
- {
-  "id": 1,
-  "nombre": "Juan",
-  "email": "juan@gmail.com",
-  "password": "Camilo",
-  "telefono": "3042093951",
-  "departamento": "cundinamarca",
-  "ciudad": "bogota",
-  "direccion": "mz 78 lote 18",
-  "tarjeta": "123456789"
- },
- {
-  "id": 2
- },
- {
-  "id": 3
- },
- {
-  "id": 4
- },
- {
-  "id": 5
- },
- {
-  "id": 6
- },
- {
-  "id": 7,
-  "nombre": "body"
- },
- {
-  "id": 8
- }
+    {   
+        "id":1,
+        "first_name":"Melosa",
+        "last_name":"Dallman",
+        "email":"mdallman0@upenn.edu",
+        "password":"xXclZJj2",
+        "category":"user",
+        "image":"user_1.jpg"
+    },
+    {
+        "id":2,
+        "first_name":"Stevy",
+        "last_name":"Neem",
+        "email":"sneem1@independent.co.uk",
+        "password":"J0Em8J",
+        "category":"user",
+        "image":"user_2.jpg"
+    },
+    {
+        "id":3,
+        "first_name":"Jermain",
+        "last_name":"Tidridge",
+        "email":"jtidridge2@stanford.edu",
+        "password":"CEzh3Qz85Ms",
+        "category":"user",
+        "image":"user_3.jpg"
+    },
+    {
+        "id":4,
+        "first_name":"Dominga",
+        "last_name":"Fairbrass",
+        "email":"dfairbrass3@behance.net",
+        "password":"Si6ZoH",
+        "category":"user",
+        "image":"user_4.jpg"
+    },
+    {
+        "id":5,
+        "first_name":"Allard",
+        "last_name":"Strelitzki",
+        "email":"astrelitzki4@whitehouse.gov",
+        "password":"3YMGqdcph",
+        "category":"user",
+        "image":"user_5.jpg"
+    },
+    {
+        "id":6,
+        "first_name":"Connie",
+        "last_name":"McDuffy",
+        "email":"cmcduffy5@clickbank.net",
+        "password":"4axDL4Z",
+        "category":"user",
+        "image":"user_6.jpg"
+    },
+    {
+        "id":7,
+        "first_name":"Cynthie",
+        "last_name":"Hubbock",
+        "email":"chubbock6@ox.ac.uk",
+        "password":"prjSXFhRO",
+        "category":"user",
+        "image":"user_7.jpg"
+    },
+    {
+        "id":8,
+        "first_name":"Armand",
+        "last_name":"Abrashkov",
+        "email":"aabrashkov7@wikispaces.com",
+        "password":"Nhc2cI8",
+        "category":"user",
+        "image":"user_8.jpg"
+    },
+    {
+        "id":9,
+        "first_name":"Armand",
+        "last_name":"Galbreath",
+        "email":"agalbreath8@indiegogo.com",
+
+        "password":"x8rSrbazpyh4",
+        "category":"user",
+        "image":"user_9.jpg"
+    },
+    {
+        "id":10,
+        "first_name":"Giovanni",
+        "last_name":"Stemp",
+        "email":"gstemp9@answers.com",
+        "password":"pEDP9L",
+        "category":"user",
+        "image":"user_10.jpg"
+    },
+    {
+        "id":11,
+        "first_name":"Dwain",
+        "last_name":"Gerner",
+        "email":"dgernera@freewebs.com",
+        "password":"It6lLJY",
+        "category":"user",
+        "image":"user_11.jpg"
+    },
+    {
+        "id":12,
+        "first_name":"Brier",
+        "last_name":"Henrionot",
+        "email":"bhenrionotb@gov.uk",
+        "password":"2AGjnH",
+        "category":"user",
+        "image":"user_12.jpg"
+    },
+    {
+        "id":13,
+        "first_name":"Lilyan",
+        "last_name":"Parkins",
+        "email":"lparkinsc@cnet.com",
+        "password":"HR2tinRY",
+        "category":"user",
+        "image":"user_13.jpg"
+    },
+    {
+        "id":14,
+        "first_name":"Dix",
+        "last_name":"Danbrook",
+        "email":"ddanbrookd@shareasale.com",
+        "password":"1D5bdY",
+        "category":"user",
+        "image":"user_14.jpg"
+    },
+    {
+        "id":15,
+        "first_name":"Clayborne",
+        "last_name":"Daile",
+        "email":"cdailee@gravatar.com",
+        "password":"sp234w",
+        "category":"user",
+        "image":"user_15.jpg"
+    },
+    {
+        "id":16,
+        "first_name":"Gabbey",
+        "last_name":"Valentinetti",
+        "email":"gvalentinettif@techcrunch.com",
+        "password":"tozTYmfoK3",
+        "category":"user",
+        "image":"user_16.jpg"
+    },
+    {
+        "id":17,
+        "first_name":"Titos",
+        "last_name":"Chirm",
+        "email":"tchirmg@dropbox.com",
+        "password":"fh4FCb7BVv",
+        "category":"user",
+        "image":"user_17.jpg"
+    },
+    {
+        "id":18,
+        "first_name":"Hattie",
+        "last_name":"Greenside",
+        "email":"hgreensideh@virginia.edu",
+        "password":"I3uqvwyOv8",
+        "category":"user",
+        "image":"user_18.jpg"
+    },
+    {
+        "id":19,
+        "first_name":"Aile",
+        "last_name":"Skermer",
+        "email":"askermeri@howstuffworks.com",
+        "password":"2YMcjAs5oc",
+        "category":"user",
+        "image":"user_19.jpg"
+    },
+    {
+        "id":20,
+        "first_name":"Malachi",
+        "last_name":"Chamberlayne",
+        "email":"mchamberlaynej@tripod.com",
+        "password":"17ONsCX",
+        "category":"user",
+        "image":"user_20.jpg"
+    }
 ]

@@ -13,4 +13,9 @@ let upload = multer ({storage})
 router.get('/create',adminController.create);
 router.post('/', upload.single("image"),adminController.store);
 
+router.get('/update/:id', adminController.update);
+
+router.get('/', adminController.index);
+router.delete('/delete/:id', adminController.delete);
+
 module.exports = router;

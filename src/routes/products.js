@@ -13,6 +13,7 @@ router.get("/bicicletas", productsController.bicicletas);
 router.get("/tenis", productsController.tenis);
 router.get("/balones", productsController.balones);
 router.get("/ropa", productsController.ropa);
+router.get('/product-info/:id',productsController.productInfo);
 
 
 module.exports = router;

@@ -15,16 +15,16 @@ const controller = {
         res.render(("users/registro"));
     },
     createUser: (req, res) => {
-        
-        console.log(req);
 		
 		let newUser = {
 			id: users[users.length - 1].id + 1,
-            nombre: req.nombre,
-			...req.body,
-
-            
-			
+            first_name: req.body.nombre,
+            last_name: req.body.nombre,
+            email: req.body.email,
+            password: req.body.password,
+            category: 'user',
+            image: req.body.telefono,
+			...req.body
 		};
 
 		users.push(newUser);

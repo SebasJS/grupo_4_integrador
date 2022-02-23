@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <link rel="stylesheet" href="/css/app.css">
+    
     <title>productInfo</title>
 </head>
 <body>
     <%- include("../partials/header.ejs") %>
     <%- include("../partials/baner.ejs") %>
     <main>
-        <section class="producto">
-            <span class="miniaturas">
-                <div class="miniPictures">
-                    <img src="/img/bicicleta2.jpg" class="picture">
-                    <img src="/img/bicicleta3.jpg" class="picture">
-                    <img src="/img/bicicleta4.jpg" class="picture">
-                    <img src="/img/bicicleta5.jpg" class="picture">
-                </div>
+        
+       <!--  <section class="producto">
+            
+              
                 <div class="principalPicture">
-                    <img src="/img/bicicleta1.jpg" alt="">
+                    <img src="/img/bicicleta1.png" alt="">
                 </div>
                 <div class="info">
                     <div id="nombreProducto">
-                        <p>Bicicleta Todoterreno</p>
+                        <p><%=product.name%></p>
                     </div>
                     <span>
                         <div id="precio">
-                            <p>$960000.00</p>
+                            <p>$<%= product.price%></p>
                         </div>
                         <div id="descuento">
-                            <p>$1200000.00</p>
+                            <p><%= product.discount%> % OFF</p>
                         </div>
                         <div id="alCarrito">
                             <p>comprar</p>
@@ -40,87 +42,114 @@
                     </span>
                     <div id="descripcionProducto">
                         <p>
-                            Marco en acero 1.9 nacional <br>
-                            ultra liviano. Marca Sforzo. <br>
-                            Altura de uso 168 a 187 cm. <br>
-                            Tenedor en acero. Frenos de disco. <br>
-                            Rines 29 doble pared. Manubrio <br>
-                            en aluminio. Caña en aluminio. <br>
-                            18 velocidades. Pedales en resina <br>
-                            9/16. Ajuste tornillo. 95% armada.
+                            <%= product.description%>
                         </p>
                     </div>
                 </div>
-            </span>
+            
         </section>
-        <section class="datosAdicionales">
-            <div id="sectionName">
-                <p>CARACTERÍSTICAS ADICIONALES</p>
+ -->
+
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Detalle del producto: <%=product.name%>
+                    </h2>
+                </div>
             </div>
-            <span class="moreData">
-                <div>
-                    <p>
-                        &#8226 Marco en acero 1.9 nacional ultra liviano. <br>
-                        &#8226 Marca Sforzo. <br>
-                        &#8226 Altura de uso: 168 a 187 cm. <br>
-                    </p>
+            <div class="product-detail">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <img src="/img/<%= product.image%>" alt="product image"
+                            class="product-detail-img">
+                        <p class="product-detail-description">
+                            <%=product.description%>
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="product-detail-info">
+                            <h2 class="product-detail-title">
+                                <%=product.name%>
+                            </h2>
+                            <% if(product.discount> 0 ) {let finalPrice = (product.price
+                                *((100-product.discount)/100)).toFixed(0);%>
+
+                                <p class="product-detail-price small">
+                                    <span>$ <%=product.price%></span>
+                                    /
+                                    <b>
+                                        <%=product.discount%> % OFF
+                                    </b>
+                                </p>
+                                <p class="product-detail-price">
+                                    $ <%=toThousand(finalPrice)%>
+                                </p>
+                                <% } else {%>
+                                    <p class="product-detail-price">
+                                        $ <%=product.price%>
+                                    </p>
+                                    <% } %>
+
+                                        <ul class="actions-list">
+                                            <li>
+                                                <i class="fas fa-credit-card"></i>
+                                                <p>Pagá en 12 cuotas sin interes</p>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-store"></i>
+                                                <p>Retiro gratis en locales del vendedor</p>
+                                            </li>
+                                        </ul>
+
+                                        <a href="#" class="buy-now-button">COMPRAR AHORA</a>
+                                        <hr>
+
+                                        <a href="/products/edit/<%=product.id%>" class="action-button edit">EDITAR
+                                            PRODUCTO</a>
+                                        <form action="/products/delete/<%=product.id%>?_method=delete" method="POST"
+                                            style="display: inline-flex">
+                                            <button type="submit" class="action-button delete">ELIMINAR</button>
+                                        </form>
+                        </article>
+                    </div>
                 </div>
-                <div>
-                    <p>
-                        &#8226 Marco en acero 1.9 nacional ultra liviano. <br>
-                        &#8226 Marca Sforzo. <br>
-                        &#8226 Altura de uso: 168 a 187 cm. <br>
-                    </p>
-                </div>
-            </span>
-        </section>
-        <section class="similares">
-            <div id="sectionName">
-                <p>PRODUCTOS SIMILARES</p>
             </div>
-            <span class="moreData">
-                <div class="similarProduct">
-                    <div id="similarPictures">
-                        <img src="/img/bicicleta2.jpg" alt="">
+        </div>
+
+         
+        <div class="container products-wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="products-title">productos similares</h2>
                     </div>
-                    <div id="similarProductName">
-                        <p id="sP">
-                            Nombre producto
-                        </p>
-                    </div>
+                    <% similar.forEach(product=>{ %>
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="product-box">
+                                <a href="/products/product-info/<%=product.id%>">
+                                    <figure class="product-box_image">
+                                        <img src="/img/<%=product.image%>" alt="imagen de producto">
+                                    </figure>
+                                    <article class="product-box_data">
+                                        <h2>$ <%=product.price%>
+                                        </h2>
+                                        <span>
+                                            <%=product.discount%>% OFF
+                                        </span>
+                                        <p>
+                                            <%=product.name%>
+                                        </p>
+                                        <i class="fas fa-truck"></i>
+                                    </article>
+                                </a>
+                            </section>
+                        </div>
+                        <% }); %>
+
                 </div>
-                <div class="similarProduct">
-                    <div id="similarPictures">
-                        <img src="/img/bicicleta2.jpg" alt="">
-                    </div>
-                    <div id="similarProductName">
-                        <p id="sP">
-                            Nombre producto
-                        </p>
-                    </div>
-                </div>
-                <div class="similarProduct">
-                    <div id="similarPictures">
-                        <img src="/img/bicicleta2.jpg" alt="">
-                    </div>
-                    <div id="similarProductName">
-                        <p id="sP">
-                            Nombre producto
-                        </p>
-                    </div>
-                </div>
-                <div class="similarProduct">
-                    <div id="similarPictures">
-                        <img src="/img/bicicleta2.jpg" alt="">
-                    </div>
-                    <div id="similarProductName">
-                        <p id="sP">
-                            Nombre producto
-                        </p>
-                    </div>
-                </div>
-            </span>
-        </section>
+            </div>
+       
+        
     </main>
     <%- include("../partials/footer.ejs") %>
 </body>

@@ -3,6 +3,7 @@ const path = require("path");
 
 const productsFilePath = path.join(__dirname, "../database/productos.json");
 const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const bicicletas = productos.filter((producto) => producto.category === "bicicletas");
 const tenis = productos.filter((producto) => producto.category === "tenis");
@@ -27,7 +28,7 @@ const controller = {
       res.render("products/bicicletas", {
         productos,
         bicicletas,
-        toThousand,
+        toThousand, 
       });
     },
     tenis: (req, res) => {
@@ -116,6 +117,45 @@ const controller = {
      res.redirect('/');
   
     },
+    productInfo: (req,res) => {
+      let id= req.params.id;
+      var product = products.find((product)=> product.id == id);
+      var similar;
+      console.log(product.category);
+     /*  if (product.category == "bicicletas"){
+        return similar = bicicletas;
+      }if (product.category == "balones"){
+        return similar = balones;
+      }if (product.category =="ropa"){
+        return similar = ropa;
+      }else{
+        return similar=tenis;
+      } */
+      switch (product.category) {
+        case 'bicicletas':
+          similar = bicicletas;
+          break;
+        case 'balones':
+          similar = balones;
+          break;
+        case 'ropa':
+          similar = ropa;
+          break;
+        case 'tenis':
+          similar=tenis;
+          break;
+        
+      }
+     
+
+      res.render("products/product-info",{
+      product,
+      similar,
+      toThousand,
+      });
+  },
+    
+    
   
     // Delete - Delete one product from DB
     destroy: (req, res) => {

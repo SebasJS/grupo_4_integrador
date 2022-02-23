@@ -10,6 +10,10 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
+  --gris:#222831;
+  --blanco:#ffffff;
+  --naranja:#FD7014;
+  --negro:#000000;
   --base-font-family: 'Roboto', sans-serif
 }
 
@@ -22,8 +26,9 @@
 html,
 body {
   min-height: 100vh;
-  margin: 0;
+  margin: 0px !important;
   font-size: 10px;
+  padding: 0px !important;
 }
 
 body {
@@ -195,7 +200,7 @@ hr {
 .product-box_data span {
   font-size: 1.5em;
   font-weight: 300;
-  color: var(--green);
+  color: var(--naranja);
   margin: 0 0 0 10px;
 }
 
@@ -210,7 +215,7 @@ hr {
 }
 
 .product-box_data i {
-  color: var(--green);
+  color: var(--naranja);
   font-size: 1.8em;
   width: 35px;
   height: 35px;
@@ -239,6 +244,10 @@ hr {
 .product-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
+}
+
+.delete{
+  margin-left: 30px;
 }
 
 
@@ -338,7 +347,7 @@ hr {
 }
 
 .actions-list i {
-  color: var(--green);
+  color: var(--naranja);
   font-size: 2em;
   margin-right: 15px;
 }

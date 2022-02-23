@@ -28,7 +28,7 @@ const controller = {
       res.render("products/bicicletas", {
         productos,
         bicicletas,
-        toThousand,
+        toThousand, 
       });
     },
     tenis: (req, res) => {

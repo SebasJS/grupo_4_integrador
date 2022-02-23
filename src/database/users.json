@@ -181,5 +181,38 @@
  },
  {
   "id": 21
+ },
+ {
+  "id": 22
+ },
+ {
+  "id": 23,
+  "first_name": "francis roa",
+  "last_name": "francis roa",
+  "email": "roabernalf@gmail.com",
+  "password": "1234567",
+  "category": "user",
+  "image": "123456789",
+  "nombre": "francis roa",
+  "telefono": "123456789",
+  "departamento": "Cundinamarca",
+  "ciudad": "Cundinamarca",
+  "direccion": "cll 61 #75-153",
+  "tarjeta": "123456987"
+ },
+ {
+  "id": 24,
+  "first_name": "dany roa",
+  "last_name": "dany roa",
+  "email": "juliber05@gmail.com",
+  "password": "159753",
+  "category": "user",
+  "image": "123654987",
+  "nombre": "dany roa",
+  "telefono": "123654987",
+  "departamento": "Cundinamarca",
+  "ciudad": "Cundinamarca",
+  "direccion": "cll131a #11-60 ",
+  "tarjeta": "123546897"
  }
 ]

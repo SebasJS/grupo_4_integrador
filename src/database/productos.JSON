@@ -248,5 +248,15 @@
   "category": "balones",
   "description": "Un tv",
   "image": "default-image.png"
+ },
+ {
+  "id": 22,
+  "name": "prueba reeditada",
+  "price": "1000",
+  "stock": "5",
+  "sku": "prueaba1",
+  "category": "",
+  "description": "una prueba del crud",
+  "image": "default-image.png"
  }
 ]

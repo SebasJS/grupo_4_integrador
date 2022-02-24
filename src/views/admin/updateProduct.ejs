@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/stylesRegProduct.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Editar Producto</title>
+    <title>Modificar</title>
 </head>
-<body>
-    <%- include("../partials/header.ejs") %>
+<body> 
+    <%- include("../partials/header.ejs") %> 
     <main>
-        <h2>Edita tu producto</h2>
-        <form action="/admin/update/<%= updateProduct.id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+        <h2>Actualiza productos</h2>
+        <form action="/admin/update/<%= productToEdit.id%>?_method=PATCH" method="POST" enctype="multipart/form-data">
             <div class="formu">
                 <label for="Nombre">Nombre producto:</label>
-                <input type="text" id="name" name="name" placeholder="Nombre" value="<%= updateProduct.name %>"><br>
+                <input type="text" id="name" name="name" value="<%= productToEdit.name%>"><br>
                 <label for="Precio">Valor del producto:</label>
-                <input type="text" id="price" name="price" placeholder="Precio" value="$<%= toThousand( updateProduct.price )%>"><br>
+                <input type="text" id="price" name="price" value="<%= productToEdit.price%>"><br>
                 <label for="Precio">Stock:</label>
-                <input type="text" id="stock" name="stock" placeholder="stock" value="<%= updateProduct.stock %>"><br>
+                <input type="text" id="stock" name="stock"  value="<%= productToEdit.stock%>"><br>
                 <label for="Precio">Codigo unico:</label>
-                <input type="text" id="sku" name="sku" placeholder="SKU" value="<%= updateProduct.sku %>"><br>
-                <input type="text" id="tag" name="tag" placeholder="TAG" value="<%= updateProduct.tag %>"><br>
-                <label for="Precio">Categoria:</label>
+                <input type="text" id="sku" name="sku" value="<%= productToEdit.sku%>">
+                <label for="Cateogry">Categoria:</label>
                 <select name="category" id="category">
-                    <option value=""><%= updateProduct.category %></option>
+                    <option value="">-----</option>
                     <option value="ropa">Ropa</option>
                     <option value="balones">Balones</option>
                     <option value="zapatos">Zapatos</option>
@@ -35,17 +34,16 @@
                     <option value="artesMarciales">Artes Marciales</option>
                     <option value="equitacion">Equitacion</option>
                     <option value="tenis">Tenis</option>
-                </select><br>
+                  </select><br>
                 <label for="descripcion">Descripcion del producto:</label><br>
-                <textarea name="description" id="description" cols="30" rows="10"
-                    placeholder="Añade la descripcion" value=""><%= updateProduct.description %></textarea><br>
-                <label for="Nombre">Cargar imagen</label>
-                <input type="file" name="image" id="image" value="<%= updateProduct.image %>"><br>
-                <button type="submit">Guardar Producto</button>
+                <textarea name="description" id="description" cols="30" rows="10"><%= productToEdit.description%></textarea><br>
+               <label for="Nombre">Cargar imagen</label>
+                <input type="file" name="image" id="image"><br>
+                <button type="submit">Actualizar Producto</button>
             </div>
 
         </form>
     </main>
-    <%- include("../partials/footer.ejs") %>    
+    <%- include("../partials/footer.ejs") %>
 </body>
 </html>

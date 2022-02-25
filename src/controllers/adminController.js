@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../database/productos.JSON');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
@@ -29,7 +28,8 @@ module.exports = {
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
 
-		res.render('admin/updateProduct', { productToEdit });
+		res.render('admin/updateProduct', { productToEdit, 
+			toThousand });
 		console.log("ENtre a edit");
 	},
 	update: (req, res) => {
@@ -52,45 +52,13 @@ module.exports = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/');
 		console.log("entre a update");
-	},/*
-	edit: (req, res) => {
-		let id = req.params.id;
-		let updateProduct = products.find(product => product.id == id);
-
-		res.render('admin/updateProduct', { updateProduct,
-		toThousand
-	 });
-		console.log("Entre a edit");
 	},
-	update: (req, res) => {
-		let id = req.params.id;
-		let updateProduct = products.find(product => product.id == id);
-		let image = req.file ? req.file.filename : updateProduct.image;
-		updateProduct = {
-			id: productToEdit.id,
-			...req.body,
-			image: image			
-		};
-		let newProducts = products.map(product => {
-			// product.id == productToEdit.id ? product = {...productToEdit} : product;
-			if (product.id == updateProduct.id) {
-				 product = {...updateProduct}
-			}
-			return product;
-		});
-		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
-		console.log("entre a update");
-/*		res.render('admin/updateProduct', {
-			updateProduct, 
-			toThousand
-		});*/
-	//},
 	delete: (req, res) => {
 		let id = req.params.id;
 		let finalProducts = products.filter(el => el.id != id)
 
 		fs.writeFileSync(finalProducts, JSON.stringify(finalProducts, null, ' '));
 		res.redirect('/');
+		console.log("entre a destroy");
 	}
 }

@@ -17,14 +17,15 @@
                 <label for="Nombre">Nombre producto:</label>
                 <input type="text" id="name" name="name" value="<%= productToEdit.name%>"><br>
                 <label for="Precio">Valor del producto:</label>
-                <input type="text" id="price" name="price" value="<%= productToEdit.price%>"><br>
+                <input type="text" id="price" name="price" value="$<%= toThousand( productToEdit.price )%>"br>
                 <label for="Precio">Stock:</label>
                 <input type="text" id="stock" name="stock"  value="<%= productToEdit.stock%>"><br>
                 <label for="Precio">Codigo unico:</label>
                 <input type="text" id="sku" name="sku" value="<%= productToEdit.sku%>">
+                <input type="text" id="tag" name="tag" placeholder="TAG" value="<%= productToEdit.tag %>"><br>
                 <label for="Cateogry">Categoria:</label>
                 <select name="category" id="category">
-                    <option value="">-----</option>
+                    <option value=""><%= productToEdit.category %></option>
                     <option value="ropa">Ropa</option>
                     <option value="balones">Balones</option>
                     <option value="zapatos">Zapatos</option>

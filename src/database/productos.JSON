@@ -251,12 +251,13 @@
  },
  {
   "id": 22,
-  "name": "prueba reeditada",
+  "name": "prueba editada",
   "price": "1000",
   "stock": "5",
   "sku": "prueaba1",
-  "category": "",
+  "tag": "in-sale",
+  "category": "ropa",
   "description": "una prueba del crud",
-  "image": "default-image.png"
+  "image": "1645833123546-zapato.png"
  }
 ]

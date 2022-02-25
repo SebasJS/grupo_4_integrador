@@ -66,57 +66,6 @@ const controller = {
         toThousand,
       });
     },
-  
-    // Create - Form to create
-    create: (req, res) => {
-      // Do the magic
-      res.render("product-create-form");
-    },
-  
-    // Create -  Method to store
-    store: (req, res) => {
-      // Do the magic
-      let newProduct = {
-          id: products[products.length - 1].id + 1,
-      ...req.body,
-      image: 'default-image.png'
-      };
-    products.push(newProduct);
-    fs.writeFileSync(productsFilePath,JSON.stringify(products,null,' '));
-  
-    res.redirect('/products');
-    },
-  
-    // Update - Form to edit
-    edit: (req, res) => {
-      // Do the magic
-  
-      let id = req.params.id;
-      let productToEdit = products.find(product => product.id == id);
-  
-      res.render('product-edit-form',{ productToEdit});
-    },
-    // Update - Method to update
-    update: (req, res) => {
-     let id = req.params.id;
-     let productToEdit = products.find(product => product.id == id);
-  
-     productToEdit = {
-       id: productToEdit.id,
-       ...req.body,
-       image: productToEdit.image
-     };
-     let newProducts=products.map(product =>{
-      /*  product.id == productToEdit.id ? product = {...productToEdit} : product; */
-      if (product.id == productToEdit.id){
-         return product = {...productToEdit}
-       }
-       return product;
-     });
-     fs.writeFileSync(productsFilePath,JSON.stringify(newProducts,null,' '));
-     res.redirect('/');
-  
-    },
     productInfo: (req,res) => {
       let id= req.params.id;
       var product = products.find((product)=> product.id == id);

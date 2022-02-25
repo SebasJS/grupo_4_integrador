@@ -180,12 +180,6 @@
   "image": "user_20.jpg"
  },
  {
-  "id": 21
- },
- {
-  "id": 22
- },
- {
   "id": 23,
   "first_name": "francis roa",
   "last_name": "francis roa",
@@ -214,5 +208,31 @@
   "ciudad": "Cundinamarca",
   "direccion": "cll131a #11-60 ",
   "tarjeta": "123546897"
+ },
+ {
+  "id": 25,
+  "first_name": "0",
+  "last_name": "0",
+  "email": "",
+  "password": "",
+  "category": "user",
+  "image": "",
+  "nombre": "0",
+  "telefono": "",
+  "departamento": "Cundinamarca",
+  "ciudad": "Cundinamarca",
+  "direccion": "",
+  "tarjeta": ""
+ },
+ {
+  "id": 26,
+  "nombre": "",
+  "email": "",
+  "password": "",
+  "telefono": "",
+  "departamento": "Cundinamarca",
+  "ciudad": "Cundinamarca",
+  "direccion": "",
+  "tarjeta": ""
  }
 ]

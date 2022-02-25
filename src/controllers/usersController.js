@@ -1,10 +1,9 @@
-const fs = require("fs");
+const { validationResult } = require('express-validator');
+
 const path = require("path");
 
-const usersFilePath = path.join(__dirname, "../database/users.json");
 
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-
+const User = require('../models/User')
 
 const controller = {
 
@@ -13,25 +12,24 @@ const controller = {
     },
     registerUser: (req,res) => {
         res.render(("users/registro"));
-    },
+    }, 
     createUser: (req, res) => {
-		
-		let newUser = {
-			id: users[users.length - 1].id + 1,
-            first_name: req.body.nombre,
-            last_name: req.body.nombre,
-            email: req.body.email,
-            password: req.body.password,
-            category: 'user',
-            image: req.body.telefono,
-			...req.body
-		};
+		const resultValidation =  validationResult(req);
+        
+        if(resultValidation.errors.length > 0){
+           return res.render('users/registro', {
+              errors: resultValidation.mapped(),
+               oldData: req.body
+           });
+        }
 
-		users.push(newUser);
-		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+        User.create(req.body);
 
-		res.redirect('/');
-	}
+		res.send(resultValidation);
+	},
+    profile: (req, res) => {
+        return res.render('');
+    }
 }
 
 module.exports = controller;

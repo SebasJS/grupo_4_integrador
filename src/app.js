@@ -11,7 +11,10 @@ const productsRouter = require("./routes/products");
 
 const publicPath = path.resolve(__dirname,'./public');
 
+app.use(express.urlencoded({extended:false}));
+
 app.use(express.static("public"));
+app.use(session( {secret: 'mensaje secreto'}));
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 

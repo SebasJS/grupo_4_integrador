@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,16 @@
     <title>Login</title>
     <link rel="stylesheet" href="/css/stylessLogin.css" type="text/css">
 </head>
+
 <body>
-    
-    <main>
-        
-     
-        <div class = "login">
-            <h1>Ingresa</h1>
-                <img class="logo"  src="/img/altisport-logo.png" alt="Logo de la pagina">
+    <%- include("../partials/header.ejs") %>
+
+        <main>
+
+
+            <div class="login">
+                <h1>Ingresa</h1>
+                <img class="logo" src="/img/altisport-logo.png" alt="Logo de la pagina">
                 <form>
                     <label for="Usuario">Usuario</label><br>
                     <input name="nombre" type="text" placeholder="Nombre usuario">
@@ -27,9 +30,11 @@
                     </nav>
                 </form>
             </div>
-           
-    </main>
-    
+
+        </main>
+
+        <%- include("../partials/footer.ejs") %>
+
 </body>
 
 </html>

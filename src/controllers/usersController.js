@@ -25,7 +25,7 @@ const controller = {
 
         User.create([req.body, req.file]);
 
-		res.send([req.file, req.body]);
+		res.redirect('/');
 	},
     profile: (req, res) => {
         return res.render('');

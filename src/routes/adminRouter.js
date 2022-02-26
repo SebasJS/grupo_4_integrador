@@ -13,7 +13,11 @@ let upload = multer ({storage})
 router.get('/create',adminController.create);
 router.post('/', upload.single("image"),adminController.store);
 
-router.get('/update/:id', adminController.update);
+//router.get('/update/:id', adminController.update); YA ESTABA
+//router.get('/edit/:id', adminController.edit); 
+//router.patch('/update/:id', upload.single("image"), adminController.update);
+router.get('/edit/:id', adminController.edit); 
+router.patch('/update/:id', upload.single("image"), adminController.update);
 
 router.get('/', adminController.index);
 router.delete('/delete/:id', adminController.delete);

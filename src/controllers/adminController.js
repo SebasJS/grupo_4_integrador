@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../database/productos.JSON');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -25,20 +25,41 @@ module.exports = {
 
 		res.redirect('/');
 	},
+	edit: (req, res) => {
+		let id = req.params.id;
+		let productToEdit = products.find(product => product.id == id);
+
+		res.render('admin/updateProduct', { productToEdit });
+		console.log("Entre a edit");
+	},
 	update: (req, res) => {
 		let id = req.params.id;
-		let updateProduct = products.find(el => el.id == id);
-		
-		res.render('admin/updateProduct', {
-			updateProduct, 
-			toThousand
+		let productToEdit = products.find(product => product.id == id);
+		let image = req.file ? req.file.filename : productToEdit.image;
+		productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+			image: image
+		};
+		let newProducts = products.map(product => {
+			// product.id == productToEdit.id ? product = {...productToEdit} : product;
+			if (product.id == productToEdit.id) {
+				 product = {...productToEdit}
+			}
+			return product;
 		});
+		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+		products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		
+		res.render('admin/adminIndex', {products});
+		console.log("entre a update");
 	},
 	delete: (req, res) => {
 		let id = req.params.id;
 		let finalProducts = products.filter(el => el.id != id)
 
-		fs.writeFileSync(finalProducts, JSON.stringify(finalProducts, null, ' '));
-		res.redirect('/');
+		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+		products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		res.render('admin/adminIndex', {products});
 	}
 }

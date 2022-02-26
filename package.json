@@ -28,6 +28,10 @@
     "express": "^4.17.2",
     "express-session": "^1.17.2",
     "method-override": "^3.0.0",
+<<<<<<< HEAD
+=======
+    "morgan": "^1.10.0",
+>>>>>>> 0a11e6d9a1b44deb54fe18192ec10767b45e0e1f
     "multer": "^1.4.4",
     "save": "^2.4.0"
   },

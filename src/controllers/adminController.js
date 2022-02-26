@@ -58,7 +58,8 @@ module.exports = {
 		let id = req.params.id;
 		let finalProducts = products.filter(el => el.id != id)
 
-		fs.writeFileSync(finalProducts, JSON.stringify(finalProducts, null, ' '));
-		res.redirect('/');
+		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+		products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		res.render('admin/adminIndex', {products});
 	}
 }

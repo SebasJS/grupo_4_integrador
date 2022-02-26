@@ -248,16 +248,5 @@
   "category": "balones",
   "description": "Un tv",
   "image": "default-image.png"
- },
- {
-  "id": 22,
-  "name": "prueba editada",
-  "price": "1000",
-  "stock": "5",
-  "sku": "prueaba1",
-  "tag": "in-sale",
-  "category": "ropa",
-  "description": "una prueba del crud",
-  "image": "1645833123546-zapato.png"
  }
 ]

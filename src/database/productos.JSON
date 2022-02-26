@@ -2,24 +2,22 @@
  {
   "id": 1,
   "name": "Bicicleta gw",
-  "price": 1000000,
-  "discount": 30,
-  "stock": 20,
+  "price": "1.000.000",
+  "stock": "20",
   "sku": "BC10001",
-  "category": "bicicletas",
   "tag": "visited",
+  "category": "bicicletas",
   "description": "bicicleta ideal para montaña y deportes extremos",
   "image": "bicicleta1.png"
  },
  {
   "id": 2,
   "name": "Bicicleta shimano",
-  "price": 900000,
-  "discount": 30,
-  "stock": 15,
+  "price": "900.000",
+  "stock": "15",
   "sku": "BC10002",
-  "category": "bicicletas",
   "tag": "visited",
+  "category": "bicicletas",
   "description": "bicicleta ideal para montaña y deportes extremos",
   "image": "bicicleta2.png"
  },
@@ -250,13 +248,14 @@
  },
  {
   "id": 22,
-  "name": "Prueba 1",
-  "price": "2000",
-  "stock": "asasd1",
-  "sku": "1214",
+  "name": "prueba",
+  "price": "1000000",
+  "discount": "30",
+  "stock": "5",
+  "sku": "prueaba1",
   "tag": "in-sale",
   "category": "ropa",
-  "description": "prueba crud",
-  "image": "1645877055665-balonbrazuca.png"
+  "description": "una prueba del crud",
+  "image": "1645878631838-camisetalosangeles.png"
  }
 ]

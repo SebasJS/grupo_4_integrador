@@ -53,6 +53,7 @@ module.exports = {
 		
 		res.render('admin/adminIndex', {products});
 		console.log("entre a update");
+		
 	},
 	delete: (req, res) => {
 		let id = req.params.id;

@@ -211,28 +211,14 @@
  },
  {
   "id": 25,
-  "first_name": "0",
-  "last_name": "0",
-  "email": "",
-  "password": "",
-  "category": "user",
-  "image": "",
-  "nombre": "0",
-  "telefono": "",
+  "nombre": "Joan",
+  "email": "gomezvargas97@gmail.com",
+  "password": "asdasda45",
+  "telefono": "1235421",
   "departamento": "Cundinamarca",
   "ciudad": "Cundinamarca",
-  "direccion": "",
-  "tarjeta": ""
- },
- {
-  "id": 26,
-  "nombre": "",
-  "email": "",
-  "password": "",
-  "telefono": "",
-  "departamento": "Cundinamarca",
-  "ciudad": "Cundinamarca",
-  "direccion": "",
-  "tarjeta": ""
+  "direccion": "a6s54da12",
+  "tarjeta": "541323",
+  "imagen_perfil": "1645820541926-2020-02-15.jpg"
  }
 ]

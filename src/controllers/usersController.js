@@ -23,9 +23,9 @@ const controller = {
            });
         }
 
-        User.create(req.body);
+        User.create([req.body, req.file]);
 
-		res.send(resultValidation);
+		res.send([req.file, req.body]);
 	},
     profile: (req, res) => {
         return res.render('');

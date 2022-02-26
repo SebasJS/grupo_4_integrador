@@ -10,7 +10,7 @@ module.exports = [
     body('telefono').isLength({min: 6, max: 10}).withMessage('*Tienes que ingresar un numero de telefono telefono valido'),
     body('direccion').notEmpty().withMessage('*Tienes que ingresar una dirección'),
     body('tarjeta').notEmpty().withMessage('*Tienes que ingresar un numero de tarjeta'),
-    body('imageProfile').custom((value, {req}) => {
+    body('imagePerfil').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
@@ -18,7 +18,7 @@ module.exports = [
             throw new Error('tienes que subir una imagen');
         } else {
             let fileExtension = path.extname(file.originalname);
-            if(!acceptedExtensions.includes(fileExtensions)){
+            if(!acceptedExtensions.includes(fileExtension)){
                 throw new Error(`Las extensiones permitidas son ${acceptedExtensions.join(', ')}`);
             }
         }

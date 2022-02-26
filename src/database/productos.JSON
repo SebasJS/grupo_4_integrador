@@ -249,12 +249,14 @@
  },
  {
   "id": 22,
-  "name": "prueba reeditada",
-  "price": "1000",
+  "name": "prueba",
+  "price": "1000000",
+  "discount": "30",
   "stock": "5",
   "sku": "prueaba1",
-  "category": "",
+  "tag": "in-sale",
+  "category": "ropa",
   "description": "una prueba del crud",
-  "image": "default-image.png"
+  "image": "1645878631838-camisetalosangeles.png"
  }
 ]

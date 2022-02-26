@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/css/styleProduct.css">
-=======
     <link rel="stylesheet" href="/css/stylesRegroduct.css">
->>>>>>> 0a11e6d9a1b44deb54fe18192ec10767b45e0e1f
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Modificar</title>
 </head>
@@ -21,13 +17,9 @@
                 <label for="Nombre">Nombre producto:</label>
                 <input type="text" id="name" name="name" value="<%= productToEdit.name%>"><br>
                 <label for="Precio">Valor del producto:</label>
-<<<<<<< HEAD
-                <input type="text" id="price" name="price" value="<%= toThousand( productToEdit.price )%>"><br>
+                <input type="text" id="price" name="price" value="<%=  productToEdit.price %>"><br>
                 <label for="Precio">Descuento:</label>
                 <input type="text" id="discount" name="discount" value="<%=productToEdit.discount%>" ><br>
-=======
-                <input type="text" id="price" name="price" value="<%= productToEdit.price%>"><br>
->>>>>>> 0a11e6d9a1b44deb54fe18192ec10767b45e0e1f
                 <label for="Precio">Stock:</label>
                 <input type="text" id="stock" name="stock"  value="<%= productToEdit.stock%>"><br>
                 <label for="Precio">Codigo unico:</label>
@@ -47,11 +39,7 @@
                     <option value="tenis">Tenis</option>
                   </select><br>
                 <label for="descripcion">Descripcion del producto:</label><br>
-<<<<<<< HEAD
-                <textarea name="description" id="description" cols="30" rows="10"><%= productToEdit.description%></textarea><br>
-=======
                 <textarea name="description" id="description" cols="30" rows="10"  placeholder="Añade la descripcion"><%= productToEdit.description%></textarea><br>
->>>>>>> 0a11e6d9a1b44deb54fe18192ec10767b45e0e1f
                <label for="Nombre">Cargar imagen</label>
                 <input type="file" name="image" id="image"><br>
                 <button type="submit">Actualizar Producto</button>

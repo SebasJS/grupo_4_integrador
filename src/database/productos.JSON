@@ -248,7 +248,7 @@
  },
  {
   "id": 22,
-  "name": "prueba",
+  "name": "prueba editada",
   "price": "1000000",
   "discount": "30",
   "stock": "5",
@@ -256,6 +256,6 @@
   "tag": "in-sale",
   "category": "ropa",
   "description": "una prueba del crud",
-  "image": "1645878631838-camisetalosangeles.png"
+  "image": "1645880855892-bicicleta4.jpg"
  }
 ]

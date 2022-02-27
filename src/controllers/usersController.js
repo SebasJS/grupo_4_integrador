@@ -61,7 +61,6 @@ const controller = {
                 //deberia redirigir a una vista de perfil
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                console.log(req.session);
                 return res.redirect('/users/profile');
             }
             return res.render("users/login", {
@@ -85,6 +84,12 @@ const controller = {
     profile: (req, res) => {
         return res.render('users/profile',{
         user: req.session.userLogged});
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        console.log(req.session)
+        return res.redirect('/');
     }
 }
 

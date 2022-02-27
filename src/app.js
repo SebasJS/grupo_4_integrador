@@ -8,14 +8,18 @@ const adminRouter = require("./routes/adminRouter");
 const usersRouter = require("./routes/usersRouter");
 const shopRouter = require("./routes/shopRouter");
 const productsRouter = require("./routes/products");
+const userLogMiddleware = require('./middlewares/userLogMiddleware');
 
 const publicPath = path.resolve(__dirname,'./public');
+
 
 app.use(session({
     secret: 'mensaje secreto',
     resave: false,
     saveUninitialized: false
 }));
+
+app.use(userLogMiddleware);
 
 app.use(express.urlencoded({extended:false}));
 

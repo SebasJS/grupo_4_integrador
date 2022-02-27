@@ -32,17 +32,19 @@
 
             </div>
             <div class="userMenu">
-                <p class="loginicon">
-                    <a href="/users/register"><i class="fas fa-user-plus"></i></a>
-                </p>
-
-                <p class="loginicon">
-                    <a href="/users/login"><i class="fas fa-sign-in-alt"></i></a>
-                </p>
-
-                <p class="loginicon">
-                    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-                </p>
+                <% if(locals.isLogged) { %>
+                    <p class="userLogged">Hola <%= locals.userLogged.nombre %></p>
+                <% } else { %>
+                    <p class="loginicon">
+                        <a href="/users/register"><i class="fas fa-user-plus"></i></a>
+                    </p>
+                    <p class="loginicon">
+                        <a href="/users/login"><i class="fas fa-sign-in-alt"></i></a>
+                    </p>
+                    <p class="loginicon">
+                        <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                    </p>
+                <% } %>
             </div>
 
 

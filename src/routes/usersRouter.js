@@ -22,5 +22,8 @@ router.get('/register',usersController.registerUser);
 router.post('/', upload.single('imagen_perfil') ,validation, usersController.createUser);
 
 router.get('/login', usersController.loginUser);
+router.post('/login', usersController.loginProcess);
+
+router.get('/profile', usersController.profile);
 
 module.exports = router;

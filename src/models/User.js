@@ -37,12 +37,11 @@ const User = {
         return userFound;
     },
 
-    create: function([bodyData, fileData]){
+    create: function(userData){
         let allUser = this.findAll();
         let newUser = {
             id: this.generateId(),
-            ...bodyData,
-            imagen_perfil: fileData.filename
+            ...userData
         }
         allUser.push(newUser);
         fs.writeFileSync(this.fileName, JSON.stringify(allUser, null, ' '));

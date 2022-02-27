@@ -241,26 +241,14 @@
  },
  {
   "id": 21,
-  "nombre": "Joan",
-  "email": "gomezvargas97@gmail.com",
-  "password": "asdas651",
-  "telefono": "6512311",
+  "nombre": "Joan Gomez",
+  "email": "joangomez@gmail.com",
+  "password": "$2a$10$FUA7wXP8zpJDISK.NpabYOmKvXZOwy1nWYP1nBvzo4v1rFw/uiMhy",
+  "telefono": "15613561",
   "departamento": "Cundinamarca",
   "ciudad": "Cundinamarca",
-  "direccion": "as12asd15",
-  "tarjeta": "5610165",
-  "imagen_perfil": "1645844106932-2020-02-15.jpg"
- },
- {
-  "id": 22,
-  "nombre": "joan ",
-  "email": "gomezvargas97@gmail.com",
-  "password": "sadasdfas",
-  "telefono": "64345534",
-  "departamento": "Tolima",
-  "ciudad": "Antioquia",
-  "direccion": "ftui67",
-  "tarjeta": "0564545",
-  "imagen_perfil": "1645844216312-2020-02-15.jpg"
+  "direccion": "156121",
+  "tarjeta": "6513123",
+  "image_perfil": "1645931695426-2020-02-15.jpg"
  }
 ]

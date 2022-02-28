@@ -250,5 +250,29 @@
   "direccion": "156121",
   "tarjeta": "6513123",
   "image_perfil": "1645931695426-2020-02-15.jpg"
+ },
+ {
+  "id": 22,
+  "nombre": "Sebastian",
+  "email": "jasad@gmail.com",
+  "password": "$2a$10$VUTleCr/YIFc/XfaEbJLROnUL9k0cf41eMO8vnPUHvHI1wx0v51PG",
+  "telefono": "4513230",
+  "departamento": "Cundinamarca",
+  "ciudad": "Cundinamarca",
+  "direccion": "as51d23a",
+  "tarjeta": "6562100",
+  "image_perfil": "1646011902281-2020-02-15.jpg"
+ },
+ {
+  "id": 23,
+  "nombre": "Sebastian",
+  "email": "lauraramirez@unisangil.edu.co",
+  "password": "$2a$10$0zeG7E0/lV313XlbHxrax.D65KRyi66fb7vnhIc6.Hl7YlqGuaW3W",
+  "telefono": "4513230",
+  "departamento": "Cundinamarca",
+  "ciudad": "Cundinamarca",
+  "direccion": "as51d23a",
+  "tarjeta": "6562100",
+  "image_perfil": "1646011926774-2020-02-15.jpg"
  }
 ]

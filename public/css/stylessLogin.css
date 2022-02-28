@@ -79,6 +79,11 @@ p.feedback {
     border-radius: 20px;
     align-self: center;
 }
+
+.rememberUser {
+    display: flex;
+    flex-wrap: nowrap;
+}
 .login a {
     margin: 0;
     padding: 0;

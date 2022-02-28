@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const cookies = require('cookie-parser');
 const res = require('express/lib/response');
 const path = require('path');
 const app = express();
@@ -18,6 +19,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
+app.use(cookies());
 
 app.use(userLogMiddleware);
 

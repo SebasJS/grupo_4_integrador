@@ -249,7 +249,7 @@
  },
  {
   "id": 22,
-  "name": "prueba editada",
+  "name": "prueba editada 2",
   "price": "1000000",
   "discount": "30",
   "stock": "5",
@@ -257,6 +257,6 @@
   "tag": "in-sale",
   "category": "ropa",
   "description": "una prueba del crud",
-  "image": "1645880855892-bicicleta4.jpg"
+  "image": "1646167354173-chaquetanike2.png"
  }
 ]

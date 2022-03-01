@@ -247,6 +247,9 @@ hr {
   box-shadow: 0 0 5px var(--green);
 }
 
+figure img {
+  scale: 0.5;
+}
 .delete{
   margin-left: 30px;
 }

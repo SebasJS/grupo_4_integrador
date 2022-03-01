@@ -215,14 +215,15 @@
  },
  {
   "id": 19,
-  "name": "Camistea AC Milan 2",
+  "name": "Camistea AC Milan 1",
   "price": "130000",
+  "discount": "10",
   "stock": "500",
   "sku": "b2002",
   "tag": "in-sale",
-  "category": "ropa",
+  "category": "",
   "description": "Camistea AC Milan 2021",
-  "image": "1645846561898-camisetamilan.png"
+  "image": "1646104854785-camisetalosangeles.png"
  },
  {
   "id": 20,

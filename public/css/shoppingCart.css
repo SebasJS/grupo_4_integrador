@@ -37,21 +37,23 @@
     align-items: center;
     font-weight: 700;
 }
-h2{
-    font-weight: 500;
-    font-size: 1.2em;
 
-}
 
 .tableHeader{
     grid-row-start: 2;
     grid-row-end: 3;
-  
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     border-bottom: 1px solid black;
+}
+
+.tableHeader h2{
+    font-size: 1.2em;
+    color: var(--negro);
+    font-weight: 550;
 }
 
 .tableHeader#itemPRoduct{

@@ -17,20 +17,40 @@
 
         <main>
 
-            <div>
+            <div class="conteiner_register">
                 <form action="/users" method="POST" class="formulario" enctype="multipart/form-data">
                     <h2 class="titulo">Crea tu cuenta</h2><br>
                     <h3 class="subtitulo">¡Crea una cuenta una única vez y conéctate a todos nuestros servicios y sus
                         asociados
                         en un clic!</h3><br>
                     <label for="Nombre">Nombre</label><br>
-                    <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre"><br>
+                    <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre" value="<%= locals.oldData ? oldData.nombre : null %>"><br>
+                    <div class="text_error">
+                        <% if(locals.errors && errors.nombre) { %>
+                            <p class="feedback"><%= errors.nombre.msg %></p>
+                        <% } %>
+                    </div>
                     <label for="Email">Introduce tu email</label><br>
-                    <input type="text" name="email" id="email" placeholder="correo electronico"><br>
+                    <input type="text" name="email" id="email" placeholder="correo electronico" value="<%= locals.oldData ? oldData.email : null %>"><br>
+                    <div class="text_error">
+                        <% if(locals.errors && errors.email) { %>
+                            <p class="feedback"><%= errors.email.msg %></p>
+                        <% } %>
+                    </div>
                     <label for="contra">Introduce tu contraseña</label><br>
-                    <input type="password" name="password" id="password" placeholder="contraseña"><br>
+                    <input type="password" name="password" id="password" placeholder="contraseña" value="<%= locals.oldData ? oldData.password : null %>"><br>
+                    <div class="text_error">
+                        <% if(locals.errors && errors.password) { %>
+                            <p class="feedback"><%= errors.password.msg %></p>
+                        <% } %>
+                    </div>
                     <label for="telefono">Telefono</label><br>
-                    <input type="number" name="telefono" id="telefono" placeholder="123 456 789"><br>
+                    <input type="number" name="telefono" id="telefono" placeholder="123 456 789" value="<%= locals.oldData ? oldData.telefono : null %>"><br>
+                    <div class="text_error">
+                        <% if(locals.errors && errors.telefono) { %>
+                            <p class="feedback"><%= errors.telefono.msg %></p>
+                        <% } %>
+                    </div>
                     <div class="columnas">
                         <p>
                             <label for="Departamento">Departamento</label><br>
@@ -40,6 +60,7 @@
                                 <option value="Tolima">Tolima</option>
                                 <option value="Huila">Huila</option>
                                 <option value="Amazonas">Amazonas</option>
+                                <option value="Casanare">Casanare</option>
                             </select>
                         </p>
                         <p>
@@ -50,13 +71,26 @@
                                 <option value="Tolima">Ibague</option>
                                 <option value="Huila">Neiva</option>
                                 <option value="Amazonas">Leticia</option>
+                                <option value="Yopal">Yopal</option>
                             </select><br>
                         </p>
                     </div>
                     <label for="Direccion">Direccion</label><br>
-                    <input type="text" name="direccion" id="direccion" placeholder="clle #2 cra 23 -tv 15"><br>
+                    <input type="text" name="direccion" id="direccion" placeholder="clle #2 cra 23 -tv 15" value="<%= locals.oldData ? oldData.direccion : null %>"><br>
+                    <div class="text_error">
+                        <% if(locals.errors && errors.direccion) { %>
+                            <p class="feedback"><%= errors.direccion.msg %></p>
+                        <% } %>
+                    </div>
                     <label for="Tarjeta">Tarjeta</label><br>
-                    <input type="number" name="tarjeta" id="tarjeta" placeholder="123 456 789"><br>
+                    <input type="number" name="tarjeta" id="tarjeta" placeholder="123 456 789" value="<%= locals.oldData ? oldData.tarjeta : null %>"><br>
+                    <div class="text_error">
+                        <% if(locals.errors && errors.tarjeta) { %>
+                            <p class="feedback"><%= errors.tarjeta.msg %></p>
+                        <% } %>
+                    </div>
+                    <label for="imagen_perfil">Imagen de perfil</label><br>
+                    <input type="file" name="imagen_perfil" id="imagen_perfil"<br>
                     <input type="submit" value="registarme" id="enviar"><br>
                 </form>
             </div>

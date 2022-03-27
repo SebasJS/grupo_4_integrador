@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-
+const db = require('../../src/database/models');
 const productsFilePath = path.join(__dirname, '../database/productos.JSON');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const Product = db.Product;
 
 module.exports = {
 	index: (req, res) =>{
@@ -34,7 +35,17 @@ module.exports = {
 	},
 	update: (req, res) => {
 		let id = req.params.id;
-		let productToEdit = products.find(product => product.id == id);
+		Product.update(
+			{
+				name: req.body.name
+				
+			}
+			
+
+		)
+
+		
+		/*let productToEdit = products.find(product => product.id == id);
 		let image = req.file ? req.file.filename : productToEdit.image;
 		productToEdit = {
 			id: productToEdit.id,
@@ -53,7 +64,7 @@ module.exports = {
 		
 		res.render('admin/adminIndex', {products});
 		console.log("entre a update");
-		
+		*/
 	},
 	delete: (req, res) => {
 		let id = req.params.id;

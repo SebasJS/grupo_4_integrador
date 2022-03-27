@@ -224,39 +224,5 @@
   "category": "",
   "description": "Camistea AC Milan 2021",
   "image": "1646104854785-camisetalosangeles.png"
- },
- {
-  "id": 20,
-  "name": "Televisor 3D",
-  "price": "20000",
-  "stock": "1",
-  "sku": "eg245",
-  "tag": "ggs253",
-  "category": "ropa",
-  "description": "thdfd",
-  "image": "1643764248253-img-cafetera-moulinex.jpg"
- },
- {
-  "id": 21,
-  "name": "Televisor 3D",
-  "price": "2000",
-  "stock": "asasd1",
-  "sku": "1214",
-  "tag": "asa13",
-  "category": "balones",
-  "description": "Un tv",
-  "image": "default-image.png"
- },
- {
-  "id": 22,
-  "name": "prueba editada 2",
-  "price": "1000000",
-  "discount": "30",
-  "stock": "5",
-  "sku": "prueaba1",
-  "tag": "in-sale",
-  "category": "ropa",
-  "description": "una prueba del crud",
-  "image": "1646167354173-chaquetanike2.png"
  }
 ]

@@ -18,5 +18,11 @@ module.exports = (sequelize,dataTypes) => {
         deletedAt: false,
     }
     const City = sequelize.define(alias,cols,config);
+    City.associate = function(models){
+        City.belongsTo(models.Departamento,{
+            as:"Departamento",
+            foreignKey: "DepartamentoId"
+        })
+    }
     return City;
 }

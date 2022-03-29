@@ -38,5 +38,17 @@ module.exports = (Sequelize, dataTypes) => {
     }
 
     const User = Sequelize.define(alias,cols,config);
+
+    User.associate = function(models){
+        User.belongsTo(models.CategoryProduct,{
+            as: "CategoryUser",
+            foreignKey: "categoryId"
+        })
+        User.belongsTo(models.Departamento,{
+            as: "Departamento",
+            foreignKey: "departamentoId"
+        })
+    }
+
     return User;
 }

@@ -18,5 +18,15 @@ module.exports = (sequelize,dataTypes) => {
         deletedAt: false,
     }
     const Departamento = sequelize.define(alias,cols,config);
+    Departamento.associate = function(models){
+        Departamento.hasMany(models.User,{
+            as:"User",
+            foreignKey: "departamentoId"
+        })
+        Departamento.hasMany(models.City,{
+            as:"City",
+            foreignKey: "departamentoId"
+        })
+    }
     return Departamento;
 }

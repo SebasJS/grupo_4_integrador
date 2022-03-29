@@ -1,5 +1,5 @@
-module.exports = (sequelize, dataTypes)=>{
-    let alias = "CategoryProduct";
+module.exports = (sequelize,dataTypes) => {
+    let alias = "City";
     let cols = {
         id:{
             type: dataTypes.INTEGER,
@@ -17,6 +17,6 @@ module.exports = (sequelize, dataTypes)=>{
         updatedAt: 'updated_at',
         deletedAt: false,
     }
-    const CategoryProduct = sequelize.define(alias,cols,config);
-    return CategoryProduct;
+    const City = sequelize.define(alias,cols,config);
+    return City;
 }

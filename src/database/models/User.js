@@ -2,37 +2,30 @@ module.exports = (Sequelize, dataTypes) => {
     let alias = "User";
     let cols = {
         id: {
-            type: dataTypes.INT.UNSIGNED,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         name:{
-            type : dataTypes.VARCHAR(255),
-            allowNull: false
+            type : dataTypes.STRING(255),
         },
         email:{
-            type : dataTypes.VARCHAR(255),
-            allowNull: false
+            type : dataTypes.STRING(255),
         },
         password:{
-            type : dataTypes.VARCHAR(255),
-            allowNull: false
+            type : dataTypes.STRING(255),
         },
         phone:{
-            type : dataTypes.INT,
-            allowNull: false
+            type : dataTypes.INTEGER,
         },
         card:{
-            type : dataTypes.INT,
-            allowNull: false
+            type : dataTypes.INTEGER,
         },
         imagen:{
-            type : dataTypes.VARCHAR(255),
-            allowNull: false
+            type : dataTypes.STRING(255),
         },
         direccion: {
-            type : dataTypes.VARCHAR(255),
-            allowNull: false
+            type : dataTypes.STRING(255),
         }
     }
     let config = {
@@ -43,6 +36,7 @@ module.exports = (Sequelize, dataTypes) => {
         deletedAt: false,
         
     }
+
     const User = Sequelize.define(alias,cols,config);
     return User;
 }

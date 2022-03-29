@@ -1,17 +1,22 @@
 const fs = require('fs');
 const path = require('path');
-const db = require('../../src/database/models');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const {op} = require("sequelize");
 const productsFilePath = path.join(__dirname, '../database/productos.JSON');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const Product = db.Product;
-
-module.exports = {
-	index: (req, res) =>{
-		res.render('admin/adminIndex', {products});
+console.log(Product);
+const productController = {
+	index: async (req, res) =>{
+		//res.render('admin/adminIndex', {products});
+		console.log("entre al index" + Product);
+		const products = await Product.findAll();
+		return res.render('admin/adminIndex.ejs',{products});
 	},
     create: (req,res)=>{
-        res.render(("admin/createProduct"));
+        res.render("admin/createProduct",products);
     },
     store: (req, res) => {
 		let image = req.file ? req.file.filename : "default-image.png";
@@ -40,8 +45,6 @@ module.exports = {
 				name: req.body.name
 				
 			}
-			
-
 		)
 
 		
@@ -76,3 +79,5 @@ module.exports = {
 		
 	}
 }
+
+module.exports = productController;

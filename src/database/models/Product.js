@@ -1,39 +1,31 @@
-const sequelize = require("sequelize");
-
 module.exports = (sequelize,dataTypes) => {
     let alias = "Product";
     let cols = {
         id : {
-            type: dataTypes.INT.UNSIGNED,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         name: {
-            type: dataTypes.VARCHAR(255),
-            allowNull: false
+            type: dataTypes.STRING(255)
         },
         price: {
-            type: dataTypes.INT,
-            allowNull: false
+            type: dataTypes.INTEGER
         },
         discount: {
-            type: dataTypes.INT,
-            allowNull: false
+            type: dataTypes.INTEGER
         },
         stock: {
-            type: dataTypes.INT,
-            allowNull: false
+            type: dataTypes.INTEGER
         },
         tag:{
-            type: dataTypes.VARCHAR(255),
-            allowNull: false
+            type: dataTypes.STRING(255)
         },
         description:{
-            type: dataTypes.VARCHAR(255),
-            allowNull: false
+            type: dataTypes.STRING(255)
         },
         imagen: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING(255)
         }
     };
     let config = {

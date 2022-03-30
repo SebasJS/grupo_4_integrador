@@ -7,29 +7,49 @@ const {op} = require("sequelize");
 //let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const Product = db.Product;
-console.log(Product);
+
 const productController = {
-	index: async (req, res) =>{
-		//res.render('admin/adminIndex', {products});
-		console.log("entre al index" + Product);
-		//const products = await Product.findAll();
+	index: async (req, res) =>{ 
+		const products = await Product.findAll();
 		return res.render('admin/adminIndex.ejs',{products});
 	},
-    create: (req,res)=>{
+    create: async (req,res)=>{
+		const products = await Product.findAll();
         res.render("admin/createProduct",products);
     },
-    store: (req, res) => {
+    store: async (req, res) => {
 		let image = req.file ? req.file.filename : "default-image.png";
-		let newProduct = {
-			id: products[products.length - 1].id + 1,
-			...req.body,
-			image: image
-		};
+		try {
+			console.log("La imagen es "+ image);
+			console.log("El req body es ");
+			console.log( req.body);
+			let categoryId = 0;
+			const vectCagetory = ["ropa","balones","zapatos","montaña","raquetas","bicicletas","artesMarciales","equitacion","tenis"];
+			for (let index = 0; index < vectCagetory.length; index++) {
+				if(vectCagetory[index] == req.body.category){
+					categoryId = index+1;
+				}
+				
+			}
+				await Product.create({
+				name: req.body.name,
+				price: req.body.price,
+				discount: req.body.discount,
+				stock: req.body.discount,
+				sku: req.body.sku,
+				tag: req.body.tag,
+				description: req.body.description,
+				categoryProductsId: categoryId,
+				imagen: image
+			});
+			console.log(req.body.sku);
+			//res.redirect('/admin/create');
+			res.redirect("/admin/create");
+		}catch (e){
+			return res.send(e);
+		}
 
-		products.push(newProduct);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-
-		res.redirect('/');
+		
 	},
 	edit: (req, res) => {
 		let id = req.params.id;

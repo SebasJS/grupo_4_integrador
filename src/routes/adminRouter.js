@@ -19,7 +19,7 @@ router.post('/', upload.single("image"),adminController.store);
 router.get('/edit/:id', adminController.edit); 
 router.patch('/update/:id', upload.single("image"), adminController.update);
 
-router.get('/', adminController.index);
+router.get('/products', adminController.index);
 router.delete('/delete/:id', adminController.delete);
 
 module.exports = router;

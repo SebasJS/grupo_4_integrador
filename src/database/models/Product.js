@@ -18,10 +18,16 @@ module.exports = (sequelize,dataTypes) => {
         stock: {
             type: dataTypes.INTEGER
         },
+        sku:{
+            type: dataTypes.STRING(255)
+        },
         tag:{
             type: dataTypes.STRING(255)
         },
         description:{
+            type: dataTypes.STRING(255)
+        },
+        categoryProductsId:{
             type: dataTypes.STRING(255)
         },
         imagen: {
@@ -36,7 +42,7 @@ module.exports = (sequelize,dataTypes) => {
     const Product = sequelize.define(alias,cols,config);
     Product.associate = function(models){
         Product.belongsTo(models.CategoryProduct, {
-            as: "CategoryProducts",
+            as: "categoryProducts",
             forenignKey:"categoryProductsId"
         })
     }

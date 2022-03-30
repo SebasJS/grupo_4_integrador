@@ -30,15 +30,13 @@ module.exports = (sequelize,dataTypes) => {
     };
     let config = {
         FOREIGN_KEY_CHECKS: 0,
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
+        timestamps: false,
         deletedAt: false,
     }
     const Product = sequelize.define(alias,cols,config);
     Product.associate = function(models){
         Product.belongsTo(models.CategoryProduct, {
-            as: "CategoryProduct",
+            as: "CategoryProducts",
             forenignKey:"categoryProductsId"
         })
     }

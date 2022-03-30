@@ -3,7 +3,7 @@ const path = require('path');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const {op} = require("sequelize");
-const productsFilePath = path.join(__dirname, '../database/productos.JSON');
+//const productsFilePath = path.join(__dirname, '../database/productos.JSON');
 //let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const Product = db.Product;
@@ -12,7 +12,7 @@ const productController = {
 	index: async (req, res) =>{
 		//res.render('admin/adminIndex', {products});
 		console.log("entre al index" + Product);
-		const products = await Product.findAll();
+		//const products = await Product.findAll();
 		return res.render('admin/adminIndex.ejs',{products});
 	},
     create: (req,res)=>{

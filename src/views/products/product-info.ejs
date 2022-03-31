@@ -19,66 +19,36 @@
     <%- include("../partials/baner.ejs") %>
     <main>
         
-       <!--  <section class="producto">
-            
-              
-                <div class="principalPicture">
-                    <img src="/img/bicicleta1.png" alt="">
-                </div>
-                <div class="info">
-                    <div id="nombreProducto">
-                        <p><%=product.name%></p>
-                    </div>
-                    <span>
-                        <div id="precio">
-                            <p>$<%= product.price%></p>
-                        </div>
-                        <div id="descuento">
-                            <p><%= product.discount%> % OFF</p>
-                        </div>
-                        <div id="alCarrito">
-                            <p>comprar</p>
-                        </div>
-                    </span>
-                    <div id="descripcionProducto">
-                        <p>
-                            <%= product.description%>
-                        </p>
-                    </div>
-                </div>
-            
-        </section>
- -->
 
         <div class="container products-wrapper">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="products-title">Detalle del producto: <%=product.name%>
+                    <h2 class="products-title">Detalle del producto: <%=productDetail.name%>
                     </h2>
                 </div>
             </div>
             <div class="product-detail">
                 <div class="row">
                     <div class="col-12 col-lg-8">
-                        <img src="/img/<%= product.image%>" alt="product image"
+                        <img src="/img/<%= productDetail.imagen%>" alt="product image"
                             class="product-detail-img">
                         <p class="product-detail-description">
-                            <%=product.description%>
+                            <%=productDetail.description%>
                         </p>
                     </div>
                     <div class="col-12 col-lg-4">
                         <article class="product-detail-info">
                             <h2 class="product-detail-title">
-                                <%=product.name%>
+                                <%=productDetail.name%>
                             </h2>
-                            <% if(product.discount> 0 ) {let finalPrice = (product.price
-                                *((100-product.discount)/100)).toFixed(0);%>
+                            <% if(productDetail.discount> 0 ) {let finalPrice = (productDetail.price
+                                *((100-productDetail.discount)/100)).toFixed(0);%>
 
                                 <p class="product-detail-price small">
-                                    <span>$ <%=product.price%></span>
+                                    <span>$ <%=productDetail.price%></span>
                                     /
                                     <b>
-                                        <%=product.discount%> % OFF
+                                        <%=productDetail.discount%> % OFF
                                     </b>
                                 </p>
                                 <p class="product-detail-price">
@@ -104,9 +74,9 @@
                                         <a href="#" class="buy-now-button">COMPRAR AHORA</a>
                                         <hr>
 
-                                        <a href="/products/edit/<%=product.id%>" class="action-button edit">EDITAR
+                                        <a href="/products/edit/<%=productDetail.id%>" class="action-button edit">EDITAR
                                             PRODUCTO</a>
-                                        <form action="/products/delete/<%=product.id%>?_method=delete" method="POST"
+                                        <form action="/products/delete/<%=productDetail.id%>?_method=delete" method="POST"
                                             style="display: inline-flex">
                                             <button type="submit" class="action-button delete">ELIMINAR</button>
                                         </form>
@@ -122,29 +92,29 @@
                     <div class="col-12">
                         <h2 class="products-title">productos similares</h2>
                     </div>
-                    <% similar.forEach(product=>{ %>
+                 <!--   <%/* similar.forEach(product=>{ %>
 
                         <div class="col-12 col-sm-6 col-lg-3">
                             <section class="product-box">
-                                <a href="/products/product-info/<%=product.id%>">
+                                <a href="/products/product-info/<%=productDetail.id%>">
                                     <figure class="product-box_image">
-                                        <img src="/img/<%=product.image%>" alt="imagen de producto">
+                                        <img src="/img/<%=productDetail.image%>" alt="imagen de producto">
                                     </figure>
                                     <article class="product-box_data">
-                                        <h2>$ <%=product.price%>
+                                        <h2>$ <%=productDetail.price%>
                                         </h2>
                                         <span>
-                                            <%=product.discount%>% OFF
+                                            <%=productDetail.discount%>% OFF
                                         </span>
                                         <p>
-                                            <%=product.name%>
+                                            <%=productDetail.name%>
                                         </p>
                                         <i class="fas fa-truck"></i>
                                     </article>
                                 </a>
                             </section>
                         </div>
-                        <% }); %>
+                        <% });*/ %>-->
 
                 </div>
             </div>

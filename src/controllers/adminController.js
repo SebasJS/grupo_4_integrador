@@ -92,13 +92,14 @@ const productController = {
 			
 
 	},
-	delete: (req, res) => {
+	delete: async (req, res) => {
 		let id = req.params.id;
-		let finalProducts = products.filter(el => el.id != id)
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.render('admin/adminIndex', {products});
+		await Product.destroy({
+			where:{
+				id: id
+			}
+		})
+		res.redirect("/admin/products");
 		
 	}
 }

@@ -26,15 +26,18 @@ module.exports = (Sequelize, dataTypes) => {
         },
         direccion: {
             type : dataTypes.STRING(255),
+        },
+        categoryId: {
+            type: dataTypes.BIGINT(10).UNSIGNED
+        },
+        departamentoId: {
+            type: dataTypes.BIGINT(10).UNSIGNED
         }
     }
     let config = {
         FOREIGN_KEY_CHECKS: 0,
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false,
-        
+        timestamps: false,
+        deletedAt: false,        
     }
 
     const User = Sequelize.define(alias,cols,config);

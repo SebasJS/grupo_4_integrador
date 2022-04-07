@@ -11,21 +11,18 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <div class="btnCreateNewProduct">
-        <form action="/admin/create">
-            <button type="submit" class="btnAdminEdit">Crear nuevo producto</button>
-        </form>
-        <form action="/admin/users">
-            <button type="submit" class="btnAdminEdit">Administrador de usuarios</button>
+        <form action="/admin/addUsers">
+            <button type="submit" class="btnAdminEdit">Crear nuevo usuario</button>
         </form>
     </div>
     <div class="containerAdminIndex">
-        <% products.forEach(product => { %>
+        <% users.forEach(users => { %>
         
-        <p class="nameProductAdmin"><%= product.name %></p>
-        <form action="/admin/delete/<%= product.id%>?_method=delete" method="POST" class="btnDelete">
+        <p class="nameProductAdmin"><%= users.name %></p>
+        <form action="/admin/deleteUsers/<%= users.id%>?_method=delete" method="POST" class="btnDelete">
             <button type="submit" class="btnAdminDelete">Eliminar</button>
         </form>    
-        <form action="/admin/edit/<%= product.id%>">
+        <form action="/admin/users/edit/<%= users.id%>">
             <button type="submit" class="btnAdminEdit">Editar</button>
         </form>
         <% });%>

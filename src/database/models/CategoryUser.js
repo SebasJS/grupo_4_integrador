@@ -12,10 +12,8 @@ module.exports = (sequelize,dataTypes) => {
     }
     let config = {
         FOREIGN_KEY_CHECKS: 0,
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false,
+        timestamps: false,
+        deletedAt: false,      
     }
 
     const CategoryUser = sequelize.define(alias,cols,config);

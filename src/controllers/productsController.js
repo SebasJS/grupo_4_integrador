@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const db = require('../database/models');
+const sequelize = db.sequelize;
+const {op} = require("sequelize");
 const Product = db.Product;
 //const productsFilePath = path.join(__dirname, "../database/productos.JSON");
 //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -10,8 +12,9 @@ const Product = db.Product;
 //const tenis = productos.filter((producto) => producto.category === "tenis");
 //const balones = productos.filter((producto) => producto.category === "balones");
 //const ropa = productos.filter((producto) => producto.category === "ropa");
-const productos = Product.findAll();
-const bicicletas = Product.findAll();
+
+
+
 const tenis = ()=> {
   Product.find({
     where:{
@@ -48,7 +51,9 @@ const controller = {
         toThousand,
       });
     },
-    bicicletas: (req, res) => {
+    bicicletas: async (req, res) => {
+      const productos = await Product.findAll();
+      const bicicletas = productos.filter((producto) => producto.categoryProductsId === 6);
       // Do the magic
       res.render("products/bicicletas", {
         productos,
@@ -56,7 +61,14 @@ const controller = {
         toThousand, 
       });
     },
-    tenis: (req, res) => {
+    tenis: async (req, res) => {
+      const productos = await Product.findAll();
+      const tenis = await Product.findAll({
+        where:{
+          categoryProductsId : 9
+        }
+      })
+      //const tenis = productos.filter((producto) => producto.categoryProductsId === 9);
       // Do the magic
       res.render("products/tenis", {
         productos,
@@ -64,7 +76,13 @@ const controller = {
         toThousand,
       });
     },
-    balones: (req, res) => {
+    balones: async (req, res) => {
+      const productos = await Product.findAll();
+      const balones = await Product.findAll({
+        where:{
+          categoryProductsId : 2
+        }
+      })
       // Do the magic
       res.render("products/balones", {
         productos,
@@ -72,7 +90,13 @@ const controller = {
         toThousand,
       });
     },
-    ropa: (req, res) => {
+    ropa: async (req, res) => {
+      const productos = await Product.findAll();
+      const ropa = await Product.findAll({
+        where:{
+          categoryProductsId : 1
+        }
+      })
       // Do the magic
       res.render("products/ropa", {
         productos,
@@ -92,8 +116,27 @@ const controller = {
       });
     },
     productInfo: async (req,res) => {
-      let id= req.params.id;
+      let id = req.params.id;
       let productDetail = await Product.findByPk(id);
+      const productos = await Product.findAll();
+      const balones = await Product.findAll({
+        where:{
+          categoryProductsId : 2
+        }
+      });
+      const ropa = await Product.findAll({
+        where:{
+          categoryProductsId : 1
+        }
+      });
+      const tenis = await Product.findAll({
+        where:{
+          categoryProductsId : 9
+        }
+      });
+      const bicicletas = productos.filter((producto) => producto.categoryProductsId === 6);
+      
+
       let similar;
       console.log("el nombre es "+ productDetail.categoryProductsId);
       switch (productDetail.categoryProductsId) {
@@ -115,7 +158,7 @@ const controller = {
 
       res.render("products/product-info",{
       productDetail,
-      //similar,
+      similar,
       toThousand,
       });
   },

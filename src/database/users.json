@@ -214,5 +214,35 @@
   "ciudad": "Cundinamarca",
   "direccion": "cll131a #11-60 ",
   "tarjeta": "123546897"
+ },
+ {
+  "id": 25,
+  "first_name": "juan salazr",
+  "last_name": "juan salazr",
+  "email": "juansalazar@gmail.com",
+  "password": "12345678",
+  "category": "user",
+  "image": "3042093698",
+  "nombre": "juan salazr",
+  "telefono": "3042093698",
+  "departamento": "Antioquia",
+  "ciudad": "Antioquia",
+  "direccion": "Mz 78 Lote 19 Etapa 2 La Pradera",
+  "tarjeta": "123456789"
+ },
+ {
+  "id": 26,
+  "first_name": "",
+  "last_name": "",
+  "email": "luisa@gmail.com",
+  "password": "12345678",
+  "category": "user",
+  "image": "",
+  "nombre": "",
+  "telefono": "",
+  "departamento": "Cundinamarca",
+  "ciudad": "Cundinamarca",
+  "direccion": "",
+  "tarjeta": ""
  }
 ]

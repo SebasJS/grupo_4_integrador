@@ -19,7 +19,7 @@
         <% users.forEach(users => { %>
         
         <p class="nameProductAdmin"><%= users.name %></p>
-        <form action="/admin/deleteUsers/<%= users.id%>?_method=delete" method="POST" class="btnDelete">
+        <form action="/admin/users/delete/<%= users.id %>" method="POST" class="btnDelete">
             <button type="submit" class="btnAdminDelete">Eliminar</button>
         </form>    
         <form action="/admin/users/edit/<%= users.id%>">

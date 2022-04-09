@@ -51,19 +51,48 @@ module.exports = {
         try {
             const User = await Users.findByPk(req.params.id);
             const category = await CategoryUser.findAll();
-            const categoryUser = CategoryUser.findByPk(User.categoryId);
             const departamento = await Departamento.findAll();
-            console.log({departamento});
-            return res.render('admin/usersEdit.ejs', {User, categoryUser, category, departamento});
+            const IdCategory = await category.find(e => e.id == User.categoryId);
+            const IdDepartamento = await departamento.find(e => e.id == User.departamentoId);
+            return res.render('admin/usersEdit.ejs', {User, category, departamento, IdCategory, IdDepartamento});
 
         } catch (error) {
             console.log();
         }
 	},
-	update: (req, res) => {
+	update: async (req, res) => {
+        try {
+            const id = req.params.id;
+            const { name, email, password, phone, card, imagen, direccion, categoryId, departamentoId } = req.body;
+            await db.User.update({
+                name,
+                email,
+                password,
+                phone,
+                card,
+                imagen,
+                direccion,
+                categoryId,
+                departamentoId
+            },
+            {
+              where: { id }  
+            });
+            return res.redirect('/admin/users')
 
+        } catch (error) {
+            return res.send(error);
+        }
 	},
-	delete: (req, res) => {
-	
+	delete: async (req, res) => {
+        try {
+            const id = req.params.id;
+		    await Users.destroy({
+			where:{ id }
+		})
+		     return res.redirect("/admin/users");
+        } catch (error) {
+            return res.send(error);
+        }
 	}
 }

@@ -25,13 +25,13 @@
                 <label for="card">Tarjeta: </label>
                 <p><input type="number" name="card" id="" value="<%= User.card %>" required></p>
                 <label for="imagen">Imagen: </label>
-                <p><input type="text" name="imagen" id="" value="<%= User.imagen%>" required></p>
+                <p><input type="text" name="imagen" id="" value="<%= User.imagen %>" required></p>
                 <label for="direccion">Direccion: </label>
                 <p><input type="text" name="direccion" id="" value="<%= User.direccion %>"required></p>
                 <p>
                     <label for="categoryId">Categoria: </label><br>
                     <select name="categoryId" id="" required>
-                        <option value="<%=categoryUser.id %>" disabled selected><%= categoryUser.name%></option>
+                        <option value="<%= IdCategory.id %>" disabled selected><%= IdCategory.name %></option>
                         <% category.forEach(category => { %>
                         <option value="<%= category.id %>"> <%= category.name %></option>
                         <% }) %>
@@ -40,6 +40,7 @@
                 <p>
                     <label for="departamentoId">Deparamento: </label><br>
                     <select name="departamentoId" id="" required>
+                        <option value="<%= IdDepartamento.id %>" disabled selected><%= IdDepartamento.name %></option>
                         <% departamento.forEach(departamento => { %>
                         <option value="<%= departamento.id %>"> <%= departamento.name %></option>
                         <% }) %>

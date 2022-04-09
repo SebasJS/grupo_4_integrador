@@ -29,5 +29,7 @@ router.get('/users', adminUsersController.index);
 router.get('/addUsers', adminUsersController.add);
 router.post('/users/create', adminUsersController.create);
 router.get('/users/edit/:id', adminUsersController.edit);
+router.post('/users/update/:id', adminUsersController.update);
+router.post('/users/delete/:id', adminUsersController.delete);
 
 module.exports = router;

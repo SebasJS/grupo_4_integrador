@@ -286,5 +286,17 @@
   "direccion": "Mz 78 Lote 19 Etapa 2 La Pradera",
   "tarjeta": "123456789",
   "image_perfil": "1646104899347-241565830_415498706781908_6017259054863402116_n.jpg"
+ },
+ {
+  "id": 25,
+  "nombre": "Juan Camilo nuevo",
+  "email": "luisa2@gmail.com",
+  "password": "$2a$10$XBskjW31wNgWxZ3xI.9paO4EnK0mPws/pqxjX/ncMxaJpsI89JAm2",
+  "telefono": "3042093951",
+  "departamento": "Tolima",
+  "ciudad": "Huila",
+  "direccion": "Mz 78 Lote 19 Etapa 2 La Pradera",
+  "tarjeta": "123456789",
+  "image_perfil": "1649646682095-camisetalosangeles.png"
  }
 ]

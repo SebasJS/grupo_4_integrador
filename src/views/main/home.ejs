@@ -69,14 +69,14 @@
 
                     <!-- Show the "visited" products -->
 
-                    <% visited.forEach( product=> { /* let finalPrice = (product.price
+                    <% products.forEach( product=> { /* let finalPrice = (product.price
                         *((100-product.discount)/100)).toFixed(0); */%>
 
                         <div class="col-12 col-sm-6 col-lg-3">
                             <section class="product-box">
                                 <a href="/products/product-info/<%= product.id%>">
                                     <figure class="product-box_image">
-                                        <img src="/img/<%= product.image%>" alt="imagen de producto">
+                                        <img src="/img/<%= product.imagen%>" alt="imagen de producto">
                                     </figure>
                                     <article class="product-box_data">
                                         <h2>
@@ -114,7 +114,7 @@
                             <section class="product-box">
                                 <a href="/products/product-info/<%= product.id%>">
                                     <figure class="product-box_image">
-                                        <img src="/img/<%= product.image%>" alt="imagen de producto">
+                                        <img src="/img/<%= product.imagen%>" alt="imagen de producto">
                                     </figure>
                                     <article class="product-box_data">
                                         <h2>

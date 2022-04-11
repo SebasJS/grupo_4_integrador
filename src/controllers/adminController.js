@@ -1,66 +1,107 @@
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../database/productos.JSON');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const {op} = require("sequelize");
+//const productsFilePath = path.join(__dirname, '../database/productos.JSON');
+//let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const Product = db.Product;
 
-module.exports = {
-	index: (req, res) =>{
-		res.render('admin/adminIndex', {products});
+const productController = {
+	index: async (req, res) =>{ 
+		const products = await Product.findAll();
+		return res.render('admin/adminIndex.ejs',{products});
 	},
-    create: (req,res)=>{
-        res.render(("admin/createProduct"));
+    create: async (req,res)=>{
+		const products = await Product.findAll();
+        res.render("admin/createProduct",products);
     },
-    store: (req, res) => {
+    store: async (req, res) => {
 		let image = req.file ? req.file.filename : "default-image.png";
-		let newProduct = {
-			id: products[products.length - 1].id + 1,
-			...req.body,
-			image: image
-		};
+		try {
+			console.log("La imagen es "+ image);
+			console.log("El req body es ");
+			console.log( req.body);
+			let categoryId = 0;
+			const vectCagetory = ["ropa","balones","zapatos","montaña","raquetas","bicicletas","artesMarciales","equitacion","tenis"];
+			for (let index = 0; index < vectCagetory.length; index++) {
+				if(vectCagetory[index] == req.body.category){
+					categoryId = index+1;
+				}
+				
+			}
+				await Product.create({
+				name: req.body.name,
+				price: req.body.price,
+				discount: req.body.discount,
+				stock: req.body.discount,
+				sku: req.body.sku,
+				tag: req.body.tag,
+				description: req.body.description,
+				categoryProductsId: categoryId,
+				imagen: image
+			});
+			console.log(req.body.sku);
+			//res.redirect('/admin/create');
+			res.redirect("/admin/create");
+		}catch (e){
+			return res.send(e);
+		}
 
-		products.push(newProduct);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-
-		res.redirect('/');
+		
 	},
-	edit: (req, res) => {
+	edit: async (req, res) => {
 		let id = req.params.id;
-		let productToEdit = products.find(product => product.id == id);
+
+		let productToEdit = await Product.findByPk(id);
 
 		res.render('admin/updateProduct', { productToEdit });
-		console.log("Entre a edit");
+		//console.log("Entre a edit");
 	},
-	update: (req, res) => {
+	update: async (req, res) => {
+		let image = req.file ? req.file.filename : "default-image.png";
 		let id = req.params.id;
-		let productToEdit = products.find(product => product.id == id);
-		let image = req.file ? req.file.filename : productToEdit.image;
-		productToEdit = {
-			id: productToEdit.id,
-			...req.body,
-			image: image
-		};
-		let newProducts = products.map(product => {
-			// product.id == productToEdit.id ? product = {...productToEdit} : product;
-			if (product.id == productToEdit.id) {
-				 product = {...productToEdit}
+		let categoryId = 0;
+		const vectCagetory = ["ropa","balones","zapatos","montaña","raquetas","bicicletas","artesMarciales","equitacion","tenis"];
+		for (let index = 0; index < vectCagetory.length; index++) {
+			if(vectCagetory[index] == req.body.category){
+				categoryId = index+1;
 			}
-			return product;
-		});
-		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		
-		res.render('admin/adminIndex', {products});
-		console.log("entre a update");
-		
-	},
-	delete: (req, res) => {
-		let id = req.params.id;
-		let finalProducts = products.filter(el => el.id != id)
+			
+		}
+		await Product.update(
+			{
+				name: req.body.name,
+				price: req.body.price,
+				discount: req.body.discount,
+				stock: req.body.discount,
+				sku: req.body.sku,
+				tag: req.body.tag,
+				description: req.body.description,
+				categoryProductsId: categoryId,
+				imagen: image
+			},
+			{
+				where:{
+					id: id
+				}
+			}	
+			)
+			res.redirect("/admin/products");
+			
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.render('admin/adminIndex', {products});
+	},
+	delete: async (req, res) => {
+		let id = req.params.id;
+		await Product.destroy({
+			where:{
+				id: id
+			}
+		})
+		res.redirect("/admin/products");
+		
 	}
 }
+
+module.exports = productController;

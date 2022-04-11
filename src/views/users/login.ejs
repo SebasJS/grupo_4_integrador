@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/stylessLogin.css" type="text/css">
+</head>
+
+<body>
+    <main>
+        <div class="login">
+            <h1>Ingresa</h1>
+            <img class="logo" src="/img/altisport-logo.png" alt="Logo de la pagina">
+            <form action="/users/login" method="POST" class="formulario">
+                <label for="Usuario">Correo electrónico</label><br>
+                <input type="text" name="email" placeholder="Nombre usuario">
+                <% if ( locals.errors && errors.email) {%>
+                    <div class="text_error">
+                        <p class="feedback">
+                            <%= errors.email.msg %>
+                        </p>
+                    </div>
+                    <% } %>
+                        <label for="password">Contraseña</label><br>
+                        <input type="password" name="password" placeholder="Ingrese contraseña"><br>
+                        <input type="submit" value="registarme" id="enviarLogin"><br>
+                        <div class="rememberUser">
+                            <input type="checkbox" name="rememberInput" id="rememberInput" class="rememberInput">
+                            <label for="rememberInput">Recordar usuario</label>
+                        </div>
+                        <nav>
+                            <a href="/users/register">¿Olvidaste tu contraseña?</a>
+                            <a href="/users/register">Crear cuenta</a>
+                        </nav>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

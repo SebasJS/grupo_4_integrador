@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Bicicleta gw",
+        "price": 1000000,
+        "discount": 30,
+        "stock": 20,
+        "sku": "BC10001",
+        "category": "bicicletas",
+        "tag": "visited",
+        "description": "bicicleta ideal para montaña y deportes extremos",
+        "image": "bicicleta1.png"
+    }
+]

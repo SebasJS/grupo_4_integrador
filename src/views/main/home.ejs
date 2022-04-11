@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>altisport</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+
+<body>
+    <%- include("../partials/header.ejs") %>
+        <%- include("../partials/baner.ejs") %>
+
+
+
+            <section class="categorias">
+                <article>
+
+                    <img src="/img/bicicleta.png" alt="categorias bicicleta">
+                    <div><a href="/products/bicicletas">
+                            <h3>Bicicletas</h3>
+                        </a></div>
+                </article>
+
+                <article>
+
+                    <img src="/img/zapato.png" alt="categorias zapatos">
+                    <div>
+                        <a href="/products/tenis">
+                            <h3>Tenis</h3>
+                        </a>
+                    </div>
+                </article>
+
+                <article>
+
+                    <img src="/img/balones.png" alt="categorias balones">
+                    <div>
+                        <a href="/products/balones">
+                            <h3>Balones</h3>
+                        </a>
+                    </div>
+                </article>
+
+                <article>
+
+                    <img src="/img/ropa.png" alt="categorias ropa">
+                    <div>
+                        <a href="/products/ropa">
+                            <h3>Ropa</h3>
+                        </a>
+                    </div>
+
+                </article>
+            </section>
+
+            <!-- seccion de productos -->
+
+            <div class="container products-wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="products-title">Basado en tu última visita</h2>
+                    </div>
+
+                    <!-- Show the "visited" products -->
+
+                    <% products.forEach( product=> { /* let finalPrice = (product.price
+                        *((100-product.discount)/100)).toFixed(0); */%>
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="product-box">
+                                <a href="/products/product-info/<%= product.id%>">
+                                    <figure class="product-box_image">
+                                        <img src="/img/<%= product.imagen%>" alt="imagen de producto">
+                                    </figure>
+                                    <article class="product-box_data">
+                                        <h2>
+                                            $ <%= product.price%>
+                                        </h2>
+                                        <span>
+                                            <%= product.discount%> % OFF
+                                        </span>
+                                        <p>
+                                            <%= product.name%>
+                                        </p>
+                                        <i class="fas fa-truck"></i>
+                                    </article>
+                                </a>
+                            </section>
+                        </div>
+                        <% }); %>
+                </div>
+            </div>
+
+            <!-- /ultima visita -->
+
+            <!-- Ofertas -->
+            <div class="container products-wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="products-title">Ofertas</h2>
+                    </div>
+                    <!-- Show the "in-sale" products -->
+
+                    <% inSale.forEach( product=> {/* let finalPrice = (product.price *
+                        ((100-product.discount)/100)).toFixed(0); */%>
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="product-box">
+                                <a href="/products/product-info/<%= product.id%>">
+                                    <figure class="product-box_image">
+                                        <img src="/img/<%= product.imagen%>" alt="imagen de producto">
+                                    </figure>
+                                    <article class="product-box_data">
+                                        <h2>
+                                            $ <%= product.price%>
+                                        </h2>
+                                        <span>
+                                            <%= product.discount%> % OFF
+                                        </span>
+                                        <p>
+                                            <%= product.name%>
+                                        </p>
+                                        <i class="fas fa-truck"></i>
+                                    </article>
+                                </a>
+                            </section>
+                        </div>
+                        <% }); %>
+                </div>
+            </div>
+            <!-- /Ofertas -->
+
+
+
+            <%- include("../partials/footer.ejs") %>
+
+</body>
+
+</html>

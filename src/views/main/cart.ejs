@@ -1,0 +1,37 @@
+|<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>productCart</title>
+</head>
+<body>
+    <%- include("../partials/header.ejs") %>
+    <div class="containerTabble">
+        <div class="tableTittle"><h1>CARRITO DE COMPRA</h1></div>
+        <div class="tableHeader" id="itemProduct"><h2><h2></div>
+        <div class="tableHeader"><h2>Precio</h2></div>
+        <div class="tableHeader"><h2>Cantidad</h2></div>
+        <div class="tableHeader"><h2>Total</h2></div>
+        <div class="tableItem"><img src="img/bicicleta3.jpg" alt=""></div>
+        <div class="tableItem" id="productName"><p>Bicicleta shimano<p></div>
+        <div class="tableItem"><p>$900000</p></div>
+        <div class="tableItem" id="itemAmount"><input type="number" value="1"></div>
+        <div class="tableItem"><p>900000</p></div>
+        <div class="tableBottom">
+            <div class="subtotal">
+                <p>SUBTOTAL</p>
+                <P>$900000</P>    
+            </div>
+            <div class="buttonBottom">
+                <button type="submit" class="btnContinue">CONTINUAR COMPRANDO</button>
+                <button type="submit" class="btnEnd">FINALIZAR PEDIDO</button>
+            </div>
+        </div>
+    </div>
+    <%- include("../partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Crear</title>
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+        <main>
+            <h2>Crea tu producto</h2>
+            <form action="/admin" method="POST" enctype="multipart/form-data" class="containerCreate">
+                <div class="formu">
+                    <label for="Nombre">Nombre producto:</label>
+                    <input type="text" id="name" name="name" placeholder="Nombre"><br>
+                    <label for="Precio">Valor del producto:</label>
+                    <input type="text" id="price" name="price" placeholder="Precio"><br>
+                    <label for="Precio">Descuento:</label>
+                    <input type="text" id="discount" name="discount" placeholder="Descuento"><br>
+                    <label for="Precio">Stock:</label>
+                    <input type="text" id="stock" name="stock" placeholder="stock"><br>
+                    <label for="Precio">Codigo unico:</label>
+                    <input type="text" id="sku" name="sku" placeholder="SKU"><br>
+                    <label for="Precio">Tag:   </label>
+                    <select name="tag" id="tag">
+                        <option  value="">-----</option>
+                        <option  value="in-sale">in-sale</option>
+                        <option  value="visited">visited</option>
+                    </select><br>
+                    <label for="Precio">Categoria:</label>
+                    <select name="category" id="category">
+                        <option id="categoryProduct" value="">-----</option>
+                        <option id="1" value="ropa">Ropa</option>
+                        <option id="2" value="balones">Balones</option>
+                        <option id="3" value="zapatos">Zapatos</option>
+                        <option id="4" value="montaña">Montaña</option>
+                        <option id="5" value="raquetas">Raqutas</option>
+                        <option id="6" value="bicicletas">Bicicletas</option>
+                        <option id="7" value="artesMarciales">Artes Marciales</option>
+                        <option id="8" value="equitacion">Equitacion</option>
+                        <option id="9" value="tenis">Tenis</option>
+                    </select><br>
+                    <label class="labelDescriptionCreateProduct" for="descripcion">Descripcion del producto:</label><br>
+                    <textarea name="description" id="description" cols="30" rows="10"
+                        placeholder="Añade la descripcion"></textarea><br>
+                    <label for="Nombre">Cargar imagen</label>
+                    <input type="file" name="image" id="image"><br>
+                    <button type="submit">Guardar Producto</button>
+                </div>
+            </form>
+        </main>
+        <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*colores*/
+    --gris:#222831;
+    --blanco:#ffffff;
+    --naranja:#FD7014;
+    --negro:#000000
+
+    /*fuentes*/
+    --roboto:'Roboto', sans-serif;
+}
+
+main {
+    border: 10px solid var(--gris);
+    height: auto;
+}
+h2{
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: var(--naranja);
+    text-align: center;
+}
+.containerCreate{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+    padding-bottom: 20px;
+    
+}
+
+form .formu  {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--gris);
+    text-align: justify;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+form .formu input{
+   width: 300px;
+   margin: 10px 0;   
+}
+
+form .formu #descripcion{
+    border: 3px solid #FD7014;
+    border-radius: 5px;
+}
+
+form .formu input[type="submit"] {
+    border: none;
+    outline: none;
+    width: 157px;
+    background: var(--naranja); 
+    color: var(--gris);
+    margin-left: 209px;
+    border-radius: 20px;
+}
+form .formu select, form  .formu textarea, form label.labelDescriptionCreateProduct{
+    margin: 10px 0;
+}
+

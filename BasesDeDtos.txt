@@ -1,0 +1,96 @@
+-- MySQL dump 10.13  Distrib 5.7.18, for Linux (x86_64)
+--
+-- Host: localhost    Database: laravel-database
+-- ------------------------------------------------------
+-- Server version	5.7.18-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `actor_episode`
+--
+
+DROP DATABASE IF EXISTS altisports_db;
+CREATE DATABASE altisports_db;
+USE altisports_db;
+CREATE TABLE `users` (
+   `id` INT AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   `email` VARCHAR(255) NOT NULL,
+   `password` VARCHAR(255) NOT NULL,
+   `phone` INT NOT NULL,
+   `card` INT NOT NULL,
+   `imagen` VARCHAR(255) NOT NULL,
+   `direccion` VARCHAR(255) NOT NULL,
+   `categoryId` INT NOT NULL,
+   `departamentoId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `categoryUsers` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `departamentos` (
+   `id` INT AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `city` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   `departamentoId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `products` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   `price` INT NOT NULL,
+   `discount` INT NOT NULL,
+   `stock` INT NOT NULL,
+   `sku` VARCHAR(255) NOT NULL,
+   `tag` VARCHAR(255) NOT NULL,
+   `description` VARCHAR(255) NOT NULL,
+   `imagen` VARCHAR(255) NOT NULL,
+   `categoryProductsId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `categoryProducts` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `carrito` (
+   `id` INT AUTO_INCREMENT,
+   `productsId` INT NOT NULL,
+   `usersId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+
+ALTER TABLE `users` ADD CONSTRAINT `FK_66356712-fc7a-4c80-9544-2680f5df3935` FOREIGN KEY (`categoryId`) REFERENCES `categoryUsers`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `users` ADD CONSTRAINT `FK_ed9377f9-6e08-4007-b025-e9c7e76de2f3` FOREIGN KEY (`departamentoId`) REFERENCES `departamento`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `city` ADD CONSTRAINT `FK_445e1b9a-3d93-490c-9ea4-8d89a7ae9629` FOREIGN KEY (`departamentoId`) REFERENCES `departamento`(`id`)  ;
+
+ALTER TABLE `products` ADD CONSTRAINT `FK_46cdef6f-cd48-4f06-95cd-1f5803951027` FOREIGN KEY (`categoryProductsId`) REFERENCES `categoryProducts`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `carrito` ADD CONSTRAINT `FK_adb79293-0ffd-4624-a57b-7a109808d1ed` FOREIGN KEY (`productsId`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `carrito` ADD CONSTRAINT `FK_0c5f03a5-f974-48f3-a869-b1176348504e` FOREIGN KEY (`usersId`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;

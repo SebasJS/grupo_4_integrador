@@ -26,19 +26,24 @@
                     <input type="text" id="stock" name="stock" placeholder="stock"><br>
                     <label for="Precio">Codigo unico:</label>
                     <input type="text" id="sku" name="sku" placeholder="SKU"><br>
-                    <input type="text" id="tag" name="tag" placeholder="TAG"><br>
+                    <label for="Precio">Tag:   </label>
+                    <select name="tag" id="tag">
+                        <option  value="">-----</option>
+                        <option  value="in-sale">in-sale</option>
+                        <option  value="visited">visited</option>
+                    </select><br>
                     <label for="Precio">Categoria:</label>
                     <select name="category" id="category">
-                        <option value="">-----</option>
-                        <option value="ropa">Ropa</option>
-                        <option value="balones">Balones</option>
-                        <option value="zapatos">Zapatos</option>
-                        <option value="montaña">Montaña</option>
-                        <option value="raquetas">Raqutas</option>
-                        <option value="bicicletas">Bicicletas</option>
-                        <option value="artesMarciales">Artes Marciales</option>
-                        <option value="equitacion">Equitacion</option>
-                        <option value="tenis">Tenis</option>
+                        <option id="categoryProduct" value="">-----</option>
+                        <option id="1" value="ropa">Ropa</option>
+                        <option id="2" value="balones">Balones</option>
+                        <option id="3" value="zapatos">Zapatos</option>
+                        <option id="4" value="montaña">Montaña</option>
+                        <option id="5" value="raquetas">Raqutas</option>
+                        <option id="6" value="bicicletas">Bicicletas</option>
+                        <option id="7" value="artesMarciales">Artes Marciales</option>
+                        <option id="8" value="equitacion">Equitacion</option>
+                        <option id="9" value="tenis">Tenis</option>
                     </select><br>
                     <label class="labelDescriptionCreateProduct" for="descripcion">Descripcion del producto:</label><br>
                     <textarea name="description" id="description" cols="30" rows="10"

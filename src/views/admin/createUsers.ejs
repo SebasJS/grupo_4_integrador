@@ -14,22 +14,25 @@
     <%- include("../partials/header.ejs") %>
         <main>
             <h2>Crea un Usuario</h2>
+            <ul id="errores">
+
+            </ul>
             <form action="/admin/users/create" method="POST" class="containerCreate">
                 <div class="formu">
                     <label for="name">Nombre:</label >
-                    <p><input type="text" name="name" id="" required></p>
+                    <p><input type="text" name="name" id="name" required></p>
                     <label for="email">Email </label>
-                    <p><input type="text" name="email" id="" required> </p>
+                    <p><input type="text" name="email" id="email" required> </p>
                     <label for="password">Contraseña: </label>
-                    <p><input type="text" name="password" id="" required></p>
+                    <p><input type="text" name="password" id="password" required></p>
                     <label for="phone">Celular: </label>
-                    <p><input type="number" name="phone" id="" required></p>
+                    <p><input type="number" name="phone" id="phone" required></p>
                     <label for="card">Tarjeta: </label>
-                    <p><input type="number" name="card" id="" required></p>
+                    <p><input type="number" name="card" id="card" required></p>
                     <label for="imagen">Imagen: </label>
-                    <p><input type="text" name="imagen" id="" required></p>
+                    <p><input type="file" name="image" id="image"><br></p>
                     <label for="direccion">Direccion: </label>
-                    <p><input type="text" name="direccion" id="" required></p>
+                    <p><input type="text" name="direccion" id="direccion" required></p>
                     <p>
                         <label for="categoryId">Categoria: </label><br>
                         <select name="categoryId" id="" required>
@@ -53,6 +56,8 @@
             </form>
         </main>
         <%- include("../partials/footer.ejs") %>
+
+        <script src="/JS/createUsers.js"></script>
 </body>
 
 </html>

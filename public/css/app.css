@@ -156,11 +156,31 @@ hr {
 
 /*====== Banner ======*/
 .banner {
+  position: relative;
   background-image: url(/images/img-home-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: 100px;
+}
+
+.titulobannercontenedor {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  z-index: 2;
+  left: 100px;
+  top: 200px;
+  padding: 30px;
+
+  background: rgba(0, 0, 0, 0.5);
+
+}
+
+.bannertitle {
+  color: #ffffff;
+  font-size: 60px;
+
 }
 
 /*====== Category ======*/

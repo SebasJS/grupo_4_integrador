@@ -10,10 +10,10 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --gris:#222831;
-  --blanco:#ffffff;
-  --naranja:#FD7014;
-  --negro:#000000;
+  --gris: #222831;
+  --blanco: #ffffff;
+  --naranja: #FD7014;
+  --negro: #000000;
   --base-font-family: 'Roboto', sans-serif
 }
 
@@ -48,7 +48,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  
+
 }
 
 figure {
@@ -155,6 +155,164 @@ hr {
   height: 100px;
 }
 
+/*====== Category ======*/
+.contenedorcategorias {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.titulocategorias {
+  align-self: center;
+  justify-self: center;
+  background-color: #ffffff;
+  padding: auto;
+  font-size: 35px;
+  color: var(--gris)
+}
+
+.categorys {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  margin-bottom: 50px;
+  background-color: #ffffff;
+  padding-bottom: 40px;
+  align-items: center;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.categorys div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.iconnormal1 {
+  width: 300px;
+
+}
+
+.iconnormal2 {
+  width: 300px;
+
+}
+
+.iconnormal3 {
+  width: 300px;
+
+}
+
+.iconnormal4 {
+  width: 300px;
+
+}
+
+
+.iconhover {
+  width: 0px;
+}
+
+.iconhover2 {
+  width: 0px;
+}
+
+.iconhover3 {
+  width: 0px;
+}
+
+.iconhover4 {
+  width: 0px;
+}
+
+.cardcategory:hover .iconnormal1 {
+  width: 0px;
+
+}
+
+.cardcategory:hover .iconnormal2 {
+  width: 0px;
+
+}
+
+.cardcategory:hover .iconnormal3 {
+  width: 0px;
+
+}
+
+.cardcategory:hover .iconnormal4 {
+  width: 0px;
+
+}
+
+.cardcategory:hover .iconhover {
+  width: 300px;
+
+}
+
+.cardcategory:hover .iconhover2 {
+  width: 300px;
+
+}
+
+.cardcategory:hover .iconhover3 {
+  width: 300px;
+
+}
+
+.cardcategory:hover .iconhover4 {
+  width: 300px;
+
+}
+
+.categorytitle {
+  color: var(--gris);
+  margin-top: -30px;
+
+  font-size: 30px;
+  align-self: center;
+}
+
+
+/*====== category3 ======*/
+/* .categorycircle {
+  width: 200px;
+  height: 200px;
+  border: solid 5px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+
+}
+
+
+
+.categorycard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 18%;
+}
+
+
+.iconcat {
+  width: 100px;
+
+} */
 
 /*====== Products ======*/
 .products-wrapper {
@@ -248,7 +406,7 @@ hr {
 }
 
 
-.delete{
+.delete {
   margin-left: 30px;
 }
 
@@ -388,6 +546,7 @@ hr {
 .action-button.edit {
   background-color: chocolate;
 }
+
 .action-button.delete {
   background-color: rgb(248, 69, 37);
 }

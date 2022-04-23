@@ -65,6 +65,14 @@ textarea {
   font-family: inherit;
 }
 
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+
+}
+
 hr {
   border: none;
   border-bottom: solid 1px var(--light-gray);

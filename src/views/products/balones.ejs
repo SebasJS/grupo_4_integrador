@@ -13,44 +13,44 @@
 
 <body>
     <%- include("../partials/header.ejs") %>
-        <%- include("../partials/baner.ejs") %>
+        <img src="/img/balonesbanner.png" id="banner">
 
-            <!-- todos los productos -->
-            <div class="container products-wrapper">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="products-title">Balones</h2>
-                    </div>
-                    <% balones.forEach(product=>{/* let finalPrice = (product.price *
-                        ((100-product.discount)/100)).toFixed(0); */ %>
-
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <section class="product-box">
-                                <a href="/products/product-info/<%=product.id%>">
-                                    <figure class="product-box_image">
-                                        <img src="/img/<%=product.imagen%>" alt="imagen de producto">
-                                    </figure>
-                                    <article class="product-box_data">
-                                        <h2>$ <%=product.price%>
-                                        </h2>
-                                        <span>
-                                            <%=product.discount%>% OFF
-                                        </span>
-                                        <p>
-                                            <%=product.name%>
-                                        </p>
-                                        <i class="fas fa-truck"></i>
-                                    </article>
-                                </a>
-                            </section>
-                        </div>
-                        <% }); %>
-
+        <!-- todos los productos -->
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Balones</h2>
                 </div>
-            </div>
-            <!-- /todos los productos -->
+                <% balones.forEach(product=>{/* let finalPrice = (product.price *
+                    ((100-product.discount)/100)).toFixed(0); */ %>
 
-            <%- include("../partials/footer.ejs") %>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <section class="product-box">
+                            <a href="/products/product-info/<%=product.id%>">
+                                <figure class="product-box_image">
+                                    <img src="/img/<%=product.imagen%>" alt="imagen de producto">
+                                </figure>
+                                <article class="product-box_data">
+                                    <h2>$ <%=product.price%>
+                                    </h2>
+                                    <span>
+                                        <%=product.discount%>% OFF
+                                    </span>
+                                    <p>
+                                        <%=product.name%>
+                                    </p>
+                                    <i class="fas fa-truck"></i>
+                                </article>
+                            </a>
+                        </section>
+                    </div>
+                    <% }); %>
+
+            </div>
+        </div>
+        <!-- /todos los productos -->
+
+        <%- include("../partials/footer.ejs") %>
 
 </body>
 

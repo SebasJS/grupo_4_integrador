@@ -21,6 +21,10 @@
                 <form action="/admin/users/update/<%= User.id %>" class="formulario" method="POST">
                     <h2 class="titulo">Actualiza usuarios</h2>
 
+                    <ul id="errores">
+
+                    </ul>
+
                     <label for="name">Nombre:</label>
                     <input type="text" name="name" id="" value="<%= User.name %>" required>
                     <label for="email">Email </label>

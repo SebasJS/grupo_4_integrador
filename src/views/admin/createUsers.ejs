@@ -20,6 +20,10 @@
 
             <div class="conteiner_createuser">
                 <form action="/admin/users/create" method="POST" class="formulario">
+                    <ul id="errores">
+
+                    </ul>
+
                     <h2 class="titulo">Crea un Usuario</h2><br>
                     <label for="name">Nombre:</label>
                     <input type="text" name="name" id="" placeholder="Introduce tu nombre" required>
@@ -32,7 +36,7 @@
                     <label for="card">Tarjeta: </label>
                     <input type="number" name="card" id="" placeholder="123 456 789" required></p>
                     <label for="imagen">Imagen: </label>
-                    <input type="text" name="imagen" id="" required></p>
+                    <input type="file" name="imagen" id="imagen"> <br>
                     <label for="direccion">Direccion: </label>
                     <input type="text" name="direccion" id="" placeholder="clle #2 cra 23 -tv 15" required></p>
                     <br>
@@ -71,6 +75,8 @@
             </div>
         </main>
         <%- include("../partials/footer.ejs") %>
+
+            <script src="/JS/createUsers.js"></script>
 </body>
 
 </html>

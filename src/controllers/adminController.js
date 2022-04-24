@@ -44,7 +44,7 @@ const productController = {
 			});
 			console.log(req.body.sku);
 			//res.redirect('/admin/create');
-			res.redirect("/admin/create");
+			res.redirect("/admin/products");
 		}catch (e){
 			return res.send(e);
 		}

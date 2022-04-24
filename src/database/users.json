@@ -298,5 +298,17 @@
   "direccion": "Mz 78 Lote 19 Etapa 2 La Pradera",
   "tarjeta": "123456789",
   "image_perfil": "1649646682095-camisetalosangeles.png"
+ },
+ {
+  "id": 26,
+  "nombre": "Manuel Ropero",
+  "email": "manuel@gmail.com",
+  "password": "$2a$10$eLu12ylmEp0rJwxpJ/GJCuPFAmeenEZhIzq/IkbbAQVwFI.gfZ/M2",
+  "telefono": "111111111",
+  "departamento": "Cundinamarca",
+  "ciudad": "Cundinamarca",
+  "direccion": "calle 123 123",
+  "tarjeta": "222222222222",
+  "image_perfil": "1649717020440-1646104899347-241565830_415498706781908_6017259054863402116_n.jpg"
  }
 ]

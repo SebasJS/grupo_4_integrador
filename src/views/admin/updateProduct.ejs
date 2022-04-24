@@ -19,6 +19,9 @@
             <form action="/admin/update/<%= productToEdit.id%>?_method=PATCH" method="POST"
                 enctype="multipart/form-data">
                 <div class="formu">
+                    <ul id="errores">
+
+                    </ul>
                     <label for="Nombre">Nombre producto:</label>
                     <input type="text" id="name" name="name" value="<%= productToEdit.name%>"><br>
                     <label for="Precio">Valor del producto:</label>

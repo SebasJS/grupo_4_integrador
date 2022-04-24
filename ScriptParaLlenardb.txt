@@ -1,4 +1,4 @@
-*insert into categoryProducts(name) values ("Ropa");
+insert into categoryProducts(name) values ("Ropa");
 insert into categoryProducts(name) values ("Balones");
 insert into categoryProducts(name) values ("Zapatos");
 insert into categoryProducts(name) values ("Montaña");
@@ -28,21 +28,21 @@ insert into products(name,price,discount,stock,sku,tag,description,imagen,catego
 insert into products(name,price,discount,stock,sku,tag,description,imagen,categoryproductsId) values ("Camistea los angeles clippers",130000,30,500,"Ch0003", "in-sale","Camistea los angeles clippers negra", "camisetalosangeles.png",1);
 insert into products(name,price,discount,stock,sku,tag,description,imagen,categoryproductsId) values ("Camistea AC Milan editada",130000,30,500,"Ch0004", "in-sale","Camistea AC Milan 2021", "1645846561898-camisetamilan.png",1);
 
-insert into departamento(name) values("Antioquia");
-insert into departamento(name) values("Bolivar");
-insert into departamento(name) values("Boyaca");
-insert into departamento(name) values("Caldas");
-insert into departamento(name) values("Cauca");
-insert into departamento(name) values("Cordoba");
-insert into departamento(name) values("Cundinamarca");
-insert into departamento(name) values("Choco");
-insert into departamento(name) values("Huila");
-insert into departamento(name) values("Guajira");
-insert into departamento(name) values("Meta");
-insert into departamento(name) values("Nariño");
-insert into departamento(name) values("Quindio");
-insert into departamento(name) values("Santander");
-insert into departamento(name) values("Tolima");
+insert into departamentos(name) values("Antioquia");
+insert into departamentos(name) values("Bolivar");
+insert into departamentos(name) values("Boyaca");
+insert into departamentos(name) values("Caldas");
+insert into departamentos(name) values("Cauca");
+insert into departamentos(name) values("Cordoba");
+insert into departamentos(name) values("Cundinamarca");
+insert into departamentos(name) values("Choco");
+insert into departamentos(name) values("Huila");
+insert into departamentos(name) values("Guajira");
+insert into departamentos(name) values("Meta");
+insert into departamentos(name) values("Nariño");
+insert into departamentos(name) values("Quindio");
+insert into departamentos(name) values("Santander");
+insert into departamentos(name) values("Tolima");
 
 insert into city(name, departamentoId) values ("Medellin",1);
 insert into city(name, departamentoId) values ("Turbo",1);
@@ -98,4 +98,4 @@ insert into users(name,email,password,phone,card,imagen,direccion,categoryId,dep
 insert into users(name,email,password,phone,card,imagen,direccion,categoryId,departamentoId) values("Jhon Jhackson", "jhon@gmail.com","Jhon123",123456559,65224321,"jhon.jpg","calle 35 sur",1,8);
 insert into users(name,email,password,phone,card,imagen,direccion,categoryId,departamentoId) values("Jhack Jonson", "jahck@gmail.com","jahck23",9556546,234561,"jhack.jpg","calle 53 norte",1,6);
 
-select * from products;
+select * from users;

@@ -13,43 +13,50 @@
 
 <body>
     <%- include("../partials/header.ejs") %>
-        <%- include("../partials/baner.ejs") %>
-
-            <!-- todos los productos -->
-            <div class="container products-wrapper">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="products-title">Bicicletas</h2>
-                    </div>
-                    <% bicicletas.forEach(product=>{/* let finalPrice = (product.price *
-                        ((100-product.discount)/100)).toFixed(0); */ %>
-
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <section class="product-box">
-                                <a href="/products/product-info/<%=product.id%>">
-                                    <figure class="product-box_image">
-                                        <img src="/img/<%=product.imagen%>" alt="imagen de producto">
-                                    </figure>
-                                    <article class="product-box_data">
-                                        <h2>$ <%=product.price%>
-                                        </h2>
-                                        <span>
-                                            <%=product.discount%>% OFF
-                                        </span>
-                                        <p>
-                                            <%=product.name%>
-                                        </p>
-                                        <i class="fas fa-truck"></i>
-                                    </article>
-                                </a>
-                            </section>
-                        </div>
-                        <% }); %>
-
-                </div>
+        <div>
+            <div class="titulobannercontenedor">
+                <h1 class="bannertitle">Las Mejores Bicicletas</h1>
             </div>
-            <!-- /todos los productos -->
-            <%- include("../partials/footer.ejs") %>
+
+            <img src="/img/banner-altisport.jpg" id="banner">
+        </div>
+
+
+        <!-- todos los productos -->
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Bicicletas</h2>
+                </div>
+                <% bicicletas.forEach(product=>{/* let finalPrice = (product.price *
+                    ((100-product.discount)/100)).toFixed(0); */ %>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <section class="product-box">
+                            <a href="/products/product-info/<%=product.id%>">
+                                <figure class="product-box_image">
+                                    <img src="/img/<%=product.imagen%>" alt="imagen de producto">
+                                </figure>
+                                <article class="product-box_data">
+                                    <h2>$ <%=product.price%>
+                                    </h2>
+                                    <span>
+                                        <%=product.discount%>% OFF
+                                    </span>
+                                    <p>
+                                        <%=product.name%>
+                                    </p>
+                                    <i class="fas fa-truck"></i>
+                                </article>
+                            </a>
+                        </section>
+                    </div>
+                    <% }); %>
+
+            </div>
+        </div>
+        <!-- /todos los productos -->
+        <%- include("../partials/footer.ejs") %>
 
 </body>
 

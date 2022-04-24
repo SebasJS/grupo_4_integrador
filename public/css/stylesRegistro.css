@@ -29,15 +29,16 @@ main {
     justify-content: center;
 }
 
-h2 {
+/* h2 {
     padding-top: 30px;
-}
+} */
 
 .form-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
 }
 
 .Izq {
@@ -77,6 +78,7 @@ h2 {
     color: #222831;
     -webkit-box-shadow: -1px 3px 17px -2px rgba(0, 0, 0, 0.48);
     box-shadow: -1px 3px 17px -2px rgba(0, 0, 0, 0.48);
+    padding-bottom: 50px;
 }
 
 .formulario label {
@@ -119,6 +121,7 @@ h2 {
     color: #ffff;
     font-size: 18px;
     border-radius: 20px;
+    margin-top: 10px;
     margin-bottom: 5px;
 
 

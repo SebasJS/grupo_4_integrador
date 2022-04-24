@@ -29,6 +29,8 @@ module.exports = {
     },
     create: async (req,res) => {
         try {
+            let image = req.body.image;
+            console.log("La imagen es "+ image);
             const { name, email, password, phone, card, imagen, direccion, categoryId, departamentoId } = req.body;
             await db.User.create({
                 name,
@@ -36,7 +38,7 @@ module.exports = {
                 password,
                 phone,
                 card,
-                imagen,
+                imagen : image,
                 direccion,
                 categoryId,
                 departamentoId
@@ -49,6 +51,7 @@ module.exports = {
 	edit:
     async (req, res) => {
         try {
+            console.log("Entre a edit");
             const User = await Users.findByPk(req.params.id);
             const category = await CategoryUser.findAll();
             const departamento = await Departamento.findAll();
@@ -62,15 +65,19 @@ module.exports = {
 	},
 	update: async (req, res) => {
         try {
+            console.log(req.body.image);
+            //let image = req.body.image ? req.body.imagefilename : "default-image.png";
+            let image = req.body.image;
+            console.log("La imagen es "+ image);
             const id = req.params.id;
-            const { name, email, password, phone, card, imagen, direccion, categoryId, departamentoId } = req.body;
+            const { name, email, password, phone, card, direccion, categoryId, departamentoId } = req.body;
             await db.User.update({
                 name,
                 email,
                 password,
                 phone,
                 card,
-                imagen,
+                imagen: image,
                 direccion,
                 categoryId,
                 departamentoId

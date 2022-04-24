@@ -5,81 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/stylesRegistro.css" type="text/css">
-    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Modificar usuarios</title>
 </head>
 
 <body>
     <%- include("../partials/header.ejs") %>
         <main>
-            <div class="conteiner_createuser">
+            <h2>Actualiza usuarios</h2>
+            <ul id="errores">
 
-                <form action="/admin/users/update/<%= User.id %>" class="formulario" method="POST">
-                    <h2 class="titulo">Actualiza usuarios</h2>
-
-                    <ul id="errores">
-
-                    </ul>
-
+            </ul>
+            <form action="/admin/users/update/<%= User.id %>" method="POST" class="formu">
+                <div class="formu">
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="" value="<%= User.name %>" required>
+                    <p><input type="text" name="name" id="name" value="<%= User.name %>" required></p>
                     <label for="email">Email </label>
-                    <input type="text" name="email" id="" value="<%= User.email %>" required>
+                    <p><input type="text" name="email" id="email" value="<%= User.email %>" required> </p>
                     <label for="password">Contraseña: </label>
-                    <input type="text" name="password" id="" value="<%= User.password %>" required>
+                    <p><input type="text" name="password" id="password" value="<%= User.password %>" required></p>
                     <label for="phone">Celular: </label>
-                    <input type="number" name="phone" id="" value="<%= User.phone %>" required>
+                    <p><input type="number" name="phone" id="phone" value="<%= User.phone %>" required></p>
                     <label for="card">Tarjeta: </label>
-                    <input type="number" name="card" id="" value="<%= User.card %>" required>
+                    <p><input type="number" name="card" id="card" value="<%= User.card %>" required></p>
                     <label for="imagen">Imagen: </label>
-                    <input type="file" name="imagen" id="" value="<%= User.imagen %>" required>
+                    <p><input type="file" name="image" id="image"><br></p>
                     <label for="direccion">Direccion: </label>
-                    <input type="text" name="direccion" id="" value="<%= User.direccion %>" required>
-                    <br>
-                    <br>
-                    <div class="columnas">
-
-                        <p>
-                            <label for="categoryId">Categoria: </label><br>
-                            <select name="categoryId" id="" required>
-                                <option value="<%= IdCategory.id %>" disabled selected>
-                                    <%= IdCategory.name %>
+                    <p><input type="text" name="direccion" id="direccion" value="<%= User.direccion %>" required></p>
+                    <p>
+                        <label for="categoryId">Categoria: </label><br>
+                        <select name="categoryId" id="" required>
+                            <option value="<%= IdCategory.id %>" disabled selected>
+                                <%= IdCategory.name %>
+                            </option>
+                            <% category.forEach(category=> { %>
+                                <option value="<%= category.id %>">
+                                    <%= category.name %>
                                 </option>
-                                <% category.forEach(category=> { %>
-                                    <option value="<%= category.id %>">
-                                        <%= category.name %>
-                                    </option>
-                                    <% }) %>
-                            </select>
-                        </p>
-                        <p>
-                            <label for="departamentoId">Deparamento: </label><br>
-                            <select name="departamentoId" id="" required>
-                                <option value="<%= IdDepartamento.id %>" disabled selected>
-                                    <%= IdDepartamento.name %>
+                                <% }) %>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="departamentoId">Deparamento: </label><br>
+                        <select name="departamentoId" id="" required>
+                            <option value="<%= IdDepartamento.id %>" disabled selected>
+                                <%= IdDepartamento.name %>
+                            </option>
+                            <% departamento.forEach(departamento=> { %>
+                                <option value="<%= departamento.id %>">
+                                    <%= departamento.name %>
                                 </option>
-                                <% departamento.forEach(departamento=> { %>
-                                    <option value="<%= departamento.id %>">
-                                        <%= departamento.name %>
-                                    </option>
-                                    <% }) %>
-                            </select>
-                        </p>
-                    </div>
-                    <br>
-                    <br>
-                    <input type="submit" value="Guardar producto" id="enviar"><br>
+                                <% }) %>
+                        </select>
+                    </p>
+                    <button type="submit">Guardar Producto</button>
+                </div>
 
-
-                </form>
-            </div>
+            </form>
         </main>
         <%- include("../partials/footer.ejs") %>
-
             <script src="/JS/usersEdit.js"></script>
 </body>
 

@@ -3,6 +3,8 @@ const router = express.Router();
 const multer = require('multer');
 const adminController = require("../controllers/adminController");
 const adminUsersController = require("../controllers/adminUsersController");
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 let storage = multer.diskStorage({
     destination: (req,file,cb) => cb(null, "public/img"),
     filename : (req, file , cb) => cb(null,Date.now()+ "-" +file.originalname)
@@ -32,4 +34,9 @@ router.get('/users/edit/:id', adminUsersController.edit);
 router.post('/users/update/:id', adminUsersController.update);
 router.post('/users/delete/:id', adminUsersController.delete);
 
+//Rutas para el login de usuarios
+
+router.get('/users/login', guestMiddleware , adminUsersController.loginUser);
+router.post('/users/ingresar', adminUsersController.loginProcess);
+router.get('/users/logout', adminUsersController.logout);
 module.exports = router;

@@ -29,9 +29,9 @@ module.exports = {
     },
     create: async (req,res) => {
         try {
-            let image = req.body.image;
-            console.log("La imagen es "+ image);
-            const { name, email, password, phone, card, imagen, direccion, categoryId, departamentoId } = req.body;
+            let image = req.file ? req.file.filename : "default-image.png";
+            console.log("La imagen es "+ req.file);
+            const { name, email, password, phone, card, direccion, categoryId, departamentoId } = req.body;
             await db.User.create({
                 name,
                 email,
@@ -102,4 +102,4 @@ module.exports = {
             return res.send(error);
         }
 	}
-}
+} 

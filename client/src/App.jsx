@@ -19,7 +19,8 @@ class App extends Component {
       nombre: "",
       imagen: "",
       tipo: "",
-      productos: []
+      productos: [],
+      usuarios: []
     }
   }
 
@@ -45,31 +46,31 @@ class App extends Component {
   traerGifNuevo() {
 
 
-    this.apiCall("http://localhost:3000/api", this.mostrarGif)
+    this.apiCall("http://localhost:3000/api", this.mostrarGif);
+    this.apiCall("http://localhost:3000/api/users", this.mostrarUsuarios);
+
 
 
   }
   mostrarGif = (data) => {
-
-
-
-
-
     this.setState({
       productos: data,
       nombre: data[0].name,
 
+    })
+    console.log(this.state.nombre)
+  }
 
+  mostrarUsuarios = (data2) => {
+    console.log(data2)
+    this.setState({
+      usuarios: data2,
+      nombredeuser: data2[0].name
 
     })
-
-
-
-    console.log(this.state.nombre)
-
-
-
+    console.log("soy el primer usuarii0" + this.state.nombredeuser)
   }
+
 
   componentDidUpdate() {
     console.log("me actualize")
@@ -80,11 +81,38 @@ class App extends Component {
     console.log("estoy renderizando");
     let contenido;
     let listProducts;
+    let imagen;
+    let imagenUsuario;
+    let listUsers;
     console.log(this.state.productos);
     listProducts = this.state.productos.map((producto) => {
       console.log(producto.name);
-      return <li>{producto.name}</li>
-    })
+      imagen = "http://localhost:3000/img/" + producto.imagen;
+      return (
+        <tr>
+          <td ><div className="thumContainer"><img className="thumProduct" src={imagen} alt="" /></div></td>
+          <td>{producto.name}</td>
+          <td>${producto.price}</td>
+          <td>{producto.categoryProductsId}</td>
+          <td><button type="button" className="btn-editar"><ion-icon name="create-outline"></ion-icon></button></td>
+          <td><button type="button" className="btn-eliminar"><ion-icon name="trash-outline"></ion-icon></button></td>
+        </tr>
+      )
+    });
+
+    listUsers = this.state.usuarios.map((usuario) => {
+      console.log(usuario.name);
+      imagenUsuario = "http://localhost:3000/img/imageProfile/" + usuario.imagen;
+      return (
+        <tr>
+          <td width={"60px"}> <div className="imgBx"><img src={imagenUsuario} alt="" /></div> </td>
+          <td><h4>{usuario.name} <br /><span>{usuario.email}</span></h4></td>
+        </tr>
+      )
+    });
+
+
+
 
     console.log(listProducts);
 
@@ -142,7 +170,7 @@ class App extends Component {
             <li className=''>
               <a href="/">
                 <span className='icon'><ion-icon name="bicycle-outline"></ion-icon></span>
-                <span className="title">Brand Name</span>
+                <span className="title">Altisports</span>
               </a>
             </li>
             <li>
@@ -249,21 +277,23 @@ class App extends Component {
             <div className="recentOrders">
               <div className="cardHeader">
                 <h2>
-                  Recent Orders
+                  Productos
                 </h2>
-                <a href="/" className='btn'>View All </a>
+                <a href="/" className='btn'>Ver todos </a>
               </div>
               <table>
                 <thead>
                   <tr>
-                    <td>Name</td>
-                    <td>Price</td>
-                    <td>Payment</td>
-                    <td>Status</td>
+
+                    <td>Nombre</td>
+                    <td>Precio</td>
+                    <td>categoria</td>
+                    <td>Editar</td>
+                    <td>Eliminar</td>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  {/* <tr>
                     <td>Star Refrigerator</td>
                     <td>$1200</td>
                     <td>Paid</td>
@@ -328,7 +358,8 @@ class App extends Component {
                     <td>$1200</td>
                     <td>Paid</td>
                     <td><span className='status inprogress'>In progress</span></td>
-                  </tr>
+                  </tr> */}
+                  {listProducts}
 
                 </tbody>
               </table>
@@ -343,38 +374,7 @@ class App extends Component {
 
               </div>
               <table>
-                <tr>
-                  <td width={"60px"}> <div className="imgBx"><img src={customerImg1} alt="" /></div> </td>
-                  <td><h4>Juan <br /><span>Italy</span></h4></td>
-                </tr>
-                <tr>
-                  <td width={"60px"}> <div className="imgBx"><img src={customerImg1} alt="" /></div> </td>
-                  <td><h4>Juan <br /><span>Italy</span></h4></td>
-                </tr>
-                <tr>
-                  <td width={"60px"}> <div className="imgBx"><img src={customerImg1} alt="" /></div> </td>
-                  <td><h4>Juan <br /><span>Italy</span></h4></td>
-                </tr>
-                <tr>
-                  <td width={"60px"}> <div className="imgBx"><img src={customerImg1} alt="" /></div> </td>
-                  <td><h4>Juan <br /><span>Italy</span></h4></td>
-                </tr>
-                <tr>
-                  <td width={"60px"}> <div className="imgBx"><img src={customerImg1} alt="" /></div> </td>
-                  <td><h4>Juan <br /><span>Italy</span></h4></td>
-                </tr>
-                <tr>
-                  <td width={"60px"}> <div className="imgBx"><img src={customerImg1} alt="" /></div> </td>
-                  <td><h4>Juan <br /><span>Italy</span></h4></td>
-                </tr>
-                <tr>
-                  <td width={"60px"}> <div className="imgBx"><img src={customerImg1} alt="" /></div> </td>
-                  <td><h4>Juan <br /><span>Italy</span></h4></td>
-                </tr>
-                <tr>
-                  <td width={"60px"}> <div className="imgBx"><img src={customerImg1} alt="" /></div> </td>
-                  <td><h4>Juan <br /><span>Italy</span></h4></td>
-                </tr>
+                {listUsers}
               </table>
 
             </div>

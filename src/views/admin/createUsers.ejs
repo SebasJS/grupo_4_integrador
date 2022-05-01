@@ -32,23 +32,23 @@
                     </ul>
 
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" id="name">
                     <label for="email">Email </label>
-                    <input type="text" name="email" id="email" required>
+                    <input type="text" name="email" id="email">
                     <label for="password">Contraseña: </label>
-                    <input type="text" name="password" id="password" required>
+                    <input type="text" name="password" id="password">
                     <label for="phone">Celular: </label>
-                    <input type="number" name="phone" id="phone" required>
+                    <input type="number" name="phone" id="phone">
                     <label for="card">Tarjeta: </label>
-                    <input type="number" name="card" id="card" required>
+                    <input type="number" name="card" id="card">
                     <label for="imagen">Imagen: </label>
                     <input type="file" name="image" id="image"><br>
                     <label for="direccion">Direccion: </label>
-                    <input type="text" name="direccion" id="direccion" required>
+                    <input type="text" name="direccion" id="direccion">
                     <div class="columnas">
                         <p>
                             <label for="categoryId">Categoria: </label><br>
-                            <select name="categoryId" id="" required>
+                            <select name="categoryId" id="">
                                 <option value="" disabled selected> - Elige Categoría - </option>
                                 <% categoryUser.forEach(category=> { %>
                                     <option value="<%= category.id %>">
@@ -59,7 +59,7 @@
                         </p>
                         <p>
                             <label for="departamentoId">Deparamento: </label><br>
-                            <select name="departamentoId" id="" required>
+                            <select name="departamentoId" id="">
                                 <option value="" disabled selected> - Elige Deparamento - </option>
                                 <% departamento.forEach(departamento=> { %>
                                     <option value="<%= departamento.id %>">

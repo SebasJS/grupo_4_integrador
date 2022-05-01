@@ -1,4 +1,5 @@
-const {Product} = require('../database/models')
+const {Product,User} = require('../database/models');
+
 const userCtrl = {}
 
 
@@ -9,6 +10,12 @@ userCtrl.getAllUsers = async (req,res)=>{
     const userJson = JSON.stringify(products);
     res.json(products);
 
+}
+
+userCtrl.getAllUsuarios = async (req,res)=>{
+    const usuarios = await User.findAll();
+    const usuariosJson= JSON.stringify(usuarios);
+    res.json(usuarios);
 }
 
 

@@ -303,7 +303,7 @@ code {
   min-height: 500px;
   background: var(--blanco);
   padding: 20px;
-  padding-top: 0px;
+
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 
@@ -329,19 +329,46 @@ code {
   border-radius: 6px;
 }
 
+.btn-editar {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--green);
+  text-decoration: none;
+  color: var(--blanco);
+  border-radius: 6px;
+  border: none;
+  font-size: 1.2em;
+
+}
+
+.btn-eliminar {
+  position: relative;
+  padding: 5px 10px;
+  background: rgb(239, 76, 76);
+  text-decoration: none;
+  color: var(--blanco);
+  border-radius: 6px;
+  border: none;
+  font-size: 1.2em;
+
+}
+
 .details table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+
 }
 
 .details table thead td {
   font-weight: 600;
+
 }
 
 .details .recentOrders table tr {
   color: #161515;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
 .details .recentOrders table tr:last-child {
@@ -349,8 +376,10 @@ code {
 }
 
 .details .recentOrders table tbody tr:hover {
+
   background: var(--gris);
   color: var(--blanco);
+
 }
 
 .details .recentOrders table tr td {
@@ -411,12 +440,17 @@ code {
 
 .recentCustomers {
   position: relative;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   min-height: 500px;
   padding: 20px;
   background: var(--blanco);
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
+  height: 100%;
+
+
 }
 
 .recentCustomers .imgBx {
@@ -428,6 +462,23 @@ code {
 }
 
 .recentCustomers .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumContainer {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.thumProduct {
   position: absolute;
   top: 0;
   left: 0;

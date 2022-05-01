@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {getAllUsers} = require('../controllers/api.controller');
+const {getAllUsers,getAllUsuarios} = require('../controllers/api.controller');
 
 const usuario = {
     nombre:'Juan',
@@ -9,6 +9,8 @@ const usuario = {
 }
 
 router.get('/',getAllUsers);
+
+router.get('/users',getAllUsuarios);
   
 
 

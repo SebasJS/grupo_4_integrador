@@ -8,7 +8,10 @@ let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const Product = db.Product;
-
+const Users = db.User;
+const CategoryUser = db.CategoryUser;
+const Departamento = db.Departamento;
+const bCrypt = require('bcryptjs');
 let productosRefresh;
 
 module.exports = {
@@ -30,5 +33,39 @@ module.exports = {
     },
     cart: (req,res)=>{
         res.render("main/cart")
+    },
+    create: async (req,res) =>{
+        try {
+            const categoryUser = await CategoryUser.findAll();
+            const departamento = await Departamento.findAll();
+            return res.render('main/createUsers.ejs', { categoryUser,departamento });         
+        } catch (error) {
+        console.log(error); 
+        }
+    },
+    store: async (req,res) => {
+        try {
+            let image = req.body.image;
+            console.log("La imagen es "+ image);
+            const { name, email, password, phone, card, imagen, direccion, categoryId, departamentoId } = req.body;
+            console.log(password);
+            const passEncript = await bCrypt.hash(password,10);
+            console.log(passEncript);
+            await db.User.create({
+                name,
+                email,
+                password : passEncript,
+                phone,
+                card,
+                imagen : image,
+                direccion,
+                categoryId,
+                departamentoId
+            });
+            return res.redirect('/admin/users')
+        } catch (error) {
+            return res.send(error);
+        }
+
     }
 }

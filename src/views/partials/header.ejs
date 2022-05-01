@@ -16,6 +16,34 @@
             <div class="logoContainer">
                 <a href="/" ><img src="/img/altisport-logo.png" alt="" class="logoimg"></a>
             </div>
+            <% if(locals.isLogged) { %>
+                <% if(locals.userLogged.categoryId == 1) { %>
+                    <div class="navMenu">
+                        <p class="navButton">
+                            <a a href="/admin/users">Administrar Usuarios</a>
+                        </p>
+                        <p class="navButton">
+                            <a a href="/admin/products">Administrar Productos</a>
+                        </p>
+                    </div>
+                <% } else if(locals.userLogged.categoryId == 2) { %>
+                    <div class="navMenu">
+                        <p class="navButton">
+                            <a a href="/products/bicicletas">Bicicletas</a>
+                        </p>
+                        <p class="navButton">
+                            <a a href="/products/balones">Balones</a>
+                        </p>
+                        <p class="navButton">
+                            <a href="/products/ropa">Ropa</a>
+                        </p>
+                        <p class="navButton">
+                            <a a href="/products/tenis">Tenis</a>
+                        </p>
+        
+                    </div>
+                    <% } %>
+            <% } else { %>
             <div class="navMenu">
                 <p class="navButton">
                     <a a href="/products/bicicletas">Bicicletas</a>
@@ -31,22 +59,40 @@
                 </p>
 
             </div>
+            <% } %>
             <div class="userMenu">
                 <% if(locals.isLogged) { %>
-                    <p class="userLogged">Hola <%= locals.userLogged.nombre %></p>
+                    <% if(locals.userLogged.categoryId == 1) { %>
+                        <p class="userLogged">Admin: <%= locals.userLogged.name %></p>
+                        <p class="loginicon">
+                            <a href="/admin/addUsers"><i class="fas fa-user-plus"></i></a>
+                        </p>
+                        <p class="loginicon">
+                            <a href="/admin/users/logout"><i class="fas fa-sign-in-alt"></i></a>
+                        </p>
+
+                    <% } %>
+                    <% if(locals.userLogged.categoryId == 2) { %>
+                        <p class="userLogged">Usuario: <%= locals.userLogged.name %></p>
+                        <p class="loginicon">
+                            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                        </p>
+                        <p class="loginicon">
+                            <a href="/admin/users/logout"><i class="fas fa-sign-in-alt"></i></a>
+                        </p>
+                    <% } %>
+                    
+
+
                 <% } else { %>
                     <p class="loginicon">
-                        <a href="/users/register"><i class="fas fa-user-plus"></i></a>
+                        <a href="/admin/users/login"><i class="fas fa-solid fa-user"></i></a>
                     </p>
                     <p class="loginicon">
-                        <a href="/users/login"><i class="fas fa-sign-in-alt"></i></a>
-                    </p>
-                    <p class="loginicon">
-                        <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="/create"><i class="fas fa-user-plus"></i></a>
                     </p>
                 <% } %>
             </div>
-
 
 
 

@@ -34,6 +34,7 @@ app.use(methodOverride('_method'));
 const mainRouter = require("./routes/mainRouter");
 const adminRouter = require("./routes/adminRouter");
 const usersRouter = require("./routes/usersRouter");
+const adminUserRouter = require('./routes/adminUsersRouter');
 const shopRouter = require("./routes/shopRouter");
 const productsRouter = require("./routes/products");
 const userLogMiddleware = require('./middlewares/userLogMiddleware');
@@ -74,6 +75,7 @@ app.use('/',mainRouter);
 app.use('/admin',adminRouter);
 app.use('/shop',shopRouter);
 app.use('/users',usersRouter);
+app.use('/adminusers',adminUserRouter);
 app.use('/products',productsRouter);
 
 //Servidor

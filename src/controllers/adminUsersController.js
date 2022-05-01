@@ -29,7 +29,8 @@ module.exports = {
     },
     create: async (req,res) => {
         try {
-            let image = req.body.image;
+            let image = req.file ? req.file.filename : "default-image.png";
+            console.log('el file es : '+ req.file );
             console.log("La imagen es "+ image);
             const { name, email, password, phone, card, imagen, direccion,  departamentoId } = req.body;
             const categoryId = 2;

@@ -21,8 +21,8 @@ const productController = {
 		let image = req.file ? req.file.filename : "default-image.png";
 		try {
 			console.log("La imagen es "+ image);
-			console.log("El req body es ");
-			console.log( req.body);
+			console.log("El req file name ");
+			console.log( req.file);
 			let categoryId = 0;
 			const vectCagetory = ["ropa","balones","zapatos","montaña","raquetas","bicicletas","artesMarciales","equitacion","tenis"];
 			for (let index = 0; index < vectCagetory.length; index++) {

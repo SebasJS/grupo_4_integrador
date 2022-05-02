@@ -45,11 +45,13 @@ module.exports = {
     },
     store: async (req,res) => {
         try {
-            let image = req.body.image;
-            console.log("La imagen es "+ image);
-            const { name, email, password, phone, card, imagen, direccion, categoryId, departamentoId } = req.body;
+            let image = req.file ? req.file.filename : "default-image.png";
+            console.log('el file es : '+ req.file );
+            console.log("La imagen en main contorller es "+ image);
+            const { name, email, password, phone, card, imagen, direccion,  departamentoId } = req.body;
             console.log(password);
             const passEncript = await bCrypt.hash(password,10);
+            const categoryId = 2;
             console.log(passEncript);
             await db.User.create({
                 name,
@@ -59,7 +61,7 @@ module.exports = {
                 card,
                 imagen : image,
                 direccion,
-                categoryId,
+                categoryId : categoryId,
                 departamentoId
             });
             return res.redirect('/admin/users')

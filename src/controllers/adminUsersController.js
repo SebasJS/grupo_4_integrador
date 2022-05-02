@@ -33,8 +33,8 @@ module.exports = {
             let image = req.file ? req.file.filename : "default-image.png";
             console.log('el file es : '+ req.file );
             console.log("La imagen es "+ image);
-            const { name, email, password, phone, card, imagen, direccion,  departamentoId } = req.body;
-            const categoryId = 2;
+            const { name, email, password, phone, card, imagen, direccion, categoryId, departamentoId } = req.body;
+            
             console.log(password);
             const passEncript = await bCrypt.hash(password,10);
             console.log(passEncript);
@@ -46,7 +46,7 @@ module.exports = {
                 card,
                 imagen : image,
                 direccion,
-                categoryId : categoryId,
+                categoryId,
                 departamentoId
             });
             /*let comparar = bCrypt.compareSync('Manuel.991',passEncript);

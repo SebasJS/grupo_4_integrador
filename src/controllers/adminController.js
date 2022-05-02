@@ -20,7 +20,7 @@ const productController = {
     store: async (req, res) => {
 		let image = req.file ? req.file.filename : "default-image.png";
 		try {
-			console.log("La imagen es "+ image);
+			console.log("La imagen en admin controller es "+ image);
 			console.log("El req file name ");
 			console.log( req.file);
 			let categoryId = 0;

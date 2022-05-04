@@ -297,6 +297,33 @@ code {
 
 }
 
+.detailsLast {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  /* margin-top: 10px; */
+
+}
+
+.lastOrder {
+  position: relative;
+  display: grid;
+  
+  background: var(--blanco);
+  padding: 20px;
+
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  min-height: 100px;
+
+}
+
+
+
 .details .recentOrders {
   position: relative;
   display: grid;
@@ -313,6 +340,7 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding-bottom: 20px;
 }
 
 .cardHeader h2 {
@@ -364,6 +392,43 @@ code {
   font-weight: 600;
 
 }
+
+.details .lastOrder table tr {
+  color: #161515;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.details .lastOrder table tr:last-child {
+  border-bottom: none;
+}
+
+.details .lastOrder table tbody tr:hover {
+
+  background: var(--gris);
+  color: var(--blanco);
+
+}
+
+.details .lastOrder table tr td {
+  padding: 10px;
+}
+
+.details .lastOrder table tr td:last-child {
+  text-align: end;
+}
+
+.details .lastOrder table tr td:nth-child(2) {
+  text-align: end;
+}
+
+.details .lastOrder table tr td:nth-child(3) {
+  text-align: center;
+}
+
+
+
+/* ultimos productos */
 
 .details .recentOrders table tr {
   color: #161515;
@@ -453,6 +518,29 @@ code {
 
 }
 
+.lastCustomer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding: 20px;
+  background: var(--blanco);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  height: 100%;
+
+
+}
+
+.lastCustomer .imgBx {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .recentCustomers .imgBx {
   position: relative;
   width: 40px;
@@ -486,6 +574,36 @@ code {
   height: 100%;
   object-fit: cover;
 }
+
+.lastCustomer table tr:hover {
+  background: var(--gris);
+  color: var(--blanco);
+}
+
+.lastCustomer table tr td {
+  padding: 12px 10px;
+}
+
+.lastCustomer table tr td h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.lastCustomer table tr td h4 span {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.lastCustomer table tr:hover {
+  background: var(--gris);
+  color: var(--blanco);
+}
+
+.lastCustomer table tr:hover td h4 span {
+  color: var(--blanco);
+}
+
 
 .recentCustomers table tr:hover {
   background: var(--gris);

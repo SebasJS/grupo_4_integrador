@@ -21,7 +21,10 @@ class App extends Component {
       tipo: "",
       productos: [],
       usuarios: [],
-      lastProduct: ""
+      lastProduct: "",
+      listBalones:[],
+      numberOfBalones:0
+
     }
   }
 
@@ -43,14 +46,17 @@ class App extends Component {
 
 
 
-  componentDidMount() {
+  componentDidMount () {
     console.log("me monte");
     this.traerGifNuevo();
+    this.numberOfballs();
    
     
 
 
   }
+
+
 
   traerGifNuevo() {
 
@@ -107,22 +113,57 @@ class App extends Component {
 
   */
 
-    
-
   
 
 
   componentDidUpdate() {
     console.log("me actualize");
-    
-
-
   }
-  render() {
-    console.log("estoy renderizando");
-    //ultimo producto
 
-    //ultimo usuario
+
+  /*------------------------- funcion hallar el numero de balones -----------------------*/
+
+// funcion para determinar el numero de balones
+
+numberOfballs(){
+  
+   
+    /*
+    a la bariable listBalones le asigno un array donde guarde cada uno de los elementos que cooincidiera 
+    con el categoryProductId de balones en este caso el categoryProductID 2
+    */
+  let listBalones;
+  let arrayBalones=[];
+  console.log("ver productos a ver que trae" + this.state.productos);
+  listBalones = this.state.productos.map((producto) => {
+  
+         //if para ver si coincide con la categoria deseada
+    if(producto.categoryProductsId == 2){  
+        //voy guardando cada uno de los elementos que pasaron el if es decir con categoryProdcutID == a 2  es decir que son balones
+        arrayBalones.push(producto);
+        }
+     //retornamos el array de balones para que se guarde en listBalones    
+    return (arrayBalones)
+     });
+
+    // guardo en el state el numero de elementos del array listBalones es decir el numero de balones 
+    console.log("numero de balones"+ this.arrayBalones)
+    this.setState({
+        //se guarda en numberOfBalls el numero de elementos del array 
+        numberOfBalones:listBalones.length
+    });
+  }
+
+  /*-------------------------fin de la funcion para hallar el numero de balones -----------------------*/
+
+
+/*----------------------------------------- Inicio del Render de la Clase ----------------------------------------*/
+
+  
+  render() {
+
+    console.log("estoy renderizando");
+   
     let contenido;
     let listProducts;
     let imagen;
@@ -130,6 +171,33 @@ class App extends Component {
     let listUsers;
     let listBicicletas;
     let numberOfBici;
+
+    let listaBalones;
+    let numeroDeBalones;
+
+    let listaTenis;
+    let numeroDeTenis;
+
+    let listaRopa;
+    let numeroDeRopa;
+
+    let listaZapatos;
+    let numeroDeZapatos;
+
+    let listaMontana;
+    let numeroDeMontana;
+
+    let listaRaqueta;
+    let numeroDeRaqueta;
+
+    let listaMarciales;
+    let numeroDeMarciales;
+
+
+
+    let selectLast;
+    let lastProductHTML;
+
     
 
 
@@ -146,55 +214,90 @@ class App extends Component {
       console.log(producto.name);
       imagen = "http://localhost:3000/img/" + producto.imagen;
       return (
-        <tr>
+        <tr  className="columnaProduct">
           <td ><div className="thumContainer"><img className="thumProduct" src={imagen} alt="" /></div></td>
-          <td>{producto.name}</td>
-          <td>${producto.price}</td>
-          <td>{producto.categoryProductsId}</td>
-          <td><button type="button" className="btn-editar"><ion-icon name="create-outline"></ion-icon></button></td>
-          <td><button type="button" className="btn-eliminar"><ion-icon name="trash-outline"></ion-icon></button></td>
+          <td >{producto.name}</td>
+          <td >${producto.price}</td>
+          <td >{producto.categoryProductsId}</td>
+          <td ><button type="button" className="btn-editar"><ion-icon name="create-outline"></ion-icon></button></td>
+          <td ><button type="button" className="btn-eliminar"><ion-icon name="trash-outline"></ion-icon></button></td>
         </tr>
       )
     });
 
+    
 
-    listBicicletas = this.state.productos.map((producto) => {
-      let arraybicicletas=[];
-     
-      imagen = "http://localhost:3000/img/" + producto.imagen;
-      if(producto.categoryProductsId == 6){
-       
-         arraybicicletas.push(producto);
-      }
-      return (
-       arraybicicletas
-      )
-    });
+
+
+
+
+    listBicicletas= this.state.productos.filter(producto => producto.categoryProductsId == 6);
 
     numberOfBici=listBicicletas.length;
 
     console.log("este es el numero de bicis" + numberOfBici)
  
 
-    //numero de balones
-    /*
-    listBicicletas = this.state.productos.map((producto) => {
-      let arraybicicletas=[];
-      console.log(producto.name);
-      imagen = "http://localhost:3000/img/" + producto.imagen;
-      if(producto.categoryProductsId == 6){
-       
-         arraybicicletas.push(producto);
-      }
-      return (
-       arraybicicletas
-      )
-    });
+    /* ------------------------- funciones para hallar el numero de balones ----------------------------*/
+    // hallar numero de balones dentro del render para poder utilizar el this.state
+    
+    listaBalones = this.state.productos.filter(producto => producto.categoryProductsId == 2);
+    
 
-    numberOfBici=listBicicletas.length;
+    numeroDeBalones=listaBalones.length;
 
-    console.log("este es el numero de bicis" + numberOfBici)
-    */
+    /* ------------------------- funciones para hallar el numero de tenis ----------------------------*/
+    // hallar numero de balones dentro del render para poder utilizar el this.state
+    
+    listaTenis = this.state.productos.filter(producto => producto.categoryProductsId == 9);
+    
+
+    numeroDeTenis=listaTenis.length;
+
+    /* ------------------------- funciones para hallar el numero de ropa ----------------------------*/
+    // hallar numero de balones dentro del render para poder utilizar el this.state
+    
+    listaRopa = this.state.productos.filter(producto => producto.categoryProductsId == 1);
+    
+
+    numeroDeRopa=listaRopa.length;
+
+    /* ------------------------- funciones para hallar el numero de zapatos ----------------------------*/
+    // hallar numero de balones dentro del render para poder utilizar el this.state
+    
+    listaZapatos = this.state.productos.filter(producto => producto.categoryProductsId == 3);
+    
+
+    numeroDeZapatos=listaZapatos.length;
+
+     /* ------------------------- funciones para hallar el numero de montaña ----------------------------*/
+    // hallar numero de balones dentro del render para poder utilizar el this.state
+    
+    listaMontana = this.state.productos.filter(producto => producto.categoryProductsId == 4);
+    
+
+    numeroDeMontana=listaMontana.length;
+
+    /* ------------------------- funciones para hallar el numero de raqueta ----------------------------*/
+    // hallar numero de balones dentro del render para poder utilizar el this.state
+    
+    listaRaqueta = this.state.productos.filter(producto => producto.categoryProductsId == 5);
+    
+
+    numeroDeRaqueta=listaRaqueta.length;
+
+
+    /* ------------------------- funciones para hallar el numero de Artes marciales ----------------------------*/
+    // hallar numero de balones dentro del render para poder utilizar el this.state
+    
+    listaMarciales = this.state.productos.filter(producto => producto.categoryProductsId == 5);
+    
+
+    numeroDeMarciales=listaMarciales.length;
+
+
+   
+    
 
     
 
@@ -205,6 +308,9 @@ class App extends Component {
     console.log(this.state.productos[numberProducts]);
     let lastProduct = (this.state.productos[numberProducts]);
     console.log(lastProduct);
+
+
+    let numberUsers = this.state.usuarios.length -1;
 
  
 
@@ -267,6 +373,17 @@ class App extends Component {
     }
     list.forEach((item) =>
       item.addEventListener('mouseover', activeLink));
+
+
+    selectLast= document.querySelectorAll(".columnaProduct");
+
+    lastProductHTML = selectLast[18];
+
+    console.log(listProducts)
+
+
+
+
     return (
 
       //add hovered class in selected list item
@@ -357,29 +474,70 @@ class App extends Component {
             <div className="card">
               <div>
                 <div className="numbers">
-                  547
+                  {numeroDeBalones}
                 </div>
-                <div className="cardName">Clientes</div>
+                <div className="cardName">Balones</div>
               </div>
-              <div className="iconBx"><ion-icon name="people-outline"></ion-icon></div>
+              <div className="iconBx"><ion-icon name="basketball-outline"></ion-icon></div>
             </div>
             <div className="card">
               <div>
                 <div className="numbers">
-                  242
+                  {numeroDeTenis}
                 </div>
-                <div className="cardName">ventas</div>
+                <div className="cardName">Tenis</div>
               </div>
-              <div className="iconBx"><ion-icon name="card-outline"></ion-icon></div>
+              <div className="iconBx"><ion-icon name="camera-outline"></ion-icon></div>
             </div>
             <div className="card">
               <div>
                 <div className="numbers">
-                  $5983
+                 {numeroDeRopa}
                 </div>
-                <div className="cardName">ganancias</div>
+                <div className="cardName">Ropa</div>
               </div>
-              <div className="iconBx"><ion-icon name="cash-outline"></ion-icon></div>
+              <div className="iconBx"><ion-icon name="accessibility-outline"></ion-icon></div>
+            </div>
+          </div>
+
+           {/* cards */}
+
+           <div className="cardBox">
+            <div className="card">
+              <div>
+                <div className="numbers">
+                  {numeroDeZapatos}
+                </div>
+                <div className="cardName">Zapatos</div>
+              </div>
+              <div className="iconBx"><ion-icon name="bicycle-outline"></ion-icon></div>
+            </div>
+            <div className="card">
+              <div>
+                <div className="numbers">
+                  {numeroDeMontana}
+                </div>
+                <div className="cardName">Montaña</div>
+              </div>
+              <div className="iconBx"><ion-icon name="diamond-outline"></ion-icon></div>
+            </div>
+            <div className="card">
+              <div>
+                <div className="numbers">
+                  {numeroDeRaqueta}
+                </div>
+                <div className="cardName">Raqueta</div>
+              </div>
+              <div className="iconBx"><ion-icon name="camera-outline"></ion-icon></div>
+            </div>
+            <div className="card">
+              <div>
+                <div className="numbers">
+                 {numeroDeMarciales}
+                </div>
+                <div className="cardName">Artes Marciales</div>
+              </div>
+              <div className="iconBx"><ion-icon name="accessibility-outline"></ion-icon></div>
             </div>
           </div>
 
@@ -397,6 +555,50 @@ class App extends Component {
 
           </div>
 
+
+         
+
+          <div className="detailsLast">
+            <div className="lastOrder">
+              <div className="cardHeader">
+                <h2>
+                  Ultimo Producto Agregado
+                </h2>
+                <a href="/" className='btn'>Ver todos </a>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <td>Imagen</td>
+                    <td>Nombre</td>
+                    <td>Precio</td>
+                    <td>categoria</td>
+                    <td>Editar</td>
+                    <td>Eliminar</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                {listProducts[numberProducts]}
+
+                </tbody>
+              </table>
+            </div>
+            {/* new customers */}
+
+            <div className="lastCustomer">
+              <div className="cardHeader">
+                <h2>
+                  Recent Customers
+                </h2>
+
+              </div>
+              <table>
+                {listUsers[numberUsers]}
+              </table>
+
+            </div>
+          </div>
 
           {/* details */}
           <div className="details">
@@ -419,72 +621,7 @@ class App extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status delivered'>Delivered</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status return'>Return</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status delivered'>Delivered</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status inprogress'>In progress</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status return'>Return</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status delivered'>Delivered</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status inprogress'>In progress</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status delivered'>Delivered</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status pending'>Pending</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status delivered'>Delivered</span></td>
-                  </tr>
-                  <tr>
-                    <td>Star Refrigerator</td>
-                    <td>$1200</td>
-                    <td>Paid</td>
-                    <td><span className='status inprogress'>In progress</span></td>
-                  </tr> */}
+                  
                   {listProducts}
 
                 </tbody>
@@ -507,11 +644,9 @@ class App extends Component {
           </div>
 
         </div>
-        {/* <div className='content-conteiner'>
-          <ul>
-            {listProducts}
-          </ul>
-        </div> */}
+
+        
+        
 
 
 

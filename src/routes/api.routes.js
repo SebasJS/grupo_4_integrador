@@ -10,6 +10,10 @@ const usuario = {
 
 router.get('/',getAllUsers);
 
+/*
+router.get('/bicicletas',getAllbicicle);
+*/
+
 router.get('/users',getAllUsuarios);
   
 

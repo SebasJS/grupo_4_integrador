@@ -46,7 +46,8 @@ class App extends Component {
   componentDidMount() {
     console.log("me monte");
     this.traerGifNuevo();
-    this.lastProduct();
+   
+    
 
 
   }
@@ -75,6 +76,9 @@ class App extends Component {
 
     console.log(this.state.productos)
     console.log("soy el primer usuarii0" + this.state.nombre)
+    /*
+    this.ultimoPro();
+    */
   }
 
   mostrarUsuarios = (data2) => {
@@ -88,15 +92,29 @@ class App extends Component {
 
   }
 
-  lastProduct(data3) {
+  /*
+  async  ultimoPro() {
+      
 
 
-  }
+    let numberProducts = this.state.productos.length - 1;
+    console.log(this.state.productos[numberProducts]);
+    let lastProduct = await (this.state.productos[0]);
+    let nombredelultimo =await lastProduct.name ;
+    console.log("nombre del ultimo productico" + nombredelultimo);
+      // expected output: "resolved"
+    }
+
+  */
+
+    
+
+  
 
 
   componentDidUpdate() {
     console.log("me actualize");
-    this.lastProduct();
+    
 
 
   }
@@ -110,7 +128,20 @@ class App extends Component {
     let imagen;
     let imagenUsuario;
     let listUsers;
-    console.log("ultmo " + this.state.productos);
+    let listBicicletas;
+    let numberOfBici;
+    
+
+
+  
+
+    
+
+
+    let ultimo;
+   let lastName;
+
+
     listProducts = this.state.productos.map((producto) => {
       console.log(producto.name);
       imagen = "http://localhost:3000/img/" + producto.imagen;
@@ -125,10 +156,57 @@ class App extends Component {
         </tr>
       )
     });
+
+
+    listBicicletas = this.state.productos.map((producto) => {
+      let arraybicicletas=[];
+     
+      imagen = "http://localhost:3000/img/" + producto.imagen;
+      if(producto.categoryProductsId == 6){
+       
+         arraybicicletas.push(producto);
+      }
+      return (
+       arraybicicletas
+      )
+    });
+
+    numberOfBici=listBicicletas.length;
+
+    console.log("este es el numero de bicis" + numberOfBici)
+ 
+
+    //numero de balones
+    /*
+    listBicicletas = this.state.productos.map((producto) => {
+      let arraybicicletas=[];
+      console.log(producto.name);
+      imagen = "http://localhost:3000/img/" + producto.imagen;
+      if(producto.categoryProductsId == 6){
+       
+         arraybicicletas.push(producto);
+      }
+      return (
+       arraybicicletas
+      )
+    });
+
+    numberOfBici=listBicicletas.length;
+
+    console.log("este es el numero de bicis" + numberOfBici)
+    */
+
+    
+
+    
+    
+    
     let numberProducts = this.state.productos.length - 1;
     console.log(this.state.productos[numberProducts]);
     let lastProduct = (this.state.productos[numberProducts]);
     console.log(lastProduct);
+
+ 
 
 
     listUsers = this.state.usuarios.map((usuario) => {
@@ -177,7 +255,8 @@ class App extends Component {
     /* toggle.addEventListener("click", function () {
       navigation.classList.toggle('active')
     }) */
-
+    
+    
 
     //agergar estilo
     let list = document.querySelectorAll('.navigation li');
@@ -269,11 +348,11 @@ class App extends Component {
             <div className="card">
               <div>
                 <div className="numbers">
-                  1,504
+                  {numberOfBici}
                 </div>
-                <div className="cardName">Productos</div>
+                <div className="cardName">Bicicletas</div>
               </div>
-              <div className="iconBx"><ion-icon name="storefront-outline"></ion-icon></div>
+              <div className="iconBx"><ion-icon name="bicycle-outline"></ion-icon></div>
             </div>
             <div className="card">
               <div>

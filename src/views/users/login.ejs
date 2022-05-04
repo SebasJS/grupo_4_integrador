@@ -14,16 +14,19 @@
         <div class="login">
             <h1>Ingresa</h1>
             <img class="logo" src="/img/altisport-logo.png" alt="Logo de la pagina">
-            <label for="Usuario">Correo electrónico</label><br>
-            <input type="text" name="email" placeholder="Nombre usuario">
-            <% if ( locals.errors && errors.email) {%>
-                <div class="text_error">
-                    <input type="password" name="password" placeholder="Ingrese contraseña"><br>
-                    =======
-                    <% }  %>
+
+            <form action="/admin/users/ingresar" method="POST" class="formulario">
+                <label for="Usuario">Correo electrónico</label><br>
+                <input type="text" name="email" placeholder="Nombre usuario">
+                <% /* if ( locals.errors && errors.email) {%>
+                    <div class="text_error">
+                        <p class="feedback">
+                            <%= errors.email.msg %>
+                        </p>
+                    </div>
+                    <% } */ %>
                         <label for="password">Contraseña</label><br>
                         <input type="password" name="password" id="password" placeholder="Ingrese contraseña"><br>
-                        >>>>>>> manuelcreateuser
                         <input type="submit" value="registarme" id="enviarLogin"><br>
                         <div class="rememberUser">
                             <input type="checkbox" name="rememberInput" id="rememberInput" class="rememberInput">
@@ -33,8 +36,8 @@
                             <a href="/users/register">¿Olvidaste tu contraseña?</a>
                             <a href="/users/register">Crear cuenta</a>
                         </nav>
-                        </form>
-                </div>
+            </form>
+        </div>
     </main>
 </body>
 

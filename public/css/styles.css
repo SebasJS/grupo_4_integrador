@@ -68,8 +68,21 @@ header {
 
 }
 
-.loginicon {}
+.loginicon {
+    display: flex;
+    align-items: center;
+}
 
+#img{
+    width: 8%;
+    border-radius: 50% ;
+    margin-left: 80%;
+    align-items: center;
+}
+.userLogged{
+    align-items: center;
+    display: flex;
+}
 header span {}
 
 #banner {

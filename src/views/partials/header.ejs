@@ -63,7 +63,10 @@
             <div class="userMenu">
                 <% if(locals.isLogged) { %>
                     <% if(locals.userLogged.categoryId == 1) { %>
-                        <p class="userLogged">Admin: <%= locals.userLogged.name %></p>
+                        <p class="loginicon">
+                            <img id="img" src="/img/imageProfile/<%=locals.userLogged.imagen%>" alt="imagen de usuario">
+                        </p>
+                        <p class="loginicon">Admin: <%= locals.userLogged.name %></p>
                         <p class="loginicon">
                             <a href="/adminusers/users/add"><i class="fas fa-user-plus"></i></a>
                         </p>
@@ -73,7 +76,10 @@
 
                     <% } %>
                     <% if(locals.userLogged.categoryId == 2) { %>
-                        <p class="userLogged">Usuario: <%= locals.userLogged.name %></p>
+                        <p class="loginicon">
+                            <img id="img" src="/img/imageProfile/<%=locals.userLogged.imagen%>" alt="imagen de usuario">
+                        </p>
+                        <p class="loginicon">Usuario: <%= locals.userLogged.name %></p>
                         <p class="loginicon">
                             <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
                         </p>

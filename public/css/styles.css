@@ -139,11 +139,7 @@ main {
     font-size: 3.6em;
 }
 
-#descuento {
-    color: var(--naranja);
-    text-decoration-line: line-through;
-    font-size: 3.6em;
-}
+color: var(--naranja);
 
 #descripcionProducto {
     color: var(--negro);
@@ -224,9 +220,8 @@ footer {
     margin-top: 10%;
     margin-right: 15%;
     color: var(--blanco);
-}
 
-.final div a {
+
     text-decoration: none;
     color: var(--blanco);
 }

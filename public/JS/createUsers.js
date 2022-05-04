@@ -1,8 +1,7 @@
 window.addEventListener("load", () => {
     console.log("Hola desde el formulario Crear usuario");
-    let formulario = this.document.querySelector("form.formulario");
+    let formulario = this.document.querySelector("form.containerCreate");
     formulario.addEventListener("submit", (event) => {
-        alert("hola");
         let errores = [];
         let expReg = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         let passwordReg = /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;

@@ -48,7 +48,7 @@ const controller = {
 	},
 
     loginUser: (req,res) => {
-        res.render("uses/login");
+        res.render("users/login");
     },
 
     loginProcess: (req, res) => {

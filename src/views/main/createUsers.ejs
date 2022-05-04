@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+ 
+    <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Crear Usuario</title>
 </head>
@@ -13,28 +15,26 @@
 <body>
     <%- include("../partials/header.ejs") %>
         <main>
-            <h2>Crea un Usuario</h2>
+            <h2 id="creationTitle">Crea un Usuario</h2>
             <ul id="errores">
 
             </ul>
             <form action="/store" method="POST" enctype="multipart/form-data" class="containerCreate">
-                <div class="formu">
+                <div id="personalInfo">
+                    <h3>Ingresa tu información personal</h3>
                     <label for="name">Nombre:</label >
                     <p><input type="text" name="name" id="name" required></p>
-                    <label for="email">Email </label>
-                    <p><input type="text" name="email" id="email" required> </p>
-                    <label for="password">Contraseña: </label>
-                    <p><input type="text" name="password" id="password" required></p>
+
                     <label for="phone">Celular: </label>
                     <p><input type="number" name="phone" id="phone" required></p>
+
                     <label for="card">Tarjeta: </label>
                     <p><input type="number" name="card" id="card" required></p>
-                    <label for="imagen">Imagen: </label>
-                    <p><input type="file" name="image" id="image"><br></p>
+                    
                     <label for="direccion">Direccion: </label>
                     <p><input type="text" name="direccion" id="direccion" required></p>
                     <p>
-                        <label for="departamentoId">Deparamento: </label><br>
+                        <label for="departamentoId">Departamento: </label><br>
                         <select name="departamentoId" id="" required>
                             <option value="" disabled selected> - Elige Deparamento - </option>
                             <% departamento.forEach(departamento => { %>
@@ -42,8 +42,20 @@
                             <% }) %>
                         </select>
                     </p>
-                    <button type="submit">Guardar Producto</button>
                 </div>
+                <div id="perfil">
+                    <h3>Configura el perfíl de tu cuenta</h3>
+                    <label for="email">Email </label>
+                    <p><input type="text" name="email" id="email" required> </p>
+                    <label for="password">Contraseña: </label>
+                    <p><input type="text" name="password" id="password" required></p>
+                    <label for="imagen">Imagen: </label>
+                    <p><input type="file" name="image" id="image"><br></p>
+                    <button type="submit">Crear Usuario</button>
+                </div>
+
+                    
+                
             </form>
         </main>
         <%- include("../partials/footer.ejs") %>

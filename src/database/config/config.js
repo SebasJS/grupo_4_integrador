@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "Camilo1992.",
+    "password": 'Fr4nc1sr0a_98',
     "database": "altisports_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

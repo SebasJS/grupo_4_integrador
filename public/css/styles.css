@@ -83,7 +83,6 @@ header {
     align-items: center;
     display: flex;
 }
-header span {}
 
 #banner {
     width: 100%;
@@ -152,7 +151,6 @@ main {
     font-size: 3.6em;
 }
 
-color: var(--naranja);
 
 #descripcionProducto {
     color: var(--negro);
@@ -247,14 +245,17 @@ footer {
     width: 100%;
     justify-content: center;
     align-items: center;
+}*/
+#creationTitle{
+    padding-left:45%;
 }
 
 .containerCreate {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 100px 0px;
+    margin: 10px 33%;
 
 
     background-color: white;
@@ -265,6 +266,22 @@ footer {
     color: #222831;
     -webkit-box-shadow: -1px 3px 17px -2px rgba(0, 0, 0, 0.48);
     box-shadow: -1px 3px 17px -2px rgba(0, 0, 0, 0.48);
-    padding-bottom: 50px;
+}
 
-} */
+#personalInfo{
+    flex-direction: column;
+    -webkit-box-shadow: -1px 3px 17px -2px rgba(0, 0, 0, 0.48);
+    box-shadow: -1px 3px 17px -2px rgba(0, 0, 0, 0.48);
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#perfil{
+    flex-direction: column;
+    -webkit-box-shadow: -1px 3px 17px -2px rgba(0, 0, 0, 0.48);
+    box-shadow: -1px 3px 17px -2px rgba(0, 0, 0, 0.48);
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}

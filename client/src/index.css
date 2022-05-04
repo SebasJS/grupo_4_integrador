@@ -45,6 +45,23 @@ code {
 
 }
 
+.altisport{
+  color: var(--naranja);
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-size: 20px;
+ margin-top: 20px;
+}
+
+.logoNavbar{
+  padding-top:5px;
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
 .navigation {
   position: fixed;
   width: 300px;
@@ -70,6 +87,7 @@ code {
   position: relative;
   width: 100%;
   list-style: none;
+  align-items:center;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 
@@ -340,7 +358,7 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 20px;
+  
 }
 
 .cardHeader h2 {
@@ -393,36 +411,48 @@ code {
 
 }
 
-.details .lastOrder table tr {
+.detailsLast table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+
+}
+
+.detailsLast table thead td {
+  font-weight: 600;
+
+}
+
+.detailsLast .lastOrder table tr {
   color: #161515;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 }
 
-.details .lastOrder table tr:last-child {
+.detailsLast .lastOrder table tr:last-child {
   border-bottom: none;
 }
 
-.details .lastOrder table tbody tr:hover {
+.detailsLast .lastOrder table tbody tr:hover {
 
   background: var(--gris);
   color: var(--blanco);
 
 }
 
-.details .lastOrder table tr td {
+.detailsLast .lastOrder table tr td {
   padding: 10px;
 }
 
-.details .lastOrder table tr td:last-child {
+.detailsLasts .lastOrder table tr td:last-child {
   text-align: end;
 }
 
-.details .lastOrder table tr td:nth-child(2) {
+.detailsLast .lastOrder table tr td:nth-child(3) {
   text-align: end;
 }
 
-.details .lastOrder table tr td:nth-child(3) {
+.detailsLast .lastOrder table tr td:nth-child(4) {
   text-align: center;
 }
 
@@ -455,11 +485,11 @@ code {
   text-align: end;
 }
 
-.details .recentOrders table tr td:nth-child(2) {
+.details .recentOrders table tr td:nth-child(3) {
   text-align: end;
 }
 
-.details .recentOrders table tr td:nth-child(3) {
+.details .recentOrders table tr td:nth-child(4) {
   text-align: center;
 }
 
@@ -633,6 +663,9 @@ code {
 .recentCustomers table tr:hover td h4 span {
   color: var(--blanco);
 }
+
+
+
 
 /*Respinsive design*/
 

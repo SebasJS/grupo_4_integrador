@@ -396,44 +396,44 @@ numberOfballs(){
           <ul>
             <li className=''>
               <a href="/">
-                <span className='icon'><ion-icon name="bicycle-outline"></ion-icon></span>
-                <span className="title">Altisports</span>
+                <span className='icon'><img className="logoNavbar" src="http://localhost:3000/img/altisport-logo.png" alt="" /></span>
+                <span className="title altisport">Altisports</span>
               </a>
             </li>
             <li>
               <a href="/">
                 <span className='icon'><ion-icon name="home-outline"></ion-icon></span>
-                <span className="title">Dashboard</span>
+                <span className="title">Panel Administrativo</span>
               </a>
             </li>
             <li>
               <a href="/">
-                <span className='icon'><ion-icon name="person-outline"></ion-icon></span>
-                <span className="title">user</span>
+                <span className='icon'><ion-icon name="people-outline"></ion-icon></span>
+                <span className="title">Lista de Usuarios</span>
               </a>
             </li>
             <li>
               <a href="/">
-                <span className='icon'><ion-icon name="cube-outline"></ion-icon></span>
-                <span className="title">help</span>
+                <span className='icon'><ion-icon name="bicycle-outline"></ion-icon></span>
+                <span className="title">Lista de Productos</span>
               </a>
             </li>
             <li>
               <a href="/">
-                <span className='icon'><ion-icon name="cube-outline"></ion-icon></span>
-                <span className="title">settings</span>
+                <span className='icon'><ion-icon name="person-add-outline"></ion-icon></span>
+                <span className="title">Agregar Usuario</span>
               </a>
             </li>
             <li>
               <a href="/">
-                <span className='icon'><ion-icon name="cube-outline"></ion-icon></span>
-                <span className="title">Password</span>
+                <span className='icon'><ion-icon name="basketball-outline"></ion-icon></span>
+                <span className="title">Agregar Producto</span>
               </a>
             </li>
             <li>
               <a href="/">
-                <span className='icon'><ion-icon name="cube-outline"></ion-icon></span>
-                <span className="title">Sing Out</span>
+                <span className='icon'><ion-icon name="log-out-outline"></ion-icon></span>
+                <span className="title">Salir</span>
               </a>
             </li>
 
@@ -449,7 +449,7 @@ numberOfballs(){
             {/*  search */}
             <div className="search">
               <label htmlFor="">
-                <input type="text" placeholder='Search here' />
+                <input type="text" placeholder='Buscar Aqui' />
                 <ion-icon name="search-outline"></ion-icon>
               </label>
             </div>
@@ -589,7 +589,7 @@ numberOfballs(){
             <div className="lastCustomer">
               <div className="cardHeader">
                 <h2>
-                  Recent Customers
+                Ultimo Usuario Agregado
                 </h2>
 
               </div>
@@ -605,7 +605,7 @@ numberOfballs(){
             <div className="recentOrders">
               <div className="cardHeader">
                 <h2>
-                  Productos
+                  Todos los Productos
                 </h2>
                 <a href="/" className='btn'>Ver todos </a>
               </div>
@@ -632,7 +632,7 @@ numberOfballs(){
             <div className="recentCustomers">
               <div className="cardHeader">
                 <h2>
-                  Recent Customers
+                  Todos los usuarios
                 </h2>
 
               </div>

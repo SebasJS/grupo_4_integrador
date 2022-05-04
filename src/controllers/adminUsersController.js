@@ -4,7 +4,7 @@ const sequelize = db.sequelize;
 const Users = db.User;
 const CategoryUser = db.CategoryUser;
 const Departamento = db.Departamento;
-
+const bCrypt = require('bcryptjs');
 module.exports = {
     index: 
     async (req, res) => {   
@@ -29,13 +29,19 @@ module.exports = {
     },
     create: async (req,res) => {
         try {
+            console.log("entre a create");
             let image = req.file ? req.file.filename : "default-image.png";
-            console.log("La imagen es "+ req.file);
-            const { name, email, password, phone, card, direccion, categoryId, departamentoId } = req.body;
+            console.log('el file es : '+ req.file );
+            console.log("La imagen es "+ image);
+            const { name, email, password, phone, card, imagen, direccion, categoryId, departamentoId } = req.body;
+            
+            console.log(password);
+            const passEncript = await bCrypt.hash(password,10);
+            console.log(passEncript);
             await db.User.create({
                 name,
                 email,
-                password,
+                password : passEncript,
                 phone,
                 card,
                 imagen : image,
@@ -43,7 +49,11 @@ module.exports = {
                 categoryId,
                 departamentoId
             });
-            return res.redirect('/admin/users')
+            /*let comparar = bCrypt.compareSync('Manuel.991',passEncript);
+            if (comparar) {
+                console.log("se comparo de buena manera");
+            }*/
+            return res.redirect('/admin/users/login')
         } catch (error) {
             return res.send(error);
         }
@@ -101,5 +111,41 @@ module.exports = {
         } catch (error) {
             return res.send(error);
         }
-	}
-} 
+	},
+    loginUser: (req,res) => {
+        console.log("Hola desde userController");
+        return res.render("users/login.ejs");
+    },    
+    loginProcess: async (req, res) => {
+        console.log("entre a login process");
+        const { email } = req.body;
+        let userToLogin = await Users.findOne({
+            where: {email: email}
+        })
+        if(userToLogin){
+            const passwordCorrecta = bCrypt.compareSync(req.body.password,userToLogin.password);
+            if(passwordCorrecta && userToLogin.categoryId == 1){
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                const users = await Users.findAll();
+                /*if(req.body.rememberInput){
+                    res.cookie('email', req.body.email, {maxAge: 30000});
+                }*/
+                //return res.send('Esta es la cuenta de '+userToLogin.name +' y es administrador');
+                return res.redirect('/');
+            }else if(passwordCorrecta && userToLogin.categoryId == 2){
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                //return res.send('Esta es la cuenta de '+userToLogin.name +' y es usuario normal');
+                return res.redirect('/');
+            }
+
+        }
+        
+    },    
+    logout: (req, res) => {
+        //res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
+    }
+}

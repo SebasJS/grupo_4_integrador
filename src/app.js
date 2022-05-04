@@ -37,6 +37,7 @@ app.use(methodOverride('_method'));
 const mainRouter = require("./routes/mainRouter");
 const adminRouter = require("./routes/adminRouter");
 const usersRouter = require("./routes/usersRouter");
+const adminUserRouter = require('./routes/adminUsersRouter');
 const shopRouter = require("./routes/shopRouter");
 const productsRouter = require("./routes/products");
 const userLogMiddleware = require('./middlewares/userLogMiddleware');
@@ -83,6 +84,9 @@ app.use('/products',productsRouter);
 
 // ruta api
 app.use('/api', apiRoutes);
+
+app.use('/adminusers',adminUserRouter);
+
 
 //Servidor
 app.listen(process.env.PORT || 3000, () =>console.log("Servidor Corriendo en Puerto 3000"));

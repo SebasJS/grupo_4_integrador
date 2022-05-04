@@ -20,7 +20,8 @@ class App extends Component {
       imagen: "",
       tipo: "",
       productos: [],
-      usuarios: []
+      usuarios: [],
+      lastProduct: ""
     }
   }
 
@@ -38,9 +39,16 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
+
+
+
+
   componentDidMount() {
     console.log("me monte");
     this.traerGifNuevo();
+    this.lastProduct();
+
+
   }
 
   traerGifNuevo() {
@@ -53,12 +61,20 @@ class App extends Component {
 
   }
   mostrarGif = (data) => {
+
     this.setState({
       productos: data,
       nombre: data[0].name,
 
+      lastProduct: data
+
     })
-    console.log(this.state.nombre)
+    console.log(this.state.nombre);
+
+
+
+    console.log(this.state.productos)
+    console.log("soy el primer usuarii0" + this.state.nombre)
   }
 
   mostrarUsuarios = (data2) => {
@@ -68,23 +84,33 @@ class App extends Component {
       nombredeuser: data2[0].name
 
     })
-    console.log("soy el primer usuarii0" + this.state.nombredeuser)
+
+
+  }
+
+  lastProduct(data3) {
+
+
   }
 
 
   componentDidUpdate() {
-    console.log("me actualize")
+    console.log("me actualize");
+    this.lastProduct();
 
 
   }
   render() {
     console.log("estoy renderizando");
+    //ultimo producto
+
+    //ultimo usuario
     let contenido;
     let listProducts;
     let imagen;
     let imagenUsuario;
     let listUsers;
-    console.log(this.state.productos);
+    console.log("ultmo " + this.state.productos);
     listProducts = this.state.productos.map((producto) => {
       console.log(producto.name);
       imagen = "http://localhost:3000/img/" + producto.imagen;
@@ -99,6 +125,11 @@ class App extends Component {
         </tr>
       )
     });
+    let numberProducts = this.state.productos.length - 1;
+    console.log(this.state.productos[numberProducts]);
+    let lastProduct = (this.state.productos[numberProducts]);
+    console.log(lastProduct);
+
 
     listUsers = this.state.usuarios.map((usuario) => {
       console.log(usuario.name);
@@ -272,6 +303,22 @@ class App extends Component {
               <div className="iconBx"><ion-icon name="cash-outline"></ion-icon></div>
             </div>
           </div>
+
+          {/* Ultimos */}
+
+          <div className='containeLast'>
+            <div className='lastProduct'>
+              <p></p>
+
+            </div>
+            <div className='lastUser'>
+
+            </div>
+
+
+          </div>
+
+
           {/* details */}
           <div className="details">
             <div className="recentOrders">
@@ -284,7 +331,7 @@ class App extends Component {
               <table>
                 <thead>
                   <tr>
-
+                    <td>Imagen</td>
                     <td>Nombre</td>
                     <td>Precio</td>
                     <td>categoria</td>

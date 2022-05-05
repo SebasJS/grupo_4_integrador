@@ -19,7 +19,20 @@
                     <a href="">Ropa deportiva</a><br>
                     <a href="">Bicicletas de montaña</a><br>
                     <a href="">Balones deportivos</a><br>
-                    <a href="/admin/users">Panel Administrativo</a>
+
+
+                    <% if(locals.isLogged) { %>
+                        <% if(locals.userLogged.categoryId==1) { %>
+                            <a href="/admin/users">Administrar Usuarios</a>
+                            <a href="/admin/products">Administrar Productos</a>
+                            <% } else if(locals.userLogged.categoryId==2) { %>
+                                <p>Bienvenido Usuario</p>
+                                <% } %>
+                                    <% } else { %>
+                                        <a href="/users/login">Loguearse</a><br>
+                                        <a href="/create">Registrarse</a>
+                                        <% } %>
+
                 </p>
             </div>
             <div>

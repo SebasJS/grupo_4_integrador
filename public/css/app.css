@@ -51,7 +51,7 @@ a {
 
 }
 
-a:hover{
+ button a:hover{
   color:#ebebeb;
 }
 
@@ -442,6 +442,11 @@ hr {
   margin-left: 30px;
 }
 
+.btnNewProduct{
+  display: flex;
+  gap: 20px;
+  padding: 20px 20px 20px 0;
+}
 
 /*====== Footer ======*/
 .main-footer {

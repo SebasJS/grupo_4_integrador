@@ -1,3 +1,4 @@
+
 insert into categoryProducts(name) values ("Ropa");
 insert into categoryProducts(name) values ("Balones");
 insert into categoryProducts(name) values ("Zapatos");
@@ -93,8 +94,8 @@ insert into city(name, departamentoId) values ("Honda",15);
 insert into categoryUsers(name) values ("Administrador");
 insert into categoryusers(name) values ("Cliente");
 
-insert into users(name,email,password,phone,card,imagen,direccion,categoryId,departamentoId) values("Pepito Perez", "pepito@gmail.com","123",123456789,987654321,"pepito.jpg","calle 45 sur",2,1);
-insert into users(name,email,password,phone,card,imagen,direccion,categoryId,departamentoId) values("Pepito Ramirez", "pepitoRamirez@gmail.com","123",1234555,987654111,"pepitoRamirez.jpg","calle 54 sur",2,7);
+insert into users(name,email,password,phone,card,imagen,direccion,categoryId,departamentoId) values("Pepito Perez", "pepito@gmail.com","$2a$10$LHyfqiQvmRA6rDer1bqdyeUL4D2uLhYWHPxFr1I/0ErqeGqqeFGye",123456789,987654321,"1651782977517-perez.jpg","calle 45 sur",1,1);
+insert into users(name,email,password,phone,card,imagen,direccion,categoryId,departamentoId) values("Pepito Ramirez", "pepitoRamirez@gmail.com","$2a$10$UflqkO5b2qZpAkXGQujFl.il498rptTbjYatY7tyL0g9ie.tL8BtS",1234555,987654111,"1651783159442-perez.jpg","calle 54 sur",2,7);
 insert into users(name,email,password,phone,card,imagen,direccion,categoryId,departamentoId) values("Jhon Jhackson", "jhon@gmail.com","Jhon123",123456559,65224321,"jhon.jpg","calle 35 sur",1,8);
 insert into users(name,email,password,phone,card,imagen,direccion,categoryId,departamentoId) values("Jhack Jonson", "jahck@gmail.com","jahck23",9556546,234561,"jhack.jpg","calle 53 norte",1,6);
 

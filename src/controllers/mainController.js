@@ -50,6 +50,7 @@ module.exports = {
             console.log("La imagen en main contorller es "+ image);
             const { name, email, password, phone, card, imagen, direccion,  departamentoId } = req.body;
             console.log(password);
+            console.log("EL celular es",phone);
             const passEncript = await bCrypt.hash(password,10);
             const categoryId = 2;
             console.log(passEncript);

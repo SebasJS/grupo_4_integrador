@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     /*colores*/
     --gris: #222831;
@@ -22,6 +23,10 @@
 html {
     font-size: 62.5%;
     font-family: var(--roboto);
+}
+
+body{
+    
 }
 
 /*HEADER*/
@@ -282,13 +287,19 @@ color: #ffffff;
 
 
 .containerAdminIndex{
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     
 }
 
+.ContenedorRegistro{
+    
+    height: 100%;
+    margin-top: 0;
 
+}
 
 
 /* ------------estilos formulario de registro--------------- */

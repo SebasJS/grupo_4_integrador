@@ -61,6 +61,10 @@ main {
     width: 50%;
 }
 
+body{
+    background: #E6E6E6;
+}
+
 
 .formulario {
     display: flex;

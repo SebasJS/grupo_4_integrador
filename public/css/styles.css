@@ -220,21 +220,23 @@ color: var(--naranja);
 footer {
     font-family: var(--roboto);
     background-color: var(--gris);
-    height: 404px;
+    height: 100%;
 }
 
 .final {
-    font-size: 3.6em;
+    font-size: 3em;
     color: var(--naranja);
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: flex-start;
-    margin-left: 5%;
+    padding-left: 300px;
+    padding-right: 300px;
 }
 
 .final div {
-    margin-top: 10%;
-    margin-right: 15%;
+    height: 300px;
+    margin-top: 100px;
+    margin-right: 0;
     color: var(--blanco);
 
 
@@ -242,10 +244,51 @@ footer {
     color: var(--blanco);
 }
 
+.final 
+
 .invisible {
     display: none;
     visibility: hidden;
 }
+
+
+.logoContainer{
+    width: 100px;
+    height: 100px;
+}
+
+
+.logoimg{
+    width: 100px;
+    height: 100px;
+}
+
+
+/*----------------Admin Crud Users & products -------------------*/
+
+.item{
+    width: 100%;
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.botonEliminar{
+
+background-color: red;
+color: #ffffff;
+
+}
+
+
+.containerAdminIndex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
 
 
 /* ------------estilos formulario de registro--------------- */

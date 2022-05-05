@@ -12,8 +12,8 @@
 
 <body>
     <footer>
-        <span class="final">
-            <div>
+        <div class="final">
+            <div class="menuFooter">
                 <p>
                     <a href="">¿Quienes somos?</a><br>
                     <a href="">Ropa deportiva</a><br>
@@ -23,13 +23,14 @@
 
                     <% if(locals.isLogged) { %>
                         <% if(locals.userLogged.categoryId==1) { %>
-                            <a href="/admin/users">Administrar Usuarios</a>
+                            <a href="/admin/users">Administrar Usuarios</a><br>
                             <a href="/admin/products">Administrar Productos</a>
                             <% } else if(locals.userLogged.categoryId==2) { %>
                                 <p>Bienvenido Usuario</p>
                                 <% } %>
                                     <% } else { %>
                                         <a href="/users/login">Loguearse</a><br>
+                                        <p>si aun no tienes cuenta:</p>
                                         <a href="/create">Registrarse</a>
                                         <% } %>
 
@@ -46,7 +47,7 @@
             <div class="logoContainer">
                 <img src="/img/altisport-logo.png" alt="" class="logoimg">
             </div>
-        </span>
+        </div>
     </footer>
 </body>
 

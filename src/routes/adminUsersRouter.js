@@ -12,6 +12,8 @@ let upload = multer ({storage})
 
 router.get('/users/add',adminUsersController.add);
 router.post('/users/create',upload.single("image"),adminUsersController.create);
+router.get('/users/edit/:id', adminUsersController.edit);
+router.post('/users/update/:id',upload.single("image"), adminUsersController.update);
 
 
 

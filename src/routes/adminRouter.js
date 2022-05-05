@@ -28,10 +28,10 @@ router.delete('/delete/:id', adminController.delete);
 //Rutas para CRUD de Usuarios por parte del ADMIN
 
 router.get('/users', adminUsersController.index);
-router.get('/addUsers', adminUsersController.add);
+/*router.get('/addUsers', adminUsersController.add);
 router.post('/users/create', adminUsersController.create);
 router.get('/users/edit/:id', adminUsersController.edit);
-router.post('/users/update/:id', adminUsersController.update);
+router.post('/users/update/:id',upload.single("image"), adminUsersController.update);*/
 router.post('/users/delete/:id', adminUsersController.delete);
 
 //Rutas para el login de usuarios

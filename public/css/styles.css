@@ -239,6 +239,11 @@ footer {
     color: var(--blanco);
 }
 
+.invisible {
+    display: none;
+    visibility: hidden;
+}
+
 
 /* ------------estilos formulario de registro--------------- */
 

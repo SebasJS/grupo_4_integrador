@@ -75,16 +75,17 @@ module.exports = {
 	},
 	update: async (req, res) => {
         try {
-            console.log(req.body.image);
-            //let image = req.body.image ? req.body.imagefilename : "default-image.png";
-            let image = req.body.image;
+            console.log("Entre a update");
+            let image = req.file ? req.file.filename : "default-image.png";
             console.log("La imagen es "+ image);
             const id = req.params.id;
             const { name, email, password, phone, card, direccion, categoryId, departamentoId } = req.body;
+            const passEncript = await bCrypt.hash(password,10);
+            console.log(passEncript);
             await db.User.update({
                 name,
                 email,
-                password,
+                password : passEncript,
                 phone,
                 card,
                 imagen: image,
@@ -138,6 +139,15 @@ module.exports = {
                 req.session.userLogged = userToLogin;
                 //return res.send('Esta es la cuenta de '+userToLogin.name +' y es usuario normal');
                 return res.redirect('/'); 
+            }else if(!passwordCorrecta){
+                console.log("La contraseña es incorrecta");
+                return res.render('users/login.ejs',{
+                    errors: {
+                        password: {
+                            msg: "Datos invalidos"
+                        }
+                    }
+                })
             }
 
         }

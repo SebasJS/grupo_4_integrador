@@ -13,7 +13,7 @@ let upload = multer ({storage});
 
 router.get("/", mainController.home);
 router.get("/cart", mainController.cart);
-router.get('/create',mainController.create);
+router.get('/create',guestMiddleware, mainController.create);
 router.post('/store', upload.single("image"),mainController.store);
 router.get('/users/login', guestMiddleware , adminUsersController.loginUser);
 router.post('/users/ingresar', adminUsersController.loginProcess);

@@ -41,7 +41,7 @@ const adminUserRouter = require('./routes/adminUsersRouter');
 const shopRouter = require("./routes/shopRouter");
 const productsRouter = require("./routes/products");
 const userLogMiddleware = require('./middlewares/userLogMiddleware');
-
+const adminMiddleware = require('./middlewares/adminMiddleware');
 const apiRoutes = require("./routes/api.routes");
 
 const publicPath = path.resolve(__dirname,'./public');

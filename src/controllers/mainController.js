@@ -64,7 +64,7 @@ module.exports = {
                 categoryId : categoryId,
                 departamentoId
             });
-            return res.redirect('/admin/users')
+            return res.redirect('/users/login')
         } catch (error) {
             return res.send(error);
         }

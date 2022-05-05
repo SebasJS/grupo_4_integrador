@@ -19,10 +19,11 @@
     <%- include("../partials/header.ejs") %>
 
 
-        <div class="btnCreateNewProduct">
-            <form action="/admin/addUsers">
-                <button type="submit" class="btnAdminEdit">Crear nuevo usuario</button>
-            </form>
+        <h1 id="primero">Gestión de usuarios</h1>
+        
+        <div id="description">
+            <div><h2 >Nombre</h2></div>
+            <div><h2 >Acción</h2></div>
         </div>
         <div class="containerAdminIndex">
             <% users.forEach(users=> { %>
@@ -39,7 +40,14 @@
                 <form action="/admin/users/edit/<%= users.id%>">
                     <button type="submit" class="btnAdminEdit">Editar</button>
                 </form>
+                
                 <% });%>
+                
+        </div>
+        <div id="btnCreateNewUser">
+            <form action="/admin/addUsers">
+                <button type="submit" class="btnAdminEdit">Crear nuevo usuario</button>
+            </form>
         </div>
         <%- include("../partials/footer") %>
 </body>

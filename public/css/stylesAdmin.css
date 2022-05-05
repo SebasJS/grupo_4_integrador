@@ -1,18 +1,24 @@
 
+#primero{
+    display: flex;
+    justify-content: center;
+}
 
 .containerAdminIndex{
-    width: 60%;
+    
     margin: 15px auto;
     font-size: 1.5em;
 
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
+    padding-left: 18%;
 }
 
 .nameProductAdmin{
     text-align: justify;
     padding: 5px 0;
-    margin-bottom: 5px;
+    border-right: solid #000;
+    border-width: 2px;
 }
 
 .btnAdminDelete{
@@ -23,4 +29,29 @@
 .btnAdminEdit{
     padding: 2px 5px;
     border-radius: 28px;
+}
+
+#description{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    border-bottom:  solid #000;
+    border-width: 5px;
+}
+
+#description div{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    
+}
+
+#btnCreateNewUser{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: solid #000;
+    border-width: 5px;
 }

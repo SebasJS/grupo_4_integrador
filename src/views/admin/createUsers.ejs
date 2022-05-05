@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/css/stylesRegistro.css" type="text/css">
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/app.css">
     <title>Crear Usuario</title>
 </head>
@@ -16,26 +14,26 @@
 <body>
     <%- include("../partials/header.ejs") %>
         <main>
-            <h2>Crea un Usuario</h2>
+            <h2 id="creationTitle">Crea un Usuario</h2>
             <ul id="errores">
 
             </ul>
             <form action="/adminusers/users/create" method="POST" enctype="multipart/form-data" class="containerCreate">
-                <div class="formu">
+                <div id="personalInfo">
+                    <h3>Ingresa la información personal</h3>
+
                     <label for="name">Nombre:</label>
                     <p><input type="text" name="name" id="name" required></p>
-                    <label for="email">Email </label>
-                    <p><input type="text" name="email" id="email" required> </p>
-                    <label for="password">Contraseña: </label>
-                    <p><input type="text" name="password" id="password" required></p>
+
                     <label for="phone">Celular: </label>
                     <p><input type="number" name="phone" id="phone" required></p>
+
                     <label for="card">Tarjeta: </label>
                     <p><input type="number" name="card" id="card" required></p>
-                    <label for="imagen">Imagen: </label>
-                    <p><input type="file" name="image" id="image"><br></p>
+
                     <label for="direccion">Direccion: </label>
                     <p><input type="text" name="direccion" id="direccion" required></p>
+                    
                     <p>
                         <label for="categoryId">Categoria: </label><br>
                         <select name="categoryId" id="" required>
@@ -59,6 +57,18 @@
                         </select>
                     </p>
                     <button type="submit">Guardar Producto</button>
+                </div>
+                <div id="perfil">
+                    <h3>Configura el perfíl</h3>
+
+                    <label for="email">Email </label>
+                    <p><input type="text" name="email" id="email" required> </p>
+
+                    <label for="password">Contraseña: </label>
+                    <p><input type="text" name="password" id="password" required></p>
+
+                    <label for="imagen">Imagen: </label>
+                    <p><input type="file" name="image" id="image"><br></p>
                 </div>
             </form>
         </main>

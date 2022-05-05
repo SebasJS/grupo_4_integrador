@@ -6,6 +6,7 @@ const {op} = require("sequelize");
 const productsFilePath = path.join(__dirname, '../database/productos.JSON');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const Product = db.Product;
 const Users = db.User;

@@ -1,7 +1,7 @@
 # grupo_4_integrador
 Para ejecutar la aplicacion:  
 Paso a paso  
-1)Clonar o descargar el proyecto de la rama ManuelRopero : https://github.com/SebasJS/grupo_4_integrador.git  
+1)Clonar o descargar el proyecto de la rama main : https://github.com/SebasJS/grupo_4_integrador.git  
 2)En mySql ejecutar el script para crear las tablas BasesDeDtos.TXT, que se encuentra dentro del proyecto  
 3)En mySql ejecutar el scritpt para llenar la basede datos ScriptParaLlenardb.txt, tambien se encuentra dentro de los archivos del proyecto  
 4)Ejecutar en visual studio code dentro del directorio Grupo_4_Integrador npm install  

@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/stylesRegistro.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/app.css">
     <title>Crear Usuario</title>
 </head>
 
@@ -19,7 +22,7 @@
             </ul>
             <form action="/adminusers/users/create" method="POST" enctype="multipart/form-data" class="containerCreate">
                 <div class="formu">
-                    <label for="name">Nombre:</label >
+                    <label for="name">Nombre:</label>
                     <p><input type="text" name="name" id="name" required></p>
                     <label for="email">Email </label>
                     <p><input type="text" name="email" id="email" required> </p>
@@ -37,18 +40,22 @@
                         <label for="categoryId">Categoria: </label><br>
                         <select name="categoryId" id="" required>
                             <option value="" disabled selected> - Elige Categoría - </option>
-                            <% categoryUser.forEach(category => { %>
-                            <option value="<%= category.id %>"> <%= category.name %></option>
-                            <% }) %>
+                            <% categoryUser.forEach(category=> { %>
+                                <option value="<%= category.id %>">
+                                    <%= category.name %>
+                                </option>
+                                <% }) %>
                         </select>
                     </p>
                     <p>
                         <label for="departamentoId">Deparamento: </label><br>
                         <select name="departamentoId" id="" required>
                             <option value="" disabled selected> - Elige Deparamento - </option>
-                            <% departamento.forEach(departamento => { %>
-                            <option value="<%= departamento.id %>"> <%= departamento.name %></option>
-                            <% }) %>
+                            <% departamento.forEach(departamento=> { %>
+                                <option value="<%= departamento.id %>">
+                                    <%= departamento.name %>
+                                </option>
+                                <% }) %>
                         </select>
                     </p>
                     <button type="submit">Guardar Producto</button>
@@ -57,7 +64,7 @@
         </main>
         <%- include("../partials/footer.ejs") %>
 
-        <script src="/JS/createUsers.js"></script>
+            <script src="/JS/createUsers.js"></script>
 </body>
 
 </html>

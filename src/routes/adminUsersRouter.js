@@ -4,7 +4,7 @@ const multer = require('multer');
 const adminUsersController = require("../controllers/adminUsersController");
 let storage = multer.diskStorage({
     destination: (req,file,cb) => cb(null, "public/img/imageProfile"),
-    filename : (req, file , cb) => cb(null,Date.now()+ "-" +file.originalname)
+    filename : (req, file , cb) => cb(null,Date.now()+ "-" + file.originalname)
 });
 let upload = multer ({storage})
 

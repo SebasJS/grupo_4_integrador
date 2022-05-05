@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+
+
 const res = require('express/lib/response');
 
 const app = express();
@@ -23,6 +25,7 @@ app.use(allowCrossDomain);
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(cors());
 
 //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
 app.use(express.urlencoded({ extended: false }));
@@ -38,6 +41,8 @@ const adminUserRouter = require('./routes/adminUsersRouter');
 const shopRouter = require("./routes/shopRouter");
 const productsRouter = require("./routes/products");
 const userLogMiddleware = require('./middlewares/userLogMiddleware');
+
+const apiRoutes = require("./routes/api.routes");
 
 const publicPath = path.resolve(__dirname,'./public');
 
@@ -75,8 +80,13 @@ app.use('/',mainRouter);
 app.use('/admin',adminRouter);
 app.use('/shop',shopRouter);
 app.use('/users',usersRouter);
-app.use('/adminusers',adminUserRouter);
 app.use('/products',productsRouter);
+
+// ruta api
+app.use('/api', apiRoutes);
+
+app.use('/adminusers',adminUserRouter);
+
 
 //Servidor
 app.listen(process.env.PORT || 3000, () =>console.log("Servidor Corriendo en Puerto 3000"));

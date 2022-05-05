@@ -137,7 +137,7 @@ module.exports = {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
                 //return res.send('Esta es la cuenta de '+userToLogin.name +' y es usuario normal');
-                return res.redirect('/');
+                return res.redirect('/'); 
             }
 
         }

@@ -13,7 +13,7 @@ Paso a paso
 7)Clickear los iconos que se encuentan al lado derecho del header para iniciar sesion o crear nuevo usuario respectivamente  
 8)Para realizar crud de usuarios y productos se debe logear como administrador para esto usar el usuario por defecto pepito@gmail.com con contraseña Perez@123  
 9)Para administrar usuarios o productos una vez logeado como administrador se debe bajar hasta el footer y clickear sobre administrar usuarios o administrar productos dependiendo lo que se quiera hacer  
-10)Para iniciar sesion como usuario usar el usuario por defecto pepitoRamirez@gmail.com y contraseña Ramirez@123, o en su defecto clickear el logo del header del lado izquierdo para crear un nuevo usuario (si se crea un usuario desde este boton al no estar logeado autoamticamente se le asigna el rol de user y no el de admin), por lo anterior este usuario no puede modificar otros usuarios o productos.  
+10)Para iniciar sesion como usuario usar el usuario por defecto pepitoRamirez@gmail.com y contraseña Ramirez@123, o en su defecto clickear el logo del header del lado derecho para crear un nuevo usuario (si se crea un usuario desde este boton al no estar logeado autoamticamente se le asigna el rol de user y no el de admin), por lo anterior este usuario no puede modificar otros usuarios o productos.  
 
 
 Descripción

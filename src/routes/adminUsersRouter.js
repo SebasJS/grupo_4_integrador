@@ -15,7 +15,7 @@ router.get('/users/add',adminMiddleware,adminUsersController.add);
 router.post('/users/create',upload.single("image"),adminUsersController.create);
 router.get('/users/edit/:id',adminMiddleware, adminUsersController.edit);
 router.post('/users/update/:id',upload.single("image"), adminUsersController.update);
-
+router.delete('/users/delete/:id',upload.single("image"), adminUsersController.delete);
 
 
 module.exports = router;

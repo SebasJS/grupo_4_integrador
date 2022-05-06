@@ -50,8 +50,8 @@
                 <td ><%= product.name %></td>
                 <td ><%= product.sku %></td>
                 <td ><%= product.tag %></td>
-                <td > <button type="button" class="btn btn-success"><a href="/adminusers/users/edit/<%= product.id%>" class="btnAdminEdit">Editar</a></button> </td>
-                <td ><button type="button" class="btn btn-danger"><a href="/admin/edit/<%= product.id%>" class="btnAdminEdit">Eliminar</a></button></td>
+                <td >  <button type="button" class="btn btn-success"><a href="/admin/edit/<%= product.id%>" class="btnAdminEdit">Editar</a></button> </td>
+                <td > <form action="/admin/delete/<%= product.id%>?_method=delete"  method="POST" > <button type="submit" class="btn btn-danger"><a  class="btnAdminEdit">Eliminar</a></button></form></td>
             </tr>
                     <% });%>
 

@@ -55,8 +55,9 @@ code {
 
 .logoNavbar{
   padding-top:5px;
-  width: 100px;
-  height: 100px;
+  margin-left: -14px;
+  width: 90px;
+  height: 90px;
 }
 
 

@@ -89,6 +89,6 @@ app.use('/adminusers',adminUserRouter);
 
 
 //Servidor
-app.listen(process.env.PORT || 3000, () =>console.log("Servidor Corriendo en Puerto 3001"));
+app.listen(process.env.PORT || 3000, () =>console.log("Servidor Corriendo en Puerto 3000"));
 
 module.exports = app;

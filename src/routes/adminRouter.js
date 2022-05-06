@@ -6,6 +6,7 @@ const adminUsersController = require("../controllers/adminUsersController");
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const adminMiddleware = require("../middlewares/adminMiddleware");
+const { validateRegister } = require('../validators/register');
 let storage = multer.diskStorage({
     destination: (req,file,cb) => cb(null, "public/img"),
     filename : (req, file , cb) => cb(null,Date.now()+ "-" +file.originalname)

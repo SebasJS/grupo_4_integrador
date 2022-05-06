@@ -65,7 +65,7 @@ const controller = {
       const productos = await Product.findAll();
       const tenis = await Product.findAll({
         where:{
-          categoryProductsId : 9
+          categoryProductsId : 8
         }
       })
       //const tenis = productos.filter((producto) => producto.categoryProductsId === 9);
@@ -131,7 +131,7 @@ const controller = {
       });
       const tenis = await Product.findAll({
         where:{
-          categoryProductsId : 9
+          categoryProductsId : 8
         }
       });
       const bicicletas = productos.filter((producto) => producto.categoryProductsId === 6);
@@ -149,7 +149,7 @@ const controller = {
         case 1:
           similar = ropa;
           break;
-        case 9:
+        case 8:
           similar=tenis;
           break;
         

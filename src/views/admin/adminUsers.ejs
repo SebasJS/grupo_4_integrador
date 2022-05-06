@@ -57,7 +57,9 @@
                         <td ><%= users.email %></td>
                         <td ><%= users.phone %></td>
                         <td > <button type="button" class="btn btn-success"><a href="/adminusers/users/edit/<%= users.id%>" class="btnAdminEdit">Editar</a></button> </td>
-                        <td ><button type="button" class="btn btn-danger"><a href="/admin/users/delete/<%= users.id %>" class="btnAdminEdit">Eliminar</a></button></td>
+                        <form action="/admin/users/delete/<%= users.id%>" method="POST" class="btnDelete">
+                            <td ><button type="submit" class="btn btn-danger">Eliminar</button></td>
+                        </form>
                     </tr>
                             <% });%>
                   

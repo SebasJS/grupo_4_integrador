@@ -158,3 +158,38 @@ body{
 
 
 }
+
+
+.contenedorRegProduct{
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 50px;
+    padding-top: 20px;
+    width: 35%;
+    height: 80%;
+    margin: 50px;
+    border-radius: 2px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+   
+    
+
+
+}
+
+.formu{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.formu input{
+    padding: 5px;
+}
+
+.formu .btn {
+    font-size: 20px;
+}
